@@ -1,0 +1,6 @@
+canvas {
+	border:1px solid #888;
+	box-shadow:#888 0px 0px 32px;
+	margin: 10px auto;
+	display:block;
+}
