@@ -20,12 +20,19 @@ var keys = [],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0]
-  ]
+  ],
+  gamestate = 0
+
+var canvas = document.getElementById("canvas"),
+  ctx = canvas.getContext("2d"),
+  tilesize = 24
+
+canvas.width = tilesize*24
+canvas.height = tilesize*22
 
 function main() {
 
   update()
-  redraw()
   requestAnimationFrame(main)
 
 }

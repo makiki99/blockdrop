@@ -1,11 +1,4 @@
-var canvas = document.getElementById("canvas"),
-  ctx = canvas.getContext("2d"),
-  tilesize = 24
-
-canvas.width = tilesize*24
-canvas.height = tilesize*22
-
-function redraw() {
+function redrawClassic() {
     var offX, offY
 
     //screen clear
