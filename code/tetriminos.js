@@ -62,7 +62,7 @@ var minoData = [
     rotation1: [[-1,-1],[0,-1],[-1,0],[0,0]],
     rotation2: [[-1,-1],[0,-1],[-1,0],[0,0]],
     rotation3: [[-1,-1],[0,-1],[-1,0],[0,0]],
-    //yes, it technically never rotates
+    //yes, it rotates without rotating
   },
 
 ]
