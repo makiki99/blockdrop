@@ -1,6 +1,13 @@
+/* font import form google servers*/
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P&subset=latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Orbitron:700);
+
 canvas {
-	border:1px solid #888;
-	box-shadow:#888 0px 0px 32px;
+	border:1px solid #000000;
 	margin: 10px auto;
 	display:block;
+}
+
+body {
+	background-color: #000000;
 }

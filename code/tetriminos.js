@@ -1,3 +1,5 @@
+//this is an object of special importance, that's why it isn't in variables.js file
+
 var minoData = [
   {
     // z-mino

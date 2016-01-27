@@ -2,7 +2,7 @@ function update() {
 
   switch (gamestate) {
     case 0:
-      //menu (duh!)
+      //main menu (duh!)
       inputMenu()
       redrawMenu()
       break
@@ -15,7 +15,8 @@ function update() {
       //TODO
       break
     case 3:
-      //classic mode (double duh!)
+      //classic mode
+      inputClassic()
       redrawClassic()
       break
     default:

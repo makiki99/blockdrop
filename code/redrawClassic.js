@@ -1,4 +1,5 @@
 function redrawClassic() {
+  
     var offX, offY
 
     //screen clear
