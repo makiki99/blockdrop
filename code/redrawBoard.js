@@ -75,6 +75,7 @@ function redrawBoard() {
     var x = minoData[game.currentPiece]["rotation"+game.currentRotation][i][0]+game.piecePos[1]
     var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0]
 
+    //TODO: make this not stupid
     switch (minoData[game.currentPiece].color) {
       case 0:
         break;
