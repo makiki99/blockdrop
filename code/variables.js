@@ -1,3 +1,5 @@
+// TODO: move these variables in their respective function files
+
 //main variables
 var keys = [],
   matrix = [

@@ -8,8 +8,12 @@ function colCheck(newPosY, newPosX, newRotation) {
       return true //bounduary collision detected
     }
 
-    if (false) {
-      return true //block-to-block collision detected
+    else {
+
+      if (matrix[y][x] > 0){
+        return true //block-to-block collision detected
+      }
+
     }
 
    }

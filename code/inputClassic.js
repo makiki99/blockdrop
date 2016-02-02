@@ -7,7 +7,10 @@ var das = 14,
 
 function inputClassic() {
 
-  var axisX = 0
+  var axisX = 0.
+    axisY = 0
+
+  //rotation - TODO
 
   //left-right input
 
@@ -36,9 +39,22 @@ function inputClassic() {
   }
 
   //gravity
+
+  if (keys[38]) {
+    //up arrow - hard drop
+    axisY --
+  }
+
   if (keys[40]) {
+    //down arrow - soft drop
+    axisY ++
+  }
+
+  if (axisY == -1) {
+    miniTilesDown += 5120
+  } else if (axisY == 1) {
     //down arrow
-    //later I'll disallow up-down click at once
+    //TODO: disallow up-down click at once
     miniTilesDown += softDropGravity
   } else {
     miniTilesDown += gravity
@@ -46,7 +62,14 @@ function inputClassic() {
 
   while (miniTilesDown >= 256) {
     miniTilesDown -= 256
-    if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) == false) {game.piecePos[0]++}
+
+    if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) == false) {
+      game.piecePos[0]++
+    } else {
+      miniTilesDown = 0
+      //TODO: piece lock
+    }
+
   }
 
 }
