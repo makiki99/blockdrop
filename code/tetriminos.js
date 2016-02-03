@@ -19,9 +19,19 @@ var minoData = [
     rotation2: [[-1,1],[0,0],[0,1],[1,0]],
     rotation3: [[0,1],[0,0],[-1,0],[-1,-1]],
   },
+  {
+    // o-mino
+    color: 3, //yellow
+    spawnpos: [1,4],
+    rotation0: [[-1,-1],[0,-1],[-1,0],[0,0]],
+    rotation1: [[-1,-1],[0,-1],[-1,0],[0,0]],
+    rotation2: [[-1,-1],[0,-1],[-1,0],[0,0]],
+    rotation3: [[-1,-1],[0,-1],[-1,0],[0,0]],
+    //yes, it rotates without rotating
+  },
   {//TODO
     // j-mino
-    color: 3, //blue
+    color: 4, //blue
     spawnpos: [1,4],
     rotation0: [[0,0],[0,1],[1,0],[1,1]],
     rotation1: [[0,0],[0,1],[1,0],[1,1]],
@@ -30,7 +40,7 @@ var minoData = [
   },
   {//TODO
     // l-mino
-    color: 4, //orange
+    color: 5, //orange
     spawnpos: [1,4],
     rotation0: [[0,0],[0,1],[1,0],[1,1]],
     rotation1: [[0,0],[0,1],[1,0],[1,1]],
@@ -39,7 +49,7 @@ var minoData = [
   },
   {//TODO
     // i-mino
-    color: 5, //cyan
+    color: 6, //cyan
     spawnpos: [0,4],
     rotation0: [[0,0],[0,0],[0,0],[0,0]],
     rotation1: [[0,0],[0,1],[1,0],[1,1]],
@@ -47,24 +57,14 @@ var minoData = [
     rotation3: [[0,0],[0,1],[1,0],[1,1]],
     //this is the reason why I didn't use mathematical rotation
   },
-  {//TODO
-    // t-mino
-    color: 6, //purple
-    spawnpos: [1,4],
-    rotation0: [[0,0],[0,1],[1,0],[1,1]],
-    rotation1: [[0,0],[0,1],[1,0],[1,1]],
-    rotation2: [[0,0],[0,1],[1,0],[1,1]],
-    rotation3: [[0,0],[0,1],[1,0],[1,1]],
-  },
   {
-    // o-mino
-    color: 7, //yellow
+    // t-mino
+    color: 7, //purple
     spawnpos: [1,4],
-    rotation0: [[-1,-1],[0,-1],[-1,0],[0,0]],
-    rotation1: [[-1,-1],[0,-1],[-1,0],[0,0]],
-    rotation2: [[-1,-1],[0,-1],[-1,0],[0,0]],
-    rotation3: [[-1,-1],[0,-1],[-1,0],[0,0]],
-    //yes, it rotates without rotating
+    rotation0: [[0,0],[-1,0],[1,0],[0,-1]],
+    rotation1: [[0,0],[0,1],[1,0],[0,-1]],
+    rotation2: [[0,0],[-1,0],[1,0],[0,1]],
+    rotation3: [[0,0],[-1,0],[0,1],[0,-1]],
   },
 
 ]

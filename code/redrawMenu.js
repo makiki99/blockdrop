@@ -8,7 +8,7 @@ function redrawMenu() {
 
   //menu selections
   ctx.fillStyle = "#ffffff"
-  ctx.font = tilesize*2 + "px 'Orbitron'"
+  ctx.font = tilesize*2 + "px 'Orbitron',monospace"
   ctx.fillText("Classic",tilesize*3,tilesize*3)
   ctx.fillText("Preferences",tilesize*3,tilesize*5)
   ctx.fillText("test string",tilesize*3,tilesize*7)

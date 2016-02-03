@@ -45,18 +45,21 @@ var menu = {
 var game = {
   currentPiece: 0,
   currentRotation: 0,
-  piecePos: [1,4]
+  piecePos: [1,4],
+  //for randomizer
+  nextPieces: [],
+  history: []
 }
 
 //color codes
 var colorCode = [
-  //TODO adjust those colors to not be total shit
+  //TODO: adjust those colors to not be total shit
   "#ff0000", //red
   "#00ff00", //green
+  "#ffff00", //yellow
   "#0000ff", //blue
   "#ff9900", //orange
   "#00ffff", //cyan
   "#ff00ff", //purple
-  "#ffff00", //yellow
-  "#ffffff", //debug(white)
+  "#dddddd", //garbage(gray)
 ]

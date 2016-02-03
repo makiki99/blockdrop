@@ -26,6 +26,7 @@ function main() {
 
   }
 
+  //TODO: framerate lock
   requestAnimationFrame(main)
 
 }

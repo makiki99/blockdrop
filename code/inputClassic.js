@@ -1,18 +1,77 @@
-//later I'll move this to variables.js... maybe.
 var das = 14,
   dasFrame = 0,
   gravity = 4, // 256 gravity = 1 tile/frame (1G)
   softDropGravity = 128,
-  miniTilesDown = 0 // how to name a variable part one
+  miniTilesDown = 0
+
+//these variables
+var cwIsPresed = false,
+  ccwIsPressed = false
 
 function inputClassic() {
 
-  var axisX = 0.
+  var axisX = 0,
     axisY = 0
 
-  //rotation - TODO
+  //rotation
+  //TODO: test wallkick possibilities
+  if (keys[90]) {
+    //z - ccw rotation
+    if (!ccwIsPressed) {
+      var newRotation = game.currentRotation -1
+      if (newRotation < 0) {
+        newRotation = 3
+      }
+      if (colCheck(game.piecePos[0],game.piecePos[1],newRotation) == false) {
+        game.currentRotation = newRotation
+      } else if (colCheck(game.piecePos[0],game.piecePos[1]-1,newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[1] -= 1
+      } else if (colCheck(game.piecePos[0],game.piecePos[1]+1,newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[1] += 1
+      } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[0] += 1
+      } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[0] -= 1
+      }
+    }
+    ccwIsPressed = true
+  } else {
+    ccwIsPressed = false
+  }
 
-  //left-right input
+  if (keys[88]) {
+    //x - cw rotation
+    if (!cwIsPressed) {
+      var newRotation = game.currentRotation + 1
+      if (newRotation > 3) {
+        newRotation = 0
+      }
+      if (colCheck(game.piecePos[0],game.piecePos[1],newRotation) == false) {
+        game.currentRotation = newRotation
+      } else if (colCheck(game.piecePos[0],game.piecePos[1]+1,newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[1] += 1
+      } else if (colCheck(game.piecePos[0],game.piecePos[1]-1,newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[1] -= 1
+      } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[0] += 1
+      } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[0] -= 1
+      }
+    }
+    cwIsPressed = true
+  } else {
+    cwIsPressed = false
+  }
+
+  //left-right move
 
   if (keys[37]) {
     //left arrow
@@ -26,12 +85,16 @@ function inputClassic() {
 
   if (axisX == -1) {
     if (dasFrame == 0 || dasFrame >= das) {
-      if (colCheck(game.piecePos[0],game.piecePos[1]-1,game.currentRotation) == false) {game.piecePos[1] -= 1}
+      if (colCheck(game.piecePos[0],game.piecePos[1]-1,game.currentRotation) == false) {
+        game.piecePos[1] -= 1
+      }
     }
     dasFrame ++
   } else if (axisX == 1) {
     if (dasFrame == 0 || dasFrame >= das) {
-      if (colCheck(game.piecePos[0],game.piecePos[1]+1,game.currentRotation) == false) {game.piecePos[1] += 1}
+      if (colCheck(game.piecePos[0],game.piecePos[1]+1,game.currentRotation) == false) {
+        game.piecePos[1] += 1
+      }
     }
     dasFrame ++
   } else {
