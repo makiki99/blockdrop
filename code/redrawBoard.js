@@ -75,7 +75,7 @@ function redrawBoard() {
     var x = minoData[game.currentPiece]["rotation"+game.currentRotation][i][0]+game.piecePos[1]
     var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0]
 
-    ctx.fillStyle = colorCode[minoData[game.currentPiece].color]
+    ctx.fillStyle = colorCode[minoData[game.currentPiece].color-1]
     ctx.fillRect((x+offX)*tilesize,(y+offY)*tilesize,tilesize,tilesize)
 
   }
