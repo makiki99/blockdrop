@@ -7,17 +7,10 @@ function inputMenu() {
     //reset gamestate logic
     if (gamestate == 3){
 
-      // game.history = [0,1,0,1]
-      // game.nextPieces = [0,0,0]
-      // //first piece can't be S, Z or O
-      // //it also doesn't modify history
-      // game.currentPiece = Math.floor(Math.random()*5)+2
-      // game.currentRotation = 0
-      // //generate next 3 pieces
-      // //for loop would be a stupid idea here IMO
-      // generatePiece()
-      // generatePiece()
-      // generatePiece()
+      game.history = [0,1,0,1]
+      //TODO: disallow S, Z and O as a first piece
+      generatePiece()
+      generatePiece()
 
     }
 

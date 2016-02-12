@@ -80,4 +80,18 @@ function redrawBoard() {
 
   }
 
+  //next piece
+  offX = 22
+  offY = 1
+  for (i = 0; i < 4; i++) {
+
+    //I tried to make this look good
+    var x = minoData[game.nextPiece].rotation0[i][0]
+    var y = minoData[game.nextPiece].rotation0[i][1]
+
+    ctx.fillStyle = colorCode[minoData[game.nextPiece].color-1]
+    ctx.fillRect((x+offX)*tilesize,(y+offY)*tilesize,tilesize,tilesize)
+
+  }
+
 }

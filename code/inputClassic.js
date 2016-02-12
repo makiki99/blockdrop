@@ -116,8 +116,6 @@ function inputClassic() {
   if (axisY == -1) {
     miniTilesDown += 5120
   } else if (axisY == 1) {
-    //down arrow
-    //TODO: disallow up-down click at once
     miniTilesDown += softDropGravity
   } else {
     miniTilesDown += gravity

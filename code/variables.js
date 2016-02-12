@@ -47,8 +47,8 @@ var game = {
   currentRotation: 0,
   piecePos: [1,4],
   //for randomizer
-  nextPieces: [],
-  history: []
+  nextPiece: 0,
+  history: [0,1,1,0]
 }
 
 //color codes
