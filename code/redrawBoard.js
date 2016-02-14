@@ -71,7 +71,6 @@ function redrawBoard() {
   //current piece
   for (i = 0; i < 4; i++) {
 
-    //I tried to make this look good
     var x = minoData[game.currentPiece]["rotation"+game.currentRotation][i][0]+game.piecePos[1]
     var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0]
 
@@ -81,11 +80,10 @@ function redrawBoard() {
   }
 
   //next piece
-  offX = 22
-  offY = 1
+  offX = 14
+  offY = 3
   for (i = 0; i < 4; i++) {
 
-    //I tried to make this look good
     var x = minoData[game.nextPiece].rotation0[i][0]
     var y = minoData[game.nextPiece].rotation0[i][1]
 
@@ -94,4 +92,9 @@ function redrawBoard() {
 
   }
 
+  //lock delay bar for testing purposes
+  offX = 1
+  offY = 21
+  ctx.fillStyle = "#00ff00"
+  ctx.fillRect(offX*tilesize,offY*tilesize+6,(tilesize*10)*(lockdelay-lockframe)/lockdelay,4)
 }

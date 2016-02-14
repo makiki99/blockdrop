@@ -4,12 +4,36 @@ function inputMenu() {
     //enter
     gamestate = menu.statelist[menu.currentSelection]
 
-    //reset gamestate logic
     if (gamestate == 3){
-
+      //reset gamestate
+      matrix = [
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,7,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,1,2,3,4,5,6,7]
+      ],
       game.history = [0,1,0,1]
-      //TODO: disallow S, Z and O as a first piece
-      generatePiece()
+      var randomNum = Math.floor(Math.random()*4+3)
+      game.currentPiece = game.nextPiece
+      game.nextPiece = randomNum
+      game.history.splice(0,1)
+      game.history.push(randomNum)
       generatePiece()
 
     }
