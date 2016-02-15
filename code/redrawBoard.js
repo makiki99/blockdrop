@@ -7,14 +7,7 @@ function redrawBoard() {
   //background
   offX = 1
   offY = 1
-  //idk if this is a good design, I'll leave this commented for now
-  // ctx.strokeStyle = "#666666"
-  // ctx.lineWidth = 1
-  // for (x = 0; x < 10; x++) {
-  //   for (y = 0; y < 20; y++) {
-  //     ctx.strokeRect((x+offX)*tilesize,(y+offY)*tilesize,tilesize,tilesize)
-  //   }
-  // }
+
   ctx.strokeStyle = "#ffffff"
   ctx.lineWidth = 3
   ctx.strokeRect(offX*tilesize,offY*tilesize,tilesize*10,tilesize*20)
@@ -69,27 +62,26 @@ function redrawBoard() {
   }
 
   //current piece
-  for (i = 0; i < 4; i++) {
+  if (areFrame <= 0) {
+    for (i = 0; i < 4; i++) {
 
-    var x = minoData[game.currentPiece]["rotation"+game.currentRotation][i][0]+game.piecePos[1]
-    var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0]
+      var x = minoData[game.currentPiece]["rotation"+game.currentRotation][i][0]+game.piecePos[1]
+      var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0]
 
-    ctx.fillStyle = colorCode[minoData[game.currentPiece].color-1]
-    ctx.fillRect((x+offX)*tilesize,(y+offY)*tilesize,tilesize,tilesize)
+      ctx.fillStyle = colorCode[minoData[game.currentPiece].color-1]
+      ctx.fillRect((x+offX)*tilesize,(y+offY)*tilesize,tilesize,tilesize)
 
+    }
   }
 
   //next piece
   offX = 15
   offY = 3
   for (i = 0; i < 4; i++) {
-
-    var x = minoData[game.nextPiece].rotation0[i][0]
+      var x = minoData[game.nextPiece].rotation0[i][0]
     var y = minoData[game.nextPiece].rotation0[i][1]
-
-    ctx.fillStyle = colorCode[minoData[game.nextPiece].color-1]
+      ctx.fillStyle = colorCode[minoData[game.nextPiece].color-1]
     ctx.fillRect((x+offX)*tilesize,(y+offY)*tilesize,tilesize,tilesize)
-
   }
 
   //lock delay bar for testing purposes

@@ -1,10 +1,12 @@
 var das = 14,
-  dasFrame = 0,
+  dasFrameLeft = 0,
+  dasFrameRight = 0,
   gravity = 4, // 256 gravity = 1 tile/frame (1G)
   softDropGravity = 128,
   miniTilesDown = 0,
   lockframe = 0,
-  lockdelay = 30
+  lockdelay = 30,
+  areFrame = 0
 
 //these variables
 var cwIsPresed = false,
@@ -28,24 +30,34 @@ function inputClassic() {
   }
 
   if (axisX == -1) {
-    if (dasFrame == 0 || dasFrame >= das) {
+    if (dasFrameLeft == 0 || dasFrameLeft >= das) {
       if (colCheck(game.piecePos[0],game.piecePos[1]-1,game.currentRotation) == false) {
-        game.piecePos[1] -= 1
+        if (areFrame <= 0) {
+          game.piecePos[1] -= 1
+        }
       }
     }
-    dasFrame ++
+    dasFrameLeft ++
+    dasFrameRight = 0
   } else if (axisX == 1) {
-    if (dasFrame == 0 || dasFrame >= das) {
+    if (dasFrameRight == 0 || dasFrameRight >= das) {
       if (colCheck(game.piecePos[0],game.piecePos[1]+1,game.currentRotation) == false) {
-        game.piecePos[1] += 1
+        if (areFrame <= 0){
+          game.piecePos[1] += 1
+        }
       }
     }
-    dasFrame ++
+    dasFrameRight ++
+    dasFrameLeft = 0
   } else {
-    dasFrame = 0
+    dasFrameLeft = 0
+    dasFrameRight = 0
   }
 
-  //TODO: ARE
+  if (areFrame > 0) {
+    areFrame--
+    return
+  }
 
   //rotation
   if (keys[90]) {
@@ -176,6 +188,10 @@ function inputClassic() {
       game.level += linesCleared
       if ((game.level + 1) % 100 != 0) {
         game.level++
+      }
+      areFrame = 30
+      if (linesCleared > 0) {
+        areFrame += 30
       }
       generatePiece()
     }
