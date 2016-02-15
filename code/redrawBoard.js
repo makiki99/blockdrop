@@ -80,7 +80,7 @@ function redrawBoard() {
   }
 
   //next piece
-  offX = 14
+  offX = 15
   offY = 3
   for (i = 0; i < 4; i++) {
 
