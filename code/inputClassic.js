@@ -120,7 +120,9 @@ function inputClassic() {
     miniTilesDown += 5120
   } else if (axisY == 1) {
     miniTilesDown += softDropGravity
-    //lockframe = 999999 //just a random big number
+    if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation)) {
+      lockframe += 1000
+    }
   } else {
     if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) == false) {
       miniTilesDown += gravity
@@ -147,13 +149,34 @@ function inputClassic() {
       for (i = 0; i < 4; i++) {
         var x = minoData[game.currentPiece]["rotation"+game.currentRotation][i][0]+game.piecePos[1]
         var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0]
-        if (false) {
+        if (matrix[y][x] == undefined) {
           topOut()
         }
         matrix[y][x] = minoData[game.currentPiece].color
       }
+      var linesCleared = 0
       lockframe = 0
       miniTilesDown = 0
+      //clear lines
+      //NOTE: this is ugly af
+      for(y = 0; y < 20; y++){
+        var foo = 0
+        for (x = 0;x < 10; x++) {
+          if (matrix[y][x] > 0) {
+            foo++
+          } else {break}
+        }
+        if (foo >= 10) {
+          matrix.splice(y,1)
+          matrix.unshift([0,0,0,0,0,0,0,0,0,0])
+          linesCleared++
+        }
+      }
+      //increase level
+      game.level += linesCleared
+      if ((game.level + 1) % 100 != 0) {
+        game.level++
+      }
       generatePiece()
     }
   }

@@ -48,7 +48,9 @@ var game = {
   piecePos: [1,4],
   //for randomizer
   nextPiece: 0,
-  history: [0,1,1,0]
+  history: [0,1,1,0],
+  level: 1,
+  score: 0
 }
 
 //color codes
