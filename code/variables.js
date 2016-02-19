@@ -32,7 +32,7 @@ var canvas = document.getElementById("canvas"),
   tilesize = 24
 
 canvas.width = tilesize*24
-canvas.height = tilesize*22
+canvas.height = tilesize*24
 
 
 //menu variables

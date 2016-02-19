@@ -6,12 +6,17 @@ function redrawBoard() {
 
   //background
   offX = 1
-  offY = 1
+  offY = 3
 
   ctx.strokeStyle = "#ffffff"
   ctx.lineWidth = 3
-  ctx.strokeRect(offX*tilesize,offY*tilesize,tilesize*10,tilesize*20)
+  ctx.strokeRect(offX*tilesize,(offY-2)*tilesize,tilesize*10,tilesize*22)
+  ctx.strokeStyle = "#ff0000"
   ctx.lineWidth = 1
+  ctx.beginPath()
+  ctx.moveTo(offX*tilesize,offY*tilesize)
+  ctx.lineTo((offX+10)*tilesize,offY*tilesize)
+  ctx.stroke()
 
   //placed pieces
   for (x = 0; x < 10; x++) {
@@ -86,7 +91,7 @@ function redrawBoard() {
 
   //lock delay bar for testing purposes
   offX = 1
-  offY = 21
+  offY = 23
   ctx.fillStyle = "#00ff00"
   ctx.fillRect(offX*tilesize,offY*tilesize+6,(tilesize*10)*(lockdelay-lockframe)/lockdelay,4)
 }
