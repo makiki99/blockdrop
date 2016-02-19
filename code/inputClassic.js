@@ -12,6 +12,22 @@ var das = 14,
 var cwIsPresed = false,
   ccwIsPressed = false
 
+var normal = {
+  speedCurve : [
+    [1,4], // [level,gravity] format
+    [50,8],
+    [100,16],
+    [150,32],
+    [200,64],
+    [250,128]
+    [300,256],
+    [350,512],
+    [400,1024],
+    [450,1280],
+    [500,5120]
+  ]
+}
+
 function inputClassic() {
 
   var axisX = 0,
@@ -194,6 +210,9 @@ function inputClassic() {
         areFrame += 30
       }
       generatePiece()
+  //    for (i = 0; normal.speed[i+1][0]>game.level; i++) {
+
+    //  }
     }
   }
 
