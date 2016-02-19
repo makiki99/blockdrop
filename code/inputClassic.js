@@ -6,25 +6,32 @@ var das = 14,
   miniTilesDown = 0,
   lockframe = 0,
   lockdelay = 30,
-  areFrame = 0
-
-//these variables
-var cwIsPresed = false,
+  areFrame = 0,
+  speedLevel = 0,
+  cwIsPresed = false,
   ccwIsPressed = false
 
 var normal = {
   speedCurve : [
     [1,4], // [level,gravity] format
+    [25,6],
     [50,8],
+    [75,12],
     [100,16],
+    [125,24],
     [150,32],
+    [175,48],
     [200,64],
-    [250,128]
+    [225,96],
+    [250,128],
+    [275,192],
     [300,256],
+    [325,384],
     [350,512],
+    [375,768],
     [400,1024],
     [450,1280],
-    [500,5120]
+    [500,5632]
   ]
 }
 
@@ -210,9 +217,13 @@ function inputClassic() {
         areFrame += 30
       }
       generatePiece()
-  //    for (i = 0; normal.speed[i+1][0]>game.level; i++) {
-
-    //  }
+      // increase gravity
+      // NOTE: probably not the optimal way to do this
+      while (game.level >= normal.speedCurve[speedLevel+1][0]) {
+        speedLevel++
+        gravity = normal.speedCurve[speedLevel][1]
+        softDropGravity = gravity + 256
+      }
     }
   }
 

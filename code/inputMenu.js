@@ -29,6 +29,7 @@ function inputMenu() {
         [0,0,0,0,0,0,0,0,0,0]
       ],
       game.history = [0,1,0,1]
+      game.level = 1
       var randomNum = Math.floor(Math.random()*4+3)
       game.currentPiece = game.nextPiece
       game.nextPiece = randomNum
