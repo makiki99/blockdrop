@@ -68,4 +68,10 @@ function redrawBoard() {
   }
 
   //GAME OVER SIGN
+  if (deadFrame > 40) {
+    ctx.font = tilesize + "px 'Orbitron',monospace"
+    ctx.fillStyle = "#ff0000"
+    ctx.fillText("GAME OVER",tilesize*2.5,tilesize*9)
+  }
+
 }
