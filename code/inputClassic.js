@@ -8,6 +8,7 @@ var das = 14,
   lockdelay = 30,
   areFrame = 0,
   speedLevel = 0,
+  deadFrame = 0,
   cwIsPresed = false,
   ccwIsPressed = false
 
@@ -41,6 +42,16 @@ function inputClassic() {
     axisY = 0
 
   //left-right move
+
+  if (deadFrame > 0) {
+    if (deadFrame > 40) {
+      if (keys[90] || keys[88]) {
+        gamestate = 0
+      }
+    }
+    deadFrame++
+    return
+  }
 
   if (keys[37]) {
     //left arrow
@@ -184,8 +195,10 @@ function inputClassic() {
       for (i = 0; i < 4; i++) {
         var x = minoData[game.currentPiece]["rotation"+game.currentRotation][i][0]+game.piecePos[1]
         var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0]
-        if (matrix[y][x] == undefined) {
-          topOut()
+        if (matrix[y] == undefined) {
+          //top out
+          ++deadFrame
+          return
         }
         matrix[y][x] = minoData[game.currentPiece].color
       }
@@ -199,7 +212,9 @@ function inputClassic() {
         for (x = 0;x < 10; x++) {
           if (matrix[y][x] > 0) {
             foo++
-          } else {break}
+          } else {
+            break
+          }
         }
         if (foo >= 10) {
           matrix.splice(y,1)

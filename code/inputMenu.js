@@ -28,6 +28,7 @@ function inputMenu() {
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0]
       ],
+      deadFrame = 0
       game.history = [0,1,0,1]
       game.level = 1
       var randomNum = Math.floor(Math.random()*4+3)
@@ -41,7 +42,6 @@ function inputMenu() {
 
   }
 
-  //TODO: maybe I should disable auto-repeat in main menu...
   if (keys[38]) {
     //up arrow
     menu.currentSelection--
