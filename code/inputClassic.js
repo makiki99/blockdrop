@@ -35,16 +35,16 @@ var normal = {
     [500,5632]
   ],
   scoreGain: [
-    [1,1,1.32,-0.0183],
-    [100,1.3,1.35,-0.0183],
-    [200,1.6,1.38,-0.0188],
-    [300,1.9,1.41,-0.0196],
-    [400,2.2,1.44,-0.02],
-    [500,2.5,1.56,-0.0226],
-    [600,2.5,1.56,-0.0226],
-    [700,2.5,1.59,-0.023],
-    [800,2.5,1.59,-0.023],
-    [900,3,1.8,-0.03]
+    [1,1,1.32,-0.0165],
+    [100,1.3,1.35,-0.0169],
+    [200,1.6,1.38,-0.0173],
+    [300,1.9,1.41,-0.0176],
+    [400,2.2,1.44,-0.018],
+    [500,2.5,1.56,-0.0208],
+    [600,2.5,1.56,-0.0208],
+    [700,2.5,1.59,-0.0212],
+    [800,2.5,1.59,-0.0212],
+    [900,3,1.8,-0.0286]
   ]
 }
 
@@ -64,6 +64,13 @@ function inputClassic() {
     deadFrame++
     return
   }
+
+  // time
+  var scoreSegment = 0
+  while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
+    scoreSegment++
+  }
+  game.score += normal.scoreGain[scoreSegment][3]
 
   if (keys[37]) {
     //left arrow
@@ -198,12 +205,6 @@ function inputClassic() {
       break
     }
   }
-
-  var scoreSegment = 0
-  while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
-    scoreSegment++
-  }
-  game.score += normal.scoreGain[scoreSegment][3]
 
   //process eventual piece lock
   if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) == true) {
