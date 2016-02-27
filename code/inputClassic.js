@@ -65,6 +65,12 @@ function inputClassic() {
     return
   }
 
+  var scoreSegment = 0
+  while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
+    scoreSegment++
+  }
+  game.score += normal.scoreGain[scoreSegment][3]
+
   if (keys[37]) {
     //left arrow
     axisX --
@@ -199,11 +205,6 @@ function inputClassic() {
     }
   }
 
-  var scoreSegment = 0
-  while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
-    scoreSegment++
-  }
-  game.score += normal.scoreGain[scoreSegment][3]
 
   //process eventual piece lock
   if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) == true) {
