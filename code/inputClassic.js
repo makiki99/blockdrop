@@ -7,7 +7,6 @@ var das = 14,
   lockframe = 0,
   lockdelay = 30,
   areFrame = 0,
-  speedLevel = 0,
   deadFrame = 0,
   cwIsPresed = false,
   ccwIsPressed = false
@@ -65,7 +64,7 @@ function inputClassic() {
     return
   }
 
-  var scoreSegment = 0
+  var scoreSegment = -1
   while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
     scoreSegment++
   }
@@ -269,6 +268,7 @@ function inputClassic() {
       generatePiece()
       // increase gravity
       // NOTE: probably not the optimal way to do this
+      var speedLevel = -1
       while (game.level >= normal.speedCurve[speedLevel+1][0]) {
         speedLevel++
         gravity = normal.speedCurve[speedLevel][1]
