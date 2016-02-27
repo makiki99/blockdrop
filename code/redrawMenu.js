@@ -15,4 +15,8 @@ function redrawMenu() {
   //menu selector
   ctx.fillText(">",tilesize*1,tilesize*(3+menu.currentSelection*2))
 
+  //version number
+  ctx.font = tilesize/2 + "px sans-serif"
+  ctx.fillText("version 0.0.1",0,tilesize/2)
+
 }

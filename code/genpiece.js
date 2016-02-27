@@ -1,5 +1,4 @@
 function generatePiece() {
-  // TODO: make it 6-roll history randomizer
   var randomNum = 0
 
   outer: for (i = 0; i < 6; i++) {

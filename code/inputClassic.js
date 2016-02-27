@@ -14,7 +14,7 @@ var das = 14,
 
 var normal = {
   speedCurve : [
-    [1,4], // [level,gravity] format
+    [1,4], // [level,gravity]
     [25,6],
     [50,8],
     [75,12],
@@ -33,6 +33,18 @@ var normal = {
     [400,1024],
     [450,1280],
     [500,5632]
+  ],
+  scoreGain: [
+    [1,1,1.32,-0.0183],
+    [100,1.3,1.35,-0.0183],
+    [200,1.6,1.38,-0.0188],
+    [300,1.9,1.41,-0.0196],
+    [400,2.2,1.44,-0.02],
+    [500,2.5,1.56,-0.0226],
+    [600,2.5,1.56,-0.0226],
+    [700,2.5,1.59,-0.023],
+    [800,2.5,1.59,-0.023],
+    [900,3,1.8,-0.03]
   ]
 }
 
@@ -44,7 +56,7 @@ function inputClassic() {
   //left-right move
 
   if (deadFrame > 0) {
-    if (deadFrame > 40) {
+    if (deadFrame > 60) {
       if (keys[90] || keys[88]) {
         gamestate = 0
       }
@@ -187,6 +199,12 @@ function inputClassic() {
     }
   }
 
+  var scoreSegment = 0
+  while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
+    scoreSegment++
+  }
+  game.score += normal.scoreGain[scoreSegment][3]
+
   //process eventual piece lock
   if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) == true) {
     if (lockframe < lockdelay) {
@@ -222,10 +240,26 @@ function inputClassic() {
           linesCleared++
         }
       }
-      //increase level
-      game.level += linesCleared
+      //process level and score
       if ((game.level + 1) % 100 != 0) {
         game.level++
+        game.score += normal.scoreGain[scoreSegment][2]
+      }
+      game.level += linesCleared
+      game.score += linesCleared*normal.scoreGain[scoreSegment][2]
+      switch (linesCleared) {
+        case 1:
+          game.score += normal.scoreGain[scoreSegment][1]*0,1
+          break;
+        case 2:
+          game.score += normal.scoreGain[scoreSegment][1]*0,5
+          break;
+        case 3:
+          game.score += normal.scoreGain[scoreSegment][1]*1,5
+          break;
+        case 4:
+          game.score += normal.scoreGain[scoreSegment][1]*5
+          break;
       }
       areFrame = 30
       if (linesCleared > 0) {
