@@ -277,4 +277,6 @@ function inputClassic() {
     }
   }
 
+  if (game.score < 0) {game.score = 0}
+
 }
