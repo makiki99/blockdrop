@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-		<title> Ludum Dare Game </title>
+		<title> Tetris </title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 
 	</head>
@@ -11,9 +11,20 @@
 
 		<canvas id="canvas" width="100" height="100"></canvas>
 
-		<script src="code/main.js"></script>
-		<script src="code/update.js"></script>
-		<script src="code/redraw.js"></script>
+		<!-- Whoa, that's a lot of files. -->
 
+		<script src="code/variables.js"></script>
+		<script src="code/main.js"></script>
+		<script src="code/redrawClassic.js"></script>
+		<script src="code/redrawBoard.js"></script>
+		<script src="code/redrawMenu.js"></script>
+		<script src="code/inputMenu.js"></script>
+		<script src="code/inputClassic.js"></script>
+		<script src="code/colCheck.js"></script>
+		<script src="code/tetriminos.js"></script>
+		<script src="code/genpiece.js"></script>
+
+		<!-- Did I overdone it? Probably yes. -->
+		<!-- TODO: minify it later -->
 	</body>
 </html>
