@@ -17,6 +17,6 @@ function redrawMenu() {
 
   //version number
   ctx.font = tilesize/2 + "px sans-serif"
-  ctx.fillText("version 0.0.1a",0,tilesize/2)
+  ctx.fillText(version,0,tilesize/2)
 
 }

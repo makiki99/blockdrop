@@ -1,5 +1,6 @@
 // TODO: move these variables in their respective function files
 
+version = "v0.0.2"
 //main variables
 var keys = [],
   matrix = [

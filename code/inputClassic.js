@@ -64,6 +64,15 @@ function inputClassic() {
     return
   }
 
+  if (game.score < game.level/10) {game.score = game.level/10}
+
+  var speedLevel = -1
+  while (game.level >= normal.speedCurve[speedLevel+1][0]) {
+    speedLevel++
+    gravity = normal.speedCurve[speedLevel][1]
+    softDropGravity = gravity + 256
+  }
+
   var scoreSegment = -1
   while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
     scoreSegment++
@@ -268,15 +277,7 @@ function inputClassic() {
       generatePiece()
       // increase gravity
       // NOTE: probably not the optimal way to do this
-      var speedLevel = -1
-      while (game.level >= normal.speedCurve[speedLevel+1][0]) {
-        speedLevel++
-        gravity = normal.speedCurve[speedLevel][1]
-        softDropGravity = gravity + 256
-      }
     }
   }
-
-  if (game.score < 0) {game.score = 0}
 
 }
