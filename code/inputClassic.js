@@ -47,37 +47,10 @@ var normal = {
   ]
 }
 
-function inputClassic() {
+function movement() {
 
   var axisX = 0,
     axisY = 0
-
-  //left-right move
-
-  if (deadFrame > 0) {
-    if (deadFrame > 60) {
-      if (keys[90] || keys[88]) {
-        gamestate = 0
-      }
-    }
-    deadFrame++
-    return
-  }
-
-  if (game.score < game.level/10) {game.score = game.level/10}
-
-  var speedLevel = -1
-  while (game.level >= normal.speedCurve[speedLevel+1][0]) {
-    speedLevel++
-    gravity = normal.speedCurve[speedLevel][1]
-    softDropGravity = gravity + 256
-  }
-
-  var scoreSegment = -1
-  while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
-    scoreSegment++
-  }
-  game.score += normal.scoreGain[scoreSegment][3]
 
   if (keys[37]) {
     //left arrow
@@ -138,6 +111,14 @@ function inputClassic() {
       } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[0] += 1
+      } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]-1,newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[1] -= 1
+        game.piecePos[0] += 1
+      } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]+1,newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[1] += 1
+        game.piecePos[0] += 1
       } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[0] -= 1
@@ -165,6 +146,14 @@ function inputClassic() {
         game.piecePos[1] -= 1
       } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) == false) {
         game.currentRotation = newRotation
+        game.piecePos[0] += 1
+      } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]+1,newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[1] += 1
+        game.piecePos[0] += 1
+      } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]-1,newRotation) == false) {
+        game.currentRotation = newRotation
+        game.piecePos[1] -= 1
         game.piecePos[0] += 1
       } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) == false) {
         game.currentRotation = newRotation
@@ -212,9 +201,42 @@ function inputClassic() {
       break
     }
   }
+}
+function inputClassic() {
 
+
+  //left-right move
+
+  if (deadFrame > 0) {
+    if (deadFrame > 60) {
+      if (keys[90] || keys[88]) {
+        gamestate = 0
+      }
+    }
+    deadFrame++
+    return
+  }
+
+  if (game.score < game.level/10) {game.score = game.level/10}
+
+  var speedLevel = -1
+  while (game.level >= normal.speedCurve[speedLevel+1][0]) {
+    speedLevel++
+    gravity = normal.speedCurve[speedLevel][1]
+    softDropGravity = gravity + 256
+  }
+
+  var scoreSegment = -1
+  while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
+    scoreSegment++
+  }
+  game.score += normal.scoreGain[scoreSegment][3]
+
+  movement()
 
   //process eventual piece lock
+
+  var linesCleared = 0
   if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) == true) {
     if (lockframe < lockdelay) {
       lockframe++
@@ -229,11 +251,9 @@ function inputClassic() {
         }
         matrix[y][x] = minoData[game.currentPiece].color
       }
-      var linesCleared = 0
       lockframe = 0
       miniTilesDown = 0
       //clear lines
-      //NOTE: this is ugly af
       for(y = 0; y < 20; y++){
         var foo = 0
         for (x = 0;x < 10; x++) {

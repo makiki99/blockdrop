@@ -50,7 +50,7 @@ var minoData = [
   {
     // i-mino
     color: 6, //cyan
-    spawnpos: [-2,5],
+    spawnpos: [-1,5],
     rotation0: [[-2,0],[-1,0],[0,0],[1,0]],
     rotation1: [[0,-2],[0,-1],[0,0],[0,1]],
     rotation2: [[-2,0],[-1,0],[0,0],[1,0]],
