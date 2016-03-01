@@ -278,16 +278,16 @@ function inputClassic() {
       game.score += linesCleared*normal.scoreGain[scoreSegment][2]
       switch (linesCleared) {
         case 1:
-          game.score += normal.scoreGain[scoreSegment][1]*0,1
+          game.score += normal.scoreGain[scoreSegment][1]*0.1
           break;
         case 2:
-          game.score += normal.scoreGain[scoreSegment][1]*0,5
+          game.score += normal.scoreGain[scoreSegment][1]*0.4
           break;
         case 3:
-          game.score += normal.scoreGain[scoreSegment][1]*1,5
+          game.score += normal.scoreGain[scoreSegment][1]*1.6
           break;
         case 4:
-          game.score += normal.scoreGain[scoreSegment][1]*5
+          game.score += normal.scoreGain[scoreSegment][1]*6.4
           break;
       }
       areFrame = 30
@@ -295,8 +295,6 @@ function inputClassic() {
         areFrame += 30
       }
       generatePiece()
-      // increase gravity
-      // NOTE: probably not the optimal way to do this
     }
   }
 

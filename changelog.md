@@ -1,15 +1,19 @@
 ## Changelog
 
+### v0.0.4 (in development)
+  * [FIX] Fixed potential weird behaviour with scoring system
+  * [CHANGE] Scaled line clear score upwards so it will be more relevant compared to time
+
 ### v0.0.3
-  * Allowed more wallkicks and confirmed that wallkick priority wirks as it should
-  * Lowered I-mino spawn location by one tile
+  * [CHANGE] Allowed more wallkicks and confirmed that wallkick priority wirks as it should
+  * [CHANGE] Lowered I-mino spawn location by one tile
 
 ### v0.0.2
-  * Slighty modified scoring system
-  * Bugfixes
+  * [CHANGE] Slighty modified scoring system
+  * [FIX] Bugfixes
 
 ### v0.0.1a
-  * Bugfixes
+  * [FIX] Bugfixes
 
 ### v0.0.1
-  * First alpha release
+  * [FIX] First alpha release

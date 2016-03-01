@@ -1,6 +1,6 @@
-// TODO: move these variables in their respective function files
+//meta variables
+version = "v0.0.4"
 
-version = "v0.0.3"
 //main variables
 var keys = [],
   matrix = [
@@ -39,7 +39,11 @@ canvas.height = tilesize*24
 //menu variables
 var menu = {
   currentSelection : 0,
-  statelist : [3,0,0]
+  statelist : [3,0],
+  namelist : [
+    "Classic | Normal",
+    "Controls"
+  ]
 }
 
 //game variables
