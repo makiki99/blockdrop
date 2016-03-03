@@ -9,8 +9,9 @@ function main() {
       redrawMenu()
       break
     case 1:
-      //settings
-      //TODO
+      //controls
+      inputControls()
+      redrawControls()
       break
     case 2:
       //pause menu

@@ -41,7 +41,7 @@ function inputMenu() {
       generatePiece()
 
     }
-
+    keys[13] = false
   }
 
   if (keys[38]) {

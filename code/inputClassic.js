@@ -52,12 +52,12 @@ function movement() {
   var axisX = 0,
     axisY = 0
 
-  if (keys[37]) {
+  if (keys[controls.keyCodes[0]]) {
     //left arrow
     axisX --
   }
 
-  if (keys[39]) {
+  if (keys[controls.keyCodes[1]]) {
     //right arrow
     axisX ++
   }
@@ -93,7 +93,7 @@ function movement() {
   }
 
   //rotation
-  if (keys[90]) {
+  if (keys[controls.keyCodes[2]]) {
     //z - ccw rotation
     if (!ccwIsPressed) {
       var newRotation = game.currentRotation -1
@@ -129,7 +129,7 @@ function movement() {
     ccwIsPressed = false
   }
 
-  if (keys[88]) {
+  if (keys[controls.keyCodes[3]]) {
     //x - cw rotation
     if (!cwIsPressed) {
       var newRotation = game.currentRotation + 1
@@ -167,12 +167,12 @@ function movement() {
 
   //gravity
 
-  if (keys[38]) {
+  if (keys[controls.keyCodes[4]]) {
     //up arrow - hard drop
     axisY --
   }
 
-  if (keys[40]) {
+  if (keys[controls.keyCodes[5]]) {
     //down arrow - soft drop
     axisY ++
   }

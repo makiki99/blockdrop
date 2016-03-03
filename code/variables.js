@@ -35,14 +35,33 @@ var canvas = document.getElementById("canvas"),
 canvas.width = tilesize*24
 canvas.height = tilesize*24
 
-
 //menu variables
 var menu = {
   currentSelection : 0,
-  statelist : [3,0],
+  statelist : [3,1],
   namelist : [
     "Classic | Normal",
     "Controls"
+  ]
+}
+
+var controls = {
+  currentSelection : 0,
+  namelist : [
+    "Move Left",
+    "Move Right",
+    "Rotate Left",
+    "Rotate Right",
+    "Sonic Drop",
+    "Soft Drop"
+  ],
+  keyCodes : [
+    37,
+    39,
+    90,
+    88,
+    38,
+    40
   ]
 }
 

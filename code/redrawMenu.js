@@ -7,8 +7,8 @@ function redrawMenu() {
   ctx.fillRect(0,0,canvas.width,canvas.height)
 
   //menu selections
-  ctx.fillStyle = "#ffffff"
   ctx.font = tilesize*2 + "px 'Orbitron',monospace"
+  ctx.fillStyle = "#ffffff"
   for (i = 0; i < menu.namelist.length; i++) {
     ctx.fillText(menu.namelist[i],tilesize*3,tilesize*(3+2*i))
   }
