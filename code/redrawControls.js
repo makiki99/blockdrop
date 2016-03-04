@@ -17,6 +17,7 @@ function redrawControls() {
     ctx.fillText(controls.namelist[i],tilesize*2,tilesize*(2+i))
   }
 
+  ctx.fillStyle = "#ffffff"
   for (i = 0; i < controls.namelist.length; i++) {
     ctx.fillText(controls.keyCodes[i],tilesize*15,tilesize*(2+i))
   }
