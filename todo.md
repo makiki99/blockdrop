@@ -1,15 +1,14 @@
 ## TODO list
 
 ### High priority
-  * Fix lv500 segment
-  * Pause button
+  * Kill button
   * Make CLASSIC|NORMAL beatable
 
 ### Medium priority
-  * Create EASY difficulty
   * Refactor code regarding piece lock
   * Refactor gamestate reset code
   * Bufferable rotation
+  * Create EASY difficulty
   * Create HARD difficulty
 
 ### Low priority
