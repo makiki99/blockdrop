@@ -18,7 +18,7 @@ function main() {
       //TODO
       break
     case 3:
-      //classic mode
+      //CLASSIC|NORMAL mode
       inputClassic()
       redrawClassic()
       break

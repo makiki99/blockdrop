@@ -1,13 +1,16 @@
 ## TODO list
 
 ### High priority
-  * Allow in-game modification of control scheme
+  * Kill button
+  * Make CLASSIC|NORMAL beatable
 
 ### Medium priority
-  * Create EASY difficulty
   * Refactor code regarding piece lock
+  * Refactor gamestate reset code
   * Bufferable rotation
+  * Create EASY difficulty
   * Create HARD difficulty
 
 ### Low priority
+  * Add a tileset or something to make graphics better
   * Add sound effects
