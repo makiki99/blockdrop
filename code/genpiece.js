@@ -6,7 +6,7 @@ function generatePiece() {
     if (i != 6) {
       for (var ii = 0; ii < 4; ii++) {
         if (game.history[ii] == randomNum) {
-          continue outer //es7 gib goto keyword plox
+          continue outer
         }
       }
     }

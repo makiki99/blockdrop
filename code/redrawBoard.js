@@ -67,7 +67,7 @@ function redrawBoard() {
     ctx.fillRect(offX*tilesize,offY*tilesize+6,(tilesize*10)*(lockdelay-lockframe)/lockdelay,4)
   }
 
-  //GAME OVER SIGN
+  //GAME OVER sign
   if (deadFrame > 30) {
     ctx.font = tilesize + "px 'Orbitron',monospace"
     ctx.fillStyle = "#ffffff"

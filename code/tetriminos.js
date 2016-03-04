@@ -1,5 +1,3 @@
-//this is an object of special importance, that's why it isn't in variables.js file
-
 var minoData = [
   {
     // z-mino
@@ -27,7 +25,6 @@ var minoData = [
     rotation1: [[-1,-1],[0,-1],[-1,0],[0,0]],
     rotation2: [[-1,-1],[0,-1],[-1,0],[0,0]],
     rotation3: [[-1,-1],[0,-1],[-1,0],[0,0]],
-    //yes, it rotates without rotating
   },
   {
     // j-mino
