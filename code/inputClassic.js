@@ -224,11 +224,17 @@ function inputClassic() {
     speedLevel++
     gravity = normal.speedCurve[speedLevel][1]
     softDropGravity = gravity + 256
+    if (normal.speedCurve[speedLevel+1] == undefined) {
+      break
+    }
   }
 
   var scoreSegment = -1
   while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
     scoreSegment++
+    if (normal.speedCurve[speedLevel+1] == undefined) {
+      break
+    }
   }
   game.score += normal.scoreGain[scoreSegment][3]
 

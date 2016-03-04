@@ -1,6 +1,7 @@
 ## TODO list
 
 ### High priority
+  * Fix lv500 segment
   * Pause button
   * Make CLASSIC|NORMAL beatable
 
