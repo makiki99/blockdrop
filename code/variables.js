@@ -1,5 +1,5 @@
 //meta variables
-version = "v0.0.4"
+version = "v0.0.4a"
 
 //main variables
 var keys = [],
@@ -79,7 +79,6 @@ var game = {
 
 //color codes
 var colorCode = [
-  //TODO: adjust those colors to not be total shit
   "#ff0000", //red
   "#00ff00", //green
   "#ffff00", //yellow
@@ -89,3 +88,6 @@ var colorCode = [
   "#ff00ff", //purple
   "#dddddd", //garbage(gray)
 ]
+
+//asset containers
+var tiles

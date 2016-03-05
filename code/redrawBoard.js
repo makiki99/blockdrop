@@ -23,11 +23,10 @@ function redrawBoard() {
     for (y = 0; y < 20; y++) {
       if (matrix[y][x] > 0) {
         if (deadFrame == 0){
-          ctx.fillStyle = colorCode[matrix[y][x]-1]
+          ctx.drawImage(tiles[matrix[y][x]-1],(x+offX)*tilesize,(y+offY)*tilesize)
         } else {
-          ctx.fillStyle = "#888888"
+          ctx.drawImage(tiles[7],(x+offX)*tilesize,(y+offY)*tilesize)
         }
-        ctx.fillRect((x+offX)*tilesize,(y+offY)*tilesize,tilesize,tilesize)
       }
     }
   }
@@ -40,11 +39,10 @@ function redrawBoard() {
       var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0]
 
       if (deadFrame == 0){
-        ctx.fillStyle = colorCode[minoData[game.currentPiece].color-1]
+        ctx.drawImage(tiles[minoData[game.currentPiece].color-1],(x+offX)*tilesize,(y+offY)*tilesize)
       } else {
-        ctx.fillStyle = "#888888"
+        ctx.drawImage(tiles[7],(x+offX)*tilesize,(y+offY)*tilesize)
       }
-      ctx.fillRect((x+offX)*tilesize,(y+offY)*tilesize,tilesize,tilesize)
 
     }
   }
@@ -55,8 +53,7 @@ function redrawBoard() {
   for (i = 0; i < 4; i++) {
     var x = minoData[game.nextPiece].rotation0[i][0]
     var y = minoData[game.nextPiece].rotation0[i][1]
-    ctx.fillStyle = colorCode[minoData[game.nextPiece].color-1]
-    ctx.fillRect((x+offX)*tilesize,(y+offY)*tilesize,tilesize,tilesize)
+    ctx.drawImage(tiles[minoData[game.nextPiece].color-1],(x+offX)*tilesize,(y+offY)*tilesize)
   }
 
   //lock delay bar for testing purposes
