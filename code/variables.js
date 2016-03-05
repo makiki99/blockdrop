@@ -1,5 +1,5 @@
 //meta variables
-version = "v0.0.4a"
+version = "v0.0.5"
 
 //main variables
 var keys = [],
