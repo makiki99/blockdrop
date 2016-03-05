@@ -32,7 +32,7 @@ function main() {
 }
 
 window.addEventListener("load",function(){
-  //assets
+  // assets
   tiles = [
     document.getElementById("tileRed"),
     document.getElementById("tileGreen"),
