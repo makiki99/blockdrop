@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.0.5
+  * [CHANGE] [Xershh](http://steamcommunity.com/id/xershh/) made me a tileset, so now you have a much better graphics!
+
 ### v0.0.4a
   * [FIX] Levels 500+ are now playable
   * [FIX] Fixed minor redraw bug in controls menu

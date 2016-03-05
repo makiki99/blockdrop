@@ -2,9 +2,9 @@
 
 ### High priority
   * Kill button
-  * Make CLASSIC|NORMAL beatable
 
 ### Medium priority
+  * Credits and license
   * Refactor code regarding piece lock
   * Refactor gamestate reset code
   * Bufferable rotation
@@ -12,5 +12,4 @@
   * Create HARD difficulty
 
 ### Low priority
-  * Add a tileset or something to make graphics better
   * Add sound effects
