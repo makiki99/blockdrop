@@ -21,19 +21,28 @@ function main() {
       //CLASSIC|NORMAL mode
       inputClassic()
       redrawClassic()
-      break
-    default:
+    break
+      default:
       console.error("Unexpected gamestate id")
 
   }
 
-  //TODO: framerate lock
   requestAnimationFrame(main)
 
 }
 
-
 window.addEventListener("load",function(){
+  //assets
+  tiles = [
+    document.getElementById("tileRed"),
+    document.getElementById("tileGreen"),
+    document.getElementById("tileYellow"),
+    document.getElementById("tileBlue"),
+    document.getElementById("tileOrange"),
+    document.getElementById("tileCyan"),
+    document.getElementById("tileViolet"),
+    document.getElementById("tileGray"),
+  ]
   requestAnimationFrame(main)
 })
 
