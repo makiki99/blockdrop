@@ -1,7 +1,7 @@
 ## Credits
 
 ### Code
-  * All code is released under [MIT ](http://choosealicense.com/licenses/mit/) license.
+  * All code is released under [MIT](http://choosealicense.com/licenses/mit/) license.
   * All done by [makiki99](https://github.com/makiki99).
 
 ### Assets

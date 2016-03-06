@@ -1,13 +1,11 @@
 ## TODO list
 
 ### High priority
-  * Kill button
+  * none
 
 ### Medium priority
-  * Credits and license
   * Refactor code regarding piece lock
   * Refactor gamestate reset code
-  * Bufferable rotation
   * Create EASY difficulty
   * Create HARD difficulty
 

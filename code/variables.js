@@ -1,5 +1,10 @@
 //meta variables
-version = "v0.0.5"
+version = "v0.0.6"
+
+//debug
+var debug = {
+  showScore: false
+}
 
 //main variables
 var keys = [],
@@ -53,7 +58,8 @@ var controls = {
     "Rotate Left",
     "Rotate Right",
     "Sonic Drop",
-    "Soft Drop"
+    "Soft Drop",
+    "Suicide"
   ],
   keyCodes : [
     37,
@@ -61,7 +67,8 @@ var controls = {
     90,
     88,
     38,
-    40
+    40,
+    75
   ]
 }
 
