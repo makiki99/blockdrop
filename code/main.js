@@ -19,7 +19,7 @@ function main() {
       break
     case 3:
       //CLASSIC|NORMAL mode
-      inputClassic()
+      inputNormal()
       redrawClassic()
     break
       default:

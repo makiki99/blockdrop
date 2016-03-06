@@ -33,6 +33,10 @@ function inputMenu() {
       game.level = 1
       game.score = 0
       speedLevel = 0
+      dasFrameLeft = 0
+      dasFrameRight = 0
+      areFrame = 60
+      lockframe = 0
       var randomNum = Math.floor(Math.random()*4+3)
       game.currentPiece = game.nextPiece
       game.nextPiece = randomNum
