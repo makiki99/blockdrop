@@ -66,29 +66,35 @@ function movement() {
       }
       if (colCheck(game.piecePos[0],game.piecePos[1],newRotation) == false) {
         game.currentRotation = newRotation
+        ccwIsPressed = true
       } else if (colCheck(game.piecePos[0],game.piecePos[1]-1,newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[1] -= 1
+        ccwIsPressed = true
       } else if (colCheck(game.piecePos[0],game.piecePos[1]+1,newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[1] += 1
+        ccwIsPressed = true
       } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[0] += 1
+        ccwIsPressed = true
       } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]-1,newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[1] -= 1
         game.piecePos[0] += 1
+        ccwIsPressed = true
       } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]+1,newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[1] += 1
         game.piecePos[0] += 1
+        ccwIsPressed = true
       } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[0] -= 1
+        ccwIsPressed = true
       }
     }
-    ccwIsPressed = true
   } else {
     ccwIsPressed = false
   }
@@ -102,29 +108,35 @@ function movement() {
       }
       if (colCheck(game.piecePos[0],game.piecePos[1],newRotation) == false) {
         game.currentRotation = newRotation
+        cwIsPressed = true
       } else if (colCheck(game.piecePos[0],game.piecePos[1]+1,newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[1] += 1
+        cwIsPressed = true
       } else if (colCheck(game.piecePos[0],game.piecePos[1]-1,newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[1] -= 1
+        cwIsPressed = true
       } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[0] += 1
+        cwIsPressed = true
       } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]+1,newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[1] += 1
         game.piecePos[0] += 1
+        cwIsPressed = true
       } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]-1,newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[1] -= 1
         game.piecePos[0] += 1
+        cwIsPressed = true
       } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) == false) {
         game.currentRotation = newRotation
         game.piecePos[0] -= 1
+        cwIsPressed = true
       }
     }
-    cwIsPressed = true
   } else {
     cwIsPressed = false
   }
