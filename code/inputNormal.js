@@ -1,24 +1,25 @@
 var normal = {
   speedCurve : [
-    [1,4], // [level,gravity]
-    [25,6],
-    [50,8],
-    [75,12],
-    [100,16],
-    [125,24],
-    [150,32],
-    [175,48],
-    [200,64],
-    [225,96],
-    [250,128],
-    [275,192],
-    [300,256],
-    [325,384],
-    [350,512],
-    [375,768],
-    [400,1024],
-    [450,1280],
-    [500,5632]
+    [1,4,30,30,30,14], // [level,gravity,ARE,line delay,lock delay,DAS]
+    [25,6,30,30,30,14],
+    [50,8,30,30,30,14],
+    [75,12,30,30,30,14],
+    [100,16,30,30,30,14],
+    [125,24,30,30,30,14],
+    [150,32,30,30,30,14],
+    [175,48,30,30,30,14],
+    [200,64,30,30,30,14],
+    [225,96,30,30,30,14],
+    [250,128,30,30,30,14],
+    [275,192,30,30,30,14],
+    [300,256,30,30,30,14],
+    [325,384,30,30,30,14],
+    [350,512,30,30,30,14],
+    [375,768,30,30,30,14],
+    [400,1024,30,30,30,14],
+    [450,1280,30,30,30,14],
+    [500,5632,30,30,30,12],
+    [900,5632,24,20,24,12],
   ],
   scoreGain: [
     [1,1,1.32,-0.0166],
@@ -31,18 +32,21 @@ var normal = {
     [700,2.5,1.59,-0.0208],
     [800,2.5,1.59,-0.0212],
     [900,3,1.8,-0.0286]
-  ]
+  ],
+  endlevel: 1000
 }
 
 function inputNormal() {
 
   //left-right move
+  if (game.level >= normal.endlevel && deadFrame == 0) {
+    deadFrame++
+  }
 
   if (deadFrame > 0) {
-    if (deadFrame > 60) {
-      if (keys[90] || keys[88]) {
-        gamestate = 0
-      }
+    if (keys[13] || keys[27]) {
+      gamestate = 0
+      keys[27] = false
     }
     deadFrame++
     return
@@ -55,6 +59,10 @@ function inputNormal() {
     speedLevel++
     gravity = normal.speedCurve[speedLevel][1]
     softDropGravity = gravity + 256
+    areDelay = normal.speedCurve[speedLevel][2]
+    lineDelay = normal.speedCurve[speedLevel][3]
+    lockDelay = normal.speedCurve[speedLevel][4]
+    das = normal.speedCurve[speedLevel][5]
     if (normal.speedCurve[speedLevel+1] == undefined) {
       break
     }
@@ -121,15 +129,15 @@ function inputNormal() {
           game.score += normal.scoreGain[scoreSegment][1]*0.8
           break;
         case 3:
-          game.score += normal.scoreGain[scoreSegment][1]*2.7
+          game.score += normal.scoreGain[scoreSegment][1]*2.4
           break;
         case 4:
           game.score += normal.scoreGain[scoreSegment][1]*6.4
           break;
       }
-      areFrame = 30
+      areFrame = areDelay
       if (linesCleared > 0) {
-        areFrame += 30
+        areFrame += lineDelay
       }
       generatePiece()
     }

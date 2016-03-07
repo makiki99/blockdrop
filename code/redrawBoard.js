@@ -1,3 +1,5 @@
+lineClearAnim = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
 function redrawBoard() {
 
   var offX, offY
@@ -45,6 +47,11 @@ function redrawBoard() {
       }
 
     }
+  }
+
+  //line clear animation
+  for (var i = 0; i < lineClearAnim.length; i++) {
+    lineClearAnim[i]
   }
 
   //next piece
