@@ -51,7 +51,11 @@ function redrawBoard() {
 
   //line clear animation
   for (var i = 0; i < lineClearAnim.length; i++) {
-    lineClearAnim[i]
+    ctx.fillStyle = "#ffffff"
+    ctx.fillRect(tilesize*offX,tilesize*(offY+i+(0.1*(5-lineClearAnim[i]))),tilesize*10,tilesize*(0.2*lineClearAnim[i]))
+    if (lineClearAnim[i]>0) {
+      lineClearAnim[i]--
+    }
   }
 
   //next piece

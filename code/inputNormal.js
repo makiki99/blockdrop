@@ -112,6 +112,7 @@ function inputNormal() {
         if (foo >= 10) {
           matrix.splice(y,1)
           matrix.unshift([0,0,0,0,0,0,0,0,0,0])
+          lineClearAnim[y] = 5
           linesCleared++
         }
       }
