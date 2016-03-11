@@ -1,5 +1,5 @@
 //meta variables
-version = "v0.0.6"
+version = "v0.1.0"
 
 //debug
 var debug = {

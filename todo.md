@@ -4,6 +4,7 @@
   * none
 
 ### Medium priority
+  * Add piece ghost
   * Refactor gamestate reset code
   * Create EASY difficulty
   * Create HARD difficulty

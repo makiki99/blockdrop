@@ -2,6 +2,7 @@
 
 ### v0.1.0
   * First beta release!
+  * [FEATURE] Added line clear animation!
   * [FIX] Now the CLASSIC|NORMAL properly ends at Level 1000.
   * [FIX] Fixed the speed curve of CLASSIC|NORMAL.
   * [CHANGE] Expanded difficulty definition system.
