@@ -46,6 +46,7 @@ function inputNormal() {
   if (deadFrame > 0) {
     if (keys[13] || keys[27]) {
       gamestate = 0
+      keys[13] = false
       keys[27] = false
     }
     deadFrame++
