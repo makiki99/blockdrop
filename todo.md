@@ -4,7 +4,7 @@
   * none
 
 ### Medium priority
-  * Refactor code regarding piece lock
+  * Add piece ghost
   * Refactor gamestate reset code
   * Create EASY difficulty
   * Create HARD difficulty

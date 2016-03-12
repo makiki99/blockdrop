@@ -1,3 +1,5 @@
+lineClearAnim = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
 function redrawBoard() {
 
   var offX, offY
@@ -44,6 +46,15 @@ function redrawBoard() {
         ctx.drawImage(tiles[7],(x+offX)*tilesize,(y+offY)*tilesize)
       }
 
+    }
+  }
+
+  //line clear animation
+  for (var i = 0; i < lineClearAnim.length; i++) {
+    ctx.fillStyle = "#ffffff"
+    ctx.fillRect(tilesize*offX,tilesize*(offY+i+(0.1*(5-lineClearAnim[i]))),tilesize*10,tilesize*(0.2*lineClearAnim[i]))
+    if (lineClearAnim[i]>0) {
+      lineClearAnim[i]--
     }
   }
 
