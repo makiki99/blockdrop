@@ -3,9 +3,10 @@
 ### v0.1.0
   * First beta release!
   * [FEATURE] Added line clear animation!
+  * [CHANGE] Expanded difficulty definition system.
   * [FIX] Now the CLASSIC|NORMAL properly ends at Level 1000.
   * [FIX] Fixed the speed curve of CLASSIC|NORMAL.
-  * [CHANGE] Expanded difficulty definition system.
+  * [FIX] Fixed the lock piece mechanic
 
 ### v0.0.6
   * [FEATURE] Added bufferable rotation.
@@ -20,9 +21,9 @@
   * [FIX] Fixed minor redraw bug in controls menu.
 
 ### v0.0.4
-  * [FIX] Fixed potential weird behaviour with scoring system.
-  * [CHANGE] Scaled line clear score upwards so it will be more relevant compared to time.
   * [FEATURE] Added control scheme editor.
+  * [CHANGE] Scaled line clear score upwards so it will be more relevant compared to time.
+  * [FIX] Fixed potential weird behaviour with scoring system.
 
 ### v0.0.3
   * [CHANGE] Allowed more wallkicks and confirmed that wallkick priority works as it should.

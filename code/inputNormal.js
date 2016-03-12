@@ -38,7 +38,6 @@ var normal = {
 
 function inputNormal() {
 
-  //left-right move
   if (game.level >= normal.endlevel && deadFrame == 0) {
     deadFrame++
   }
@@ -81,7 +80,6 @@ function inputNormal() {
   movement()
 
   //process eventual piece lock
-
   var linesCleared = 0
   if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) == true) {
     if (lockframe < lockdelay) {
@@ -142,6 +140,7 @@ function inputNormal() {
         areFrame += lineDelay
       }
       generatePiece()
+      lockframe = 0
     }
   }
 
