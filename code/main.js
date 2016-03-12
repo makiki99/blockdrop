@@ -1,3 +1,54 @@
+
+var version = "v0.2.0",
+  debug = {
+    //debug toogles
+    showScore: false
+  },
+  keys = [],
+  matrix = [
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0]
+  ],
+  gamestate = 0,
+  game = {
+    currentPiece: 0,
+    currentRotation: 0,
+    piecePos: [1,4],
+    nextPiece: 0,
+    history: [0,1,1,0],
+    level: 1,
+    score: 0
+  }
+
+//canvas variables
+var canvas = document.getElementById("canvas"),
+  ctx = canvas.getContext("2d"),
+  tilesize = 24
+
+canvas.width = tilesize*24
+canvas.height = tilesize*24
+
+//asset containers
+var tiles
+
 function main() {
 
   //update logic
@@ -14,13 +65,17 @@ function main() {
       redrawControls()
       break
     case 2:
-      //pause menu
+      //CLASSIC|EASY mode
       //TODO
       break
     case 3:
       //CLASSIC|NORMAL mode
       inputNormal()
       redrawClassic()
+    case 4:
+      //CLASSIC|HARD mode
+      //TODO
+      break
     break
       default:
       console.error("Unexpected gamestate id")

@@ -1,10 +1,21 @@
+var menu = {
+  currentSelection : 0,
+  statelist : [2,3,4,1],
+  namelist : [
+    "Classic | Easy",
+    "Classic | Normal",
+    "Classic | Hard",
+    "Controls"
+  ]
+}
+
 function inputMenu() {
 
   if (keys[13]) {
     //enter
     gamestate = menu.statelist[menu.currentSelection]
 
-    if (gamestate == 3){
+    if (gamestate == 2 || gamestate == 3 || gamestate == 4){
       //reset gamestate
       matrix = [
         [0,0,0,0,0,0,0,0,0,0],
@@ -45,7 +56,7 @@ function inputMenu() {
       generatePiece()
     }
     keys[13] = false
-    
+
   }
 
   if (keys[38]) {
