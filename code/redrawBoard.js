@@ -1,4 +1,5 @@
-lineClearAnim = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+var lineClearAnim = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  drawGhost = true
 
 function redrawBoard() {
 
@@ -28,6 +29,27 @@ function redrawBoard() {
           ctx.drawImage(tiles[matrix[y][x]-1],(x+offX)*tilesize,(y+offY)*tilesize)
         } else {
           ctx.drawImage(tiles[7],(x+offX)*tilesize,(y+offY)*tilesize)
+        }
+      }
+    }
+  }
+
+  //ghost piece
+  if (areFrame <= 0 && drawGhost) {
+    var ghostPos = [0,0]
+    ghostPos[0] = game.piecePos[0]
+    ghostPos[1] = game.piecePos[1]
+    while (!colCheck(ghostPos[0]+1, ghostPos[1], game.currentRotation)) {
+      ghostPos[0] += 1
+    }
+    if (ghostPos != game.piecePos) {
+      ctx.strokeStyle = "#aaaaaa"
+      ctx.lineWidth = 2
+      for (i = 0; i < 4; i++) {
+        var x = minoData[game.currentPiece]["rotation"+game.currentRotation][i][0]+ghostPos[1]
+        var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+ghostPos[0]
+        if (deadFrame == 0){
+          ctx.strokeRect(tilesize*(offX+x)+2,tilesize*(offY+y)+2,tilesize-4,tilesize-4)
         }
       }
     }

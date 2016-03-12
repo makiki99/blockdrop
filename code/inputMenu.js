@@ -43,9 +43,9 @@ function inputMenu() {
       game.history.splice(0,1)
       game.history.push(randomNum)
       generatePiece()
-
     }
     keys[13] = false
+    
   }
 
   if (keys[38]) {

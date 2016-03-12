@@ -1,12 +1,17 @@
 ## Changelog
 
+### v0.2.0
+  * [FEATURE] Added ghost piece.
+  * [CHANGE] Slighty changed low-speed scoring.
+  * [CHANGE] Refactored `inputNormal()` to allow easier difficulty definitions.
+  
 ### v0.1.0
   * First beta release!
-  * [FEATURE] Added line clear animation!
+  * [FEATURE] Added line clear animation.
   * [CHANGE] Expanded difficulty definition system.
   * [FIX] Now the CLASSIC|NORMAL properly ends at Level 1000.
   * [FIX] Fixed the speed curve of CLASSIC|NORMAL.
-  * [FIX] Fixed the lock piece mechanic
+  * [FIX] Fixed the lock piece mechanic.
 
 ### v0.0.6
   * [FEATURE] Added bufferable rotation.
