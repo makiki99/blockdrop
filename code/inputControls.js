@@ -1,4 +1,25 @@
-var isChangingKeyCode = false
+var controls = {
+    currentSelection : 0,
+    namelist : [
+      "Move Left",
+      "Move Right",
+      "Rotate Left",
+      "Rotate Right",
+      "Sonic Drop",
+      "Soft Drop",
+      "Suicide"
+    ],
+    keyCodes : [
+      37,
+      39,
+      90,
+      88,
+      38,
+      40,
+      75
+    ]
+  },
+  isChangingKeyCode = false
 
 function keyCapture(e) {
   if (e.keyCode != 27) {
