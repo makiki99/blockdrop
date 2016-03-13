@@ -66,12 +66,14 @@ function main() {
       break
     case 2:
       //CLASSIC|EASY mode
-      //TODO
+      inputEasy()
+      redrawClassic()
       break
     case 3:
       //CLASSIC|NORMAL mode
       inputNormal()
       redrawClassic()
+      break
     case 4:
       //CLASSIC|HARD mode
       inputHard()
