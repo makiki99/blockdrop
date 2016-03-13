@@ -39,6 +39,7 @@ function inputNormal() {
 
   if (game.level >= normal.endlevel && deadFrame == 0) {
     deadFrame++
+    modeClear = true
   }
 
   if (deadFrame > 0) {

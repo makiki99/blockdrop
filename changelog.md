@@ -3,6 +3,7 @@
 ### v0.2.0
   * FEATURE | Added ghost piece.
   * FEATURE | Added Classic|Hard
+  * FEATURE | Added MODE CLEAR message.
   * CHANGE | Slighty changed low-speed scoring.
   * CHANGE | Refactored `inputNormal()` to allow easier difficulty definitions.
   * CHANGE | Moved variable declarations out of variables.js.

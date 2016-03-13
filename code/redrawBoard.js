@@ -1,5 +1,6 @@
 var lineClearAnim = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  drawGhost = true
+  drawGhost = true,
+  modeClear = false
 
 function redrawBoard() {
 
@@ -97,14 +98,19 @@ function redrawBoard() {
     ctx.fillRect(offX*tilesize,offY*tilesize+6,(tilesize*10)*(lockdelay-lockframe)/lockdelay,4)
   }
 
-  //GAME OVER sign
+  //GAME OVER/CLEAR sign
   if (deadFrame > 30) {
     ctx.font = tilesize + "px 'Orbitron',monospace"
     ctx.fillStyle = "#ffffff"
     ctx.strokeStyle = "#000000"
     ctx.lineWidth = 6
-    ctx.strokeText("GAME OVER",tilesize*3.5,tilesize*9)
-    ctx.fillText("GAME OVER",tilesize*3.5,tilesize*9)
+    if (modeClear) {
+      ctx.strokeText("MODE CLEAR",tilesize*3,tilesize*9)
+      ctx.fillText("MODE CLEAR",tilesize*3,tilesize*9)
+    } else {
+      ctx.strokeText("GAME OVER",tilesize*3.5,tilesize*9)
+      ctx.fillText("GAME OVER",tilesize*3.5,tilesize*9)
+    }
   }
 
 }

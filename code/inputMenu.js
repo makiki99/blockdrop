@@ -52,6 +52,7 @@ function inputMenu() {
       game.nextPiece = randomNum
       game.history.splice(0,1)
       game.history.push(randomNum)
+      modeClear = false
       generatePiece()
     }
     keys[13] = false

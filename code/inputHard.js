@@ -34,6 +34,7 @@ function inputHard() {
 
   if (game.level >= hard.endlevel && deadFrame == 0) {
     deadFrame++
+    modeClear = true
   }
 
   if (deadFrame > 0) {
