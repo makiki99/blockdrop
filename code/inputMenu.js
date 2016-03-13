@@ -1,8 +1,7 @@
 var menu = {
   currentSelection : 0,
-  statelist : [2,3,4,1],
+  statelist : [3,4,1],
   namelist : [
-    "Classic | Easy",
     "Classic | Normal",
     "Classic | Hard",
     "Controls"
