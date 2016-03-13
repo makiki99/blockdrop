@@ -2,16 +2,18 @@
 
 ### v0.2.0
   * FEATURE | Added ghost piece.
+  * FEATURE | Added Classic|Hard
   * CHANGE | Slighty changed low-speed scoring.
   * CHANGE | Refactored `inputNormal()` to allow easier difficulty definitions.
-  * CHANGE | Moved variable declarations out of variables.js
+  * CHANGE | Moved variable declarations out of variables.js.
+  * CHANGE | Another modification of Classic|Normal scoring.
 
 ### v0.1.0
   * First beta release!
   * FEATURE | Added line clear animation.
   * CHANGE | Expanded difficulty definition system.
-  * FIX | Now the CLASSIC|NORMAL properly ends at Level 1000.
-  * FIX | Fixed the speed curve of CLASSIC|NORMAL.
+  * FIX | Now the Classic|Normal properly ends at Level 1000.
+  * FIX | Fixed the speed curve of Classic|Normal.
   * FIX | Fixed the lock piece mechanic.
 
 ### v0.0.6

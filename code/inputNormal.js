@@ -19,7 +19,7 @@ var normal = {
     [400,1024,30,30,30,14],
     [450,1280,30,30,30,14],
     [500,5632,30,30,30,12],
-    [900,5632,24,20,24,12],
+    [900,5632,24,20,26,12]
   ],
   scoreGain: [
     [1,1,1.32,-0.0166],
@@ -27,10 +27,8 @@ var normal = {
     [200,1.6,1.38,-0.0170],
     [300,1.9,1.41,-0.0173],
     [400,2.2,1.44,-0.0176],
-    [500,2.5,1.56,-0.0180],
-    [600,2.5,1.56,-0.0208],
-    [700,2.5,1.59,-0.0208],
-    [800,2.5,1.59,-0.0212],
+    [500,2.5,1.56,-0.0208],
+    [700,2.5,1.59,-0.0212],
     [900,3,1.8,-0.0286]
   ],
   endlevel: 1000,
@@ -38,6 +36,49 @@ var normal = {
 }
 
 function inputNormal() {
+
+  if (game.level >= normal.endlevel && deadFrame == 0) {
+    deadFrame++
+  }
+
+  if (deadFrame > 0) {
+    if (keys[13] || keys[27]) {
+      gamestate = 0
+      keys[13] = false
+      keys[27] = false
+    }
+    deadFrame++
+    return
+  }
+
+  if (game.level >= normal.ghostEnd) {
+    drawGhost = false
+  } else {
+    drawGhost = true
+  }
+
+  speedLevel = -1
+  while (game.level >= normal.speedCurve[speedLevel+1][0]) {
+    speedLevel++
+    gravity = normal.speedCurve[speedLevel][1]
+    softDropGravity = gravity + 256
+    areDelay = normal.speedCurve[speedLevel][2]
+    lineDelay = normal.speedCurve[speedLevel][3]
+    lockDelay = normal.speedCurve[speedLevel][4]
+    das = normal.speedCurve[speedLevel][5]
+    if (normal.speedCurve[speedLevel+1] == undefined) {
+      break
+    }
+  }
+
+  scoreSegment = -1
+  while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
+    scoreSegment++
+    if (normal.speedCurve[speedLevel+1] == undefined) {
+      break
+    }
+  }
+  game.score += normal.scoreGain[scoreSegment][3]
 
   inputClassic()
 

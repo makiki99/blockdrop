@@ -74,7 +74,8 @@ function main() {
       redrawClassic()
     case 4:
       //CLASSIC|HARD mode
-      //TODO
+      inputHard()
+      redrawClassic()
       break
     break
       default:

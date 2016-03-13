@@ -2,49 +2,6 @@ var scoreSegment, speedLevel, haveLockedPiece, linesCleared
 
 function inputClassic() {
 
-  if (game.level >= normal.endlevel && deadFrame == 0) {
-    deadFrame++
-  }
-
-  if (deadFrame > 0) {
-    if (keys[13] || keys[27]) {
-      gamestate = 0
-      keys[13] = false
-      keys[27] = false
-    }
-    deadFrame++
-    return
-  }
-
-  if (game.level >= normal.ghostEnd) {
-    drawGhost = false
-  } else {
-    drawGhost = true
-  }
-
-  speedLevel = -1
-  while (game.level >= normal.speedCurve[speedLevel+1][0]) {
-    speedLevel++
-    gravity = normal.speedCurve[speedLevel][1]
-    softDropGravity = gravity + 256
-    areDelay = normal.speedCurve[speedLevel][2]
-    lineDelay = normal.speedCurve[speedLevel][3]
-    lockDelay = normal.speedCurve[speedLevel][4]
-    das = normal.speedCurve[speedLevel][5]
-    if (normal.speedCurve[speedLevel+1] == undefined) {
-      break
-    }
-  }
-
-  scoreSegment = -1
-  while (game.level >= normal.scoreGain[scoreSegment+1][0]) {
-    scoreSegment++
-    if (normal.speedCurve[speedLevel+1] == undefined) {
-      break
-    }
-  }
-  game.score += normal.scoreGain[scoreSegment][3]
-
   movement()
 
   //process eventual piece lock
