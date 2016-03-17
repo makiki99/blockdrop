@@ -10,7 +10,7 @@ var das = 14,
   areFrame = 0,
   areDelay = 0,
   deadFrame = 0,
-  cwIsPresed = false,
+  cwIsPressed = false,
   ccwIsPressed = false
 
 function movement() {

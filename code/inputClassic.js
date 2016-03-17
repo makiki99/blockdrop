@@ -46,6 +46,8 @@ function inputClassic() {
       generatePiece()
       lockframe = 0
       haveLockedPiece = true
+      cwIsPressed = false
+      ccwIsPressed = false
     }
   }
 
