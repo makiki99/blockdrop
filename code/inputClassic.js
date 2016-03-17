@@ -9,7 +9,9 @@ function inputClassic() {
   linesCleared = 0
   if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) == true) {
     if (lockframe < lockdelay) {
-      lockframe++
+      if (areFrame <= 0) {
+        lockframe++
+      }
     } else {
       for (i = 0; i < 4; i++) {
         var x = minoData[game.currentPiece]["rotation"+game.currentRotation][i][0]+game.piecePos[1]

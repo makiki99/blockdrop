@@ -1,5 +1,9 @@
 ## Changelog
 
+### v0.2.1
+  * FIX | Fixed the bug where a piece could lock during ARE
+  * FIX | IRS (pre-rotation) now works consistently
+
 ### v0.2.0
   * FEATURE | Added ghost piece.
   * FEATURE | Added Classic|Hard
