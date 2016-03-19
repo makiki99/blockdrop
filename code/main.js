@@ -14,18 +14,18 @@ var version = "v0.3.0",
     history: [0,1,1,0],
     level: 1,
     score: 0
-  }
+  };
 
 //canvas variables
 var canvas = document.getElementById("canvas"),
   ctx = canvas.getContext("2d"),
-  tilesize = 24
+  tilesize = 24;
 
-canvas.width = tilesize*24
-canvas.height = tilesize*24
+canvas.width = tilesize*24;
+canvas.height = tilesize*24;
 
 //asset containers
-var tiles
+var tiles;
 
 function main() {
 
@@ -34,36 +34,35 @@ function main() {
 
     case 0:
       //main menu (duh!)
-      inputMenu()
-      redrawMenu()
-      break
+      inputMenu();
+      redrawMenu();
+      break;
     case 1:
       //controls
-      inputControls()
-      redrawControls()
-      break
+      inputControls();
+      redrawControls();
+      break;
     case 2:
       //CLASSIC|EASY mode
-      inputEasy()
-      redrawClassic()
-      break
+      inputEasy();
+      redrawClassic();
+      break;
     case 3:
       //CLASSIC|NORMAL mode
-      inputNormal()
-      redrawClassic()
-      break
+      inputNormal();
+      redrawClassic();
+      break;
     case 4:
       //CLASSIC|HARD mode
-      inputHard()
-      redrawClassic()
-      break
-    break
+      inputHard();
+      redrawClassic();
+      break;
       default:
-      console.error("Unexpected gamestate id")
+      console.error("Unexpected gamestate id");
 
   }
 
-  requestAnimationFrame(main)
+  requestAnimationFrame(main);
 
 }
 
@@ -78,14 +77,14 @@ window.addEventListener("load",function(){
     document.getElementById("tileCyan"),
     document.getElementById("tileViolet"),
     document.getElementById("tileGray"),
-  ]
-  requestAnimationFrame(main)
-})
+  ];
+  requestAnimationFrame(main);
+});
 
 document.body.addEventListener("keydown", function(e){
-	keys[e.keyCode] = true
-})
+	keys[e.keyCode] = true;
+});
 
 document.body.addEventListener("keyup", function(e){
-	keys[e.keyCode] = false
-})
+	keys[e.keyCode] = false;
+});

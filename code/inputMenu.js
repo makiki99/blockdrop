@@ -7,13 +7,13 @@ var menu = {
     "Classic | Hard",
     "Controls"
   ]
-}, countdown = 0
+}, countdown = 0;
 
 function inputMenu() {
 
   if (keys[13]) {
     //enter
-    gamestate = menu.statelist[menu.currentSelection]
+    gamestate = menu.statelist[menu.currentSelection];
 
     if (gamestate == 2 || gamestate == 3 || gamestate == 4){
       //reset gamestate
@@ -38,45 +38,45 @@ function inputMenu() {
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0]
-      ]
-      deadFrame = 0
-      game.history = [0,1,0,1]
-      game.level = 1
-      game.score = 0
-      speedLevel = 0
-      dasFrameLeft = 0
-      dasFrameRight = 0
-      areFrame = 0
-      lockframe = 0
-      countdown = 180
-      var randomNum = Math.floor(Math.random()*4+3)
-      game.currentPiece = game.nextPiece
-      game.nextPiece = randomNum
-      game.history.splice(0,1)
-      game.history.push(randomNum)
-      modeClear = false
-      generatePiece()
+      ];
+      deadFrame = 0;
+      game.history = [0,1,0,1];
+      game.level = 1;
+      game.score = 0;
+      speedLevel = 0;
+      dasFrameLeft = 0;
+      dasFrameRight = 0;
+      areFrame = 0;
+      lockframe = 0;
+      countdown = 180;
+      var randomNum = Math.floor(Math.random()*4+3);
+      game.currentPiece = game.nextPiece;
+      game.nextPiece = randomNum;
+      game.history.splice(0,1);
+      game.history.push(randomNum);
+      modeClear = false;
+      generatePiece();
     }
-    keys[13] = false
+    keys[13] = false;
 
   }
 
   if (keys[38]) {
     //up arrow
-    menu.currentSelection--
+    menu.currentSelection--;
     if (menu.currentSelection < 0) {
-      menu.currentSelection = menu.statelist.length-1
+      menu.currentSelection = menu.statelist.length-1;
     }
-    keys[38] = false
+    keys[38] = false;
   }
 
   if (keys[40]) {
     //down arrow
-    menu.currentSelection++
+    menu.currentSelection++;
     if (menu.currentSelection > menu.statelist.length-1) {
-      menu.currentSelection = 0
+      menu.currentSelection = 0;
     }
-    keys[40] = false
+    keys[40] = false;
   }
 
 }

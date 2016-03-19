@@ -28,83 +28,83 @@ var hard = {
   ],
   endlevel: 1000,
   ghostEnd: 0,
-}
+};
 
 function inputHard() {
 
-  if (game.level >= hard.endlevel && deadFrame == 0) {
-    deadFrame++
-    modeClear = true
+  if (game.level >= hard.endlevel && deadFrame === 0) {
+    deadFrame++;
+    modeClear = true;
   }
 
   if (deadFrame > 0) {
     if (keys[13] || keys[27]) {
-      gamestate = 0
-      keys[13] = false
-      keys[27] = false
+      gamestate = 0;
+      keys[13] = false;
+      keys[27] = false;
     }
-    deadFrame++
-    return
+    deadFrame++;
+    return;
   }
 
   if (game.level >= hard.ghostEnd) {
-    drawGhost = false
+    drawGhost = false;
   } else {
-    drawGhost = true
+    drawGhost = true;
   }
 
-  speedLevel = -1
+  speedLevel = -1;
   while (game.level >= hard.speedCurve[speedLevel+1][0]) {
-    speedLevel++
-    gravity = hard.speedCurve[speedLevel][1]
-    softDropGravity = gravity + 256
-    areDelay = hard.speedCurve[speedLevel][2]
-    lineDelay = hard.speedCurve[speedLevel][3]
-    lockDelay = hard.speedCurve[speedLevel][4]
-    das = hard.speedCurve[speedLevel][5]
-    if (hard.speedCurve[speedLevel+1] == undefined) {
-      break
+    speedLevel++;
+    gravity = hard.speedCurve[speedLevel][1];
+    softDropGravity = gravity + 256;
+    areDelay = hard.speedCurve[speedLevel][2];
+    lineDelay = hard.speedCurve[speedLevel][3];
+    lockDelay = hard.speedCurve[speedLevel][4];
+    das = hard.speedCurve[speedLevel][5];
+    if (hard.speedCurve[speedLevel+1] === undefined) {
+      break;
     }
   }
 
-  scoreSegment = -1
+  scoreSegment = -1;
   while (game.level >= hard.scoreGain[scoreSegment+1][0]) {
-    scoreSegment++
-    if (hard.speedCurve[speedLevel+1] == undefined) {
-      break
+    scoreSegment++;
+    if (hard.speedCurve[speedLevel+1] === undefined) {
+      break;
     }
   }
-  game.score += hard.scoreGain[scoreSegment][3]
+  game.score += hard.scoreGain[scoreSegment][3];
 
-  inputClassic()
+  inputClassic();
 
   if (game.score < game.level/4) {
-    game.score = game.level/4
+    game.score = game.level/4;
   }
 
   //process level and score
-  if (haveLockedPiece && (game.level + 1) % 100 != 0) {
-    game.level++
-    game.score += hard.scoreGain[scoreSegment][2]
+  if (haveLockedPiece && (game.level + 1) % 100 !== 0) {
+    game.level++;
+    game.score += hard.scoreGain[scoreSegment][2];
   }
-  game.level += linesCleared
-  game.score += linesCleared*hard.scoreGain[scoreSegment][2]
+  game.level += linesCleared;
+  game.score += linesCleared*hard.scoreGain[scoreSegment][2];
   switch (linesCleared) {
     case 1:
-      game.score += hard.scoreGain[scoreSegment][1]*0.1
+      game.score += hard.scoreGain[scoreSegment][1]*0.1;
       break;
     case 2:
-      game.score += hard.scoreGain[scoreSegment][1]*0.8
+      game.score += hard.scoreGain[scoreSegment][1]*0.8;
       break;
     case 3:
-      game.score += hard.scoreGain[scoreSegment][1]*2.4
+      game.score += hard.scoreGain[scoreSegment][1]*2.4;
       break;
     case 4:
-      game.score += hard.scoreGain[scoreSegment][1]*6.4
+      game.score += hard.scoreGain[scoreSegment][1]*6.4;
       break;
   }
   if (linesCleared > 0) {
-    areFrame += lineDelay
+    areFrame += lineDelay;
   }
 
 }
