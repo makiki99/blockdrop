@@ -4,8 +4,10 @@
   * FEATURE | Added Classic|Easy.
   <!-- * FEATURE | Added Ghost|Normal. -->
   * FEATURE | Added countdown before start.
-  * FIX | Fixed badly scoped variables, which were potential problems.
-  * FIX | Fixed one variable that caused problems with expanding code
+  * FEATURE | Created local profiles.
+  * CHANGE | Rearranged the file structure.
+  * FIX | Fixed badly scoped variables, which were potentially problematic.
+  * FIX | Fixed one variable that caused problems with expanding code.
 
 ### v0.2.1
   * FIX | Fixed the bug where a piece could lock during ARE.
