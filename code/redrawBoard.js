@@ -107,6 +107,26 @@ function redrawBoard() {
     }
   }
 
+  //countdown
+  offX = 5.5;
+  offY = 10;
+  ctx.font = tilesize*3 + "px 'Orbitron',monospace";
+  ctx.fillStyle = "#ffffff";
+  ctx.strokeStyle = "#000000";
+  ctx.lineWidth = 8;
+  if (countdown > 0 && countdown < 60) {
+    ctx.strokeText("1",tilesize*offX,tilesize*offY);
+    ctx.fillText("1",tilesize*offX,tilesize*offY);
+  }
+  if (countdown > 60 && countdown < 120) {
+    ctx.strokeText("2",tilesize*offX,tilesize*offY);
+    ctx.fillText("2",tilesize*offX,tilesize*offY);
+  }
+  if (countdown > 120) {
+    ctx.strokeText("3",tilesize*offX,tilesize*offY);
+    ctx.fillText("3",tilesize*offX,tilesize*offY);
+  }
+
   //GAME OVER/CLEAR sign
   if (deadFrame > 30) {
     ctx.font = tilesize + "px 'Orbitron',monospace";
