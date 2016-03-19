@@ -1,12 +1,13 @@
 var menu = {
   currentSelection : 0,
-  statelist : [3,4,1],
+  statelist : [2,3,4,1],
   namelist : [
+    "Classic | Easy",
     "Classic | Normal",
     "Classic | Hard",
     "Controls"
   ]
-}
+}, countdown = 0
 
 function inputMenu() {
 
@@ -37,7 +38,7 @@ function inputMenu() {
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0]
-      ],
+      ]
       deadFrame = 0
       game.history = [0,1,0,1]
       game.level = 1
@@ -45,8 +46,9 @@ function inputMenu() {
       speedLevel = 0
       dasFrameLeft = 0
       dasFrameRight = 0
-      areFrame = 60
+      areFrame = 0
       lockframe = 0
+      countdown = 180
       var randomNum = Math.floor(Math.random()*4+3)
       game.currentPiece = game.nextPiece
       game.nextPiece = randomNum

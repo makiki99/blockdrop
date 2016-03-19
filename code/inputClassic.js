@@ -2,6 +2,10 @@ var scoreSegment, speedLevel, haveLockedPiece, linesCleared
 
 function inputClassic() {
 
+  if (countdown > 0) {
+    countdown--
+    return
+  }
   movement()
 
   //process eventual piece lock
