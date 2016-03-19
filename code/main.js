@@ -57,7 +57,18 @@ function main() {
       inputHard();
       redrawClassic();
       break;
-      default:
+    case 5:
+      //CLASSIC|EXPERT mode
+      break;
+    case 6:
+      //CLASSIC|ANOTHER mode
+      break;
+    case 6:
+      //GHOST|NORMAL mode
+      //inputGhNormal();
+      //redrawClassic();
+      break;
+    default:
       console.error("Unexpected gamestate id");
 
   }
