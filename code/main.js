@@ -32,6 +32,10 @@ function main() {
   //update logic
   switch (gamestate) {
 
+    case -1:
+      inputProfile();
+      redrawProfile();
+      break;
     case 0:
       //main menu (duh!)
       inputMenu();
@@ -62,11 +66,6 @@ function main() {
       break;
     case 6:
       //CLASSIC|ANOTHER mode
-      break;
-    case 6:
-      //GHOST|NORMAL mode
-      //inputGhNormal();
-      //redrawClassic();
       break;
     default:
       console.error("Unexpected gamestate id");

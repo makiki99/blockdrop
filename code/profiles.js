@@ -2,11 +2,15 @@ var currentProfile = 0,
   profileList = [];
 
 function loadProfiles() {
-  profileList.join(new Profile("???"));
+  if (localStorage.blockdropProfiles !== undefined) {
+    profileList = JSON.parse(localStorage.blockdropProfiles);
+  } else {
+    profileList.push(new Profile("???"));
+  }
 }
 
 function saveProfiles() {
-
+  localStorage.blockdropProfiles = JSON.stringify(profileList);
 }
 
 function Profile (name) {
