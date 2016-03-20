@@ -59,6 +59,7 @@ function inputClassic() {
       generatePiece();
       lockframe = 0;
       haveLockedPiece = true;
+      floorkicks = 0;
       cwIsPressed = false;
       ccwIsPressed = false;
     }

@@ -10,6 +10,7 @@ var das = 14,
   areFrame = 0,
   areDelay = 0,
   deadFrame = 0,
+  floorkicks = 0,
   cwIsPressed = false,
   ccwIsPressed = false;
 
@@ -93,9 +94,12 @@ function movement() {
           game.piecePos[0] += 1;
           ccwIsPressed = true;
         } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[0] -= 1;
-          ccwIsPressed = true;
+          if (floorkicks < 2) {
+            game.currentRotation = newRotation;
+            game.piecePos[0] -= 1;
+            ccwIsPressed = true;
+            floorkicks++;
+          }
         }
       }
     } else {
@@ -137,9 +141,12 @@ function movement() {
           game.piecePos[0] += 1;
           cwIsPressed = true;
         } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[0] -= 1;
-          cwIsPressed = true;
+          if (floorkicks < 2) {
+            game.currentRotation = newRotation;
+            game.piecePos[0] -= 1;
+            cwIsPressed = true;
+            floorkicks++;
+          }
         }
       }
     } else {
