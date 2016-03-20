@@ -6,6 +6,7 @@ var version = "v0.3.0",
   keys = [],
   matrix = [],
   gamestate = 0,
+  framecount = 0,
   game = {
     currentPiece: 0,
     currentRotation: 0,

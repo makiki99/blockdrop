@@ -9,6 +9,10 @@ function inputClassic() {
     countdown--;
     return;
   }
+
+  if (deadFrame === 0) {
+    framecount++;
+  }
   movement();
 
   //process eventual piece lock

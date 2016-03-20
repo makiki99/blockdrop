@@ -111,6 +111,27 @@ function redrawBoard() {
       ctx.fillStyle = "#00ff00";
       ctx.fillRect(offX*tilesize,offY*tilesize+6,(tilesize*10)*(lockdelay-lockframe)/lockdelay,4);
     }
+
+    (function() {
+      //timer
+      var minutes = (Math.floor(framecount / 3600)).toString();
+      var seconds = (Math.floor((framecount % 3600) / 60)).toString();
+      var centiseconds = (Math.floor((framecount % 60)*10/6)).toString();
+      if (minutes.length === 1) {
+        minutes = "0" + minutes;
+      }
+      if (seconds.length === 1) {
+        seconds = "0" + seconds;
+      }
+      if (centiseconds.length === 1) {
+        centiseconds = "0" + centiseconds;
+      }
+      offX = 3;
+      offY = 22.5;
+      ctx.font = tilesize + "px 'Orbitron',monospace";
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(minutes+":"+seconds+"."+centiseconds,tilesize*offX,tilesize*offY);
+    }());
   }
 
   //countdown

@@ -48,6 +48,7 @@ function inputMenu() {
       dasFrameRight = 0;
       areFrame = 0;
       lockframe = 0;
+      framecount = 0;
       countdown = 180;
       var randomNum = Math.floor(Math.random()*4+3);
       game.currentPiece = game.nextPiece;
