@@ -126,7 +126,7 @@ function redrawBoard() {
       if (centiseconds.length === 1) {
         centiseconds = "0" + centiseconds;
       }
-      offX = 3;
+      offX = 4.5;
       offY = 22.5;
       ctx.font = tilesize + "px 'Orbitron',monospace";
       ctx.fillStyle = "#ffffff";
