@@ -2,10 +2,10 @@
 
 ### v0.3.0
   * FEATURE | Added Classic|Easy.
-  <!-- * FEATURE | Added Ghost|Normal. -->
   * FEATURE | Added countdown before start.
   * FEATURE | Created local profiles.
   * CHANGE | Rearranged the file structure.
+  * FIX | ARE is now more true.
   * FIX | Fixed badly scoped variables, which were potentially problematic.
   * FIX | Fixed one variable that caused problems with expanding code.
 

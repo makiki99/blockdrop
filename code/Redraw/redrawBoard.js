@@ -1,6 +1,7 @@
 var lineClearAnim = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
   drawGhost = true,
-  modeClear = false;
+  modeClear = false,
+  nextBuffer = 0;
 
 function redrawBoard() {
 
@@ -93,9 +94,14 @@ function redrawBoard() {
     offX = 15;
     offY = 2;
     for (i = 0; i < 4; i++) {
-      var x = minoData[game.nextPiece].rotation0[i][0];
-      var y = minoData[game.nextPiece].rotation0[i][1];
-      ctx.drawImage(tiles[minoData[game.nextPiece].color-1],(x+offX)*tilesize,(y+offY)*tilesize);
+      if (areFrame > 0) {
+        nextBuffer = game.currentPiece;
+      } else {
+        nextBuffer = game.nextPiece;
+      }
+      var x = minoData[nextBuffer].rotation0[i][0];
+      var y = minoData[nextBuffer].rotation0[i][1];
+      ctx.drawImage(tiles[minoData[nextBuffer].color-1],(x+offX)*tilesize,(y+offY)*tilesize);
     }
 
     //lock delay bar for testing purposes
