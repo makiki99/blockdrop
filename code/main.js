@@ -1,4 +1,4 @@
-var version = "v0.3.0",
+var version = "v0.3.1",
   debug = {
     //debug toogles
     showScore: false
@@ -49,17 +49,17 @@ function main() {
       break;
     case 2:
       //CLASSIC|EASY mode
-      inputEasy();
+      inputClassic(easy);
       redrawClassic();
       break;
     case 3:
       //CLASSIC|NORMAL mode
-      inputNormal();
+      inputClassic(normal);
       redrawClassic();
       break;
     case 4:
       //CLASSIC|HARD mode
-      inputHard();
+      inputClassic(hard);
       redrawClassic();
       break;
     case 5:

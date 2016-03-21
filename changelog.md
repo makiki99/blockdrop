@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.4.0
+  * FIX | Cleaned up some code, making creating additional modes easier
+
 ### v0.3.0
   * FEATURE | Added Classic|Easy.
   * FEATURE | Added countdown before start.
