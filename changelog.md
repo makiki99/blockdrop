@@ -1,13 +1,16 @@
 ## Changelog
 
 ### v0.4.0
+  * FEATURE | Added Hyper mode.
+  * FEATURE | Added third rotation button.
+  * CHANGE | Renamed difficulties.
   * FIX | Cleaned up some code, making creating additional modes easier
 
 ### v0.3.0
   * FEATURE | Added Classic|Easy.
   * FEATURE | Added countdown before start.
   * FEATURE | Added a timer.
-  * CHANGE | Limited ammount of floorkicks pre pirece to 2.
+  * CHANGE | Limited ammount of floorkicks per piece to 2.
   * CHANGE | Rearranged the file structure.
   * FIX | ARE is now more true.
   * FIX | Fixed badly scoped variables, which were potentially problematic.

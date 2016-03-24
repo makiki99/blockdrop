@@ -22,7 +22,7 @@ var normal = {
     [900,5632,24,20,26,12]
   ],
   scoreGain: [
-    [1,1,1.32,-0.0166],
+    [1,1,1.32,-0.0166], //[level, line clear multipler, score/lvl, score/frame]
     [100,1.3,1.35,-0.0168],
     [200,1.6,1.38,-0.0170],
     [300,1.9,1.41,-0.0173],
@@ -33,4 +33,5 @@ var normal = {
   ],
   endlevel: 1000,
   ghostEnd: 100,
+  ranked: true
 };

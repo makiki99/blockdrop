@@ -24,7 +24,7 @@ var easy = {
     [900,5632,30,30,30,12],
   ],
   scoreGain: [
-    [1,0.7,0.35,-0.0032],
+    [1,0.7,0.35,-0.0032], //[level, line clear multipler, score/lvl, score/frame]
     [100,0.8,0.37,-0.0034],
     [200,0.9,0.39,-0.0036],
     [300,1,0.41,-0.0038],
@@ -37,4 +37,5 @@ var easy = {
   ],
   endlevel: 1000,
   ghostEnd: 500,
+  ranked: true
 };

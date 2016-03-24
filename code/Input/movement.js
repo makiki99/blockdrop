@@ -12,7 +12,8 @@ var das = 14,
   deadFrame = 0,
   floorkicks = 0,
   cwIsPressed = false,
-  ccwIsPressed = false;
+  ccwIsPressed = false,
+  ccwAltIsPressed = false;
 
 function movement() {
 
@@ -154,12 +155,60 @@ function movement() {
     }
   }());
 
-  if (keys[controls.keyCodes[4]]) {
+  (function() {
+    //rotation
+    if (keys[controls.keyCodes[4]]) {
+      //c - alt ccw rotation
+      if (!ccwAltIsPressed) {
+        var newRotation = game.currentRotation -1;
+        if (newRotation < 0) {
+          newRotation = 3;
+        }
+        if (colCheck(game.piecePos[0],game.piecePos[1],newRotation) === false) {
+          game.currentRotation = newRotation;
+          ccwAltIsPressed = true;
+        } else if (colCheck(game.piecePos[0],game.piecePos[1]-1,newRotation) === false) {
+          game.currentRotation = newRotation;
+          game.piecePos[1] -= 1;
+          ccwAltIsPressed = true;
+        } else if (colCheck(game.piecePos[0],game.piecePos[1]+1,newRotation) === false) {
+          game.currentRotation = newRotation;
+          game.piecePos[1] += 1;
+          ccwAltIsPressed = true;
+        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) === false) {
+          game.currentRotation = newRotation;
+          game.piecePos[0] += 1;
+          ccwAltIsPressed = true;
+        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]-1,newRotation) === false) {
+          game.currentRotation = newRotation;
+          game.piecePos[1] -= 1;
+          game.piecePos[0] += 1;
+          ccwAltIsPressed = true;
+        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]+1,newRotation) === false) {
+          game.currentRotation = newRotation;
+          game.piecePos[1] += 1;
+          game.piecePos[0] += 1;
+          ccwAltIsPressed = true;
+        } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) === false) {
+          if (floorkicks < 2) {
+            game.currentRotation = newRotation;
+            game.piecePos[0] -= 1;
+            ccwAltIsPressed = true;
+            floorkicks++;
+          }
+        }
+      }
+    } else {
+      ccwAltIsPressed = false;
+    }
+  }());
+
+  if (keys[controls.keyCodes[5]]) {
     //up arrow - hard drop
     axisY --;
   }
 
-  if (keys[controls.keyCodes[5]]) {
+  if (keys[controls.keyCodes[6]]) {
     //down arrow - soft drop
     axisY ++;
   }
@@ -189,7 +238,7 @@ function movement() {
     }
   }
 
-  if (keys[controls.keyCodes[6]]) {
+  if (keys[controls.keyCodes[7]]) {
     deadFrame++;
   }
 

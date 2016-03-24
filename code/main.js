@@ -64,6 +64,8 @@ function main() {
       break;
     case 5:
       //CLASSIC|EXPERT mode
+      inputClassic(hyper);
+      redrawClassic();
       break;
     case 6:
       //CLASSIC|ANOTHER mode

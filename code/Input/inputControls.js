@@ -3,8 +3,9 @@ var controls = {
     namelist : [
       "Move Left",
       "Move Right",
-      "Rotate Left",
-      "Rotate Right",
+      "A (Rotate Left)",
+      "B (Rotate Right)",
+      "C (Rotate Left)",
       "Sonic Drop",
       "Soft Drop",
       "Suicide"
@@ -14,6 +15,7 @@ var controls = {
       39,
       90,
       88,
+      67,
       38,
       40,
       75
