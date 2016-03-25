@@ -2,6 +2,7 @@
 
 ### v0.4.2
   * FIX | Fixed issue with grade reverting to unranked.
+  * FIX | Profile menu is NOW resseting properly... I hope.
 
 ### v0.4.1
   * FIX | Profile menu is now resseting properly.
