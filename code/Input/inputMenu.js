@@ -18,7 +18,7 @@ function inputMenu() {
     //enter
     gamestate = menu.statelist[menu.currentSelection];
 
-    if (gamestate == 2 || gamestate == 3 || gamestate == 4){
+    if (gamestate === 2 || gamestate === 3 || gamestate === 4 || gamestate === 5){
       //reset gamestate
       matrix = [
         [0,0,0,0,0,0,0,0,0,0],

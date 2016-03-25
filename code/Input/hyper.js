@@ -12,7 +12,16 @@ var hyper = {
     [900,5632,4,4,15,6]
   ],
   scoreGain: [
-    [1,1,0,0], //[level, line clear multipler, score/lvl, score/frame]
+    [1,2.25,1.55,0], //[level, line clear multipler, score/lvl, score/frame]
+    [100,2.5,1.6,0],
+    [200,2.75,1.65,0],
+    [300,3,1.7,0],
+    [400,3.25,1.75,0],
+    [500,3.5,1.8,0],
+    [600,3.75,1.85,0],
+    [700,4,1.9,0],
+    [800,5,1.95,0],
+    [900,6,2,0],
   ],
   endlevel: 1000,
   ghostEnd: 0,
