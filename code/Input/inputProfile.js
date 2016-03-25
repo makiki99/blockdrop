@@ -52,6 +52,7 @@ function inputProfile() {
           loadProfile(profileMenu.inputBuffer);
           isGuest = false;
           gamestate = 0;
+          profileMenu.substate = 0;
         } else {
           profileMenu.substate = 3;
         }
@@ -83,6 +84,7 @@ function inputProfile() {
           createProfile(profileMenu.inputBuffer);
           isGuest = false;
           gamestate = 0;
+          profileMenu.substate = 0;
         }
       }
       if (keys[27]) {
