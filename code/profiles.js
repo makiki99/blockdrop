@@ -1,22 +1,30 @@
-var currentProfile = 0,
+var currentProfile = {},
   profileList = [];
 
-function loadProfiles() {
-  if (localStorage.blockdropProfiles !== undefined) {
-    profileList = JSON.parse(localStorage.blockdropProfiles);
+function checkProfile(name) {
+  if (localStorage[name] !== undefined) {
+    return true;
   } else {
-    profileList.push(new Profile("???"));
+    return false;
   }
 }
 
-function saveProfiles() {
-  localStorage.blockdropProfiles = JSON.stringify(profileList);
+function loadProfile(name) {
+  currentProfile = JSON.parse(localStorage[name]);
 }
 
-function Profile (name) {
+function saveProfile(name) {
+  localStorage[name] = JSON.stringify(currentProfile);
+}
+
+function createProfile(name) {
+  currentProfile = new Profile(name);
+  saveProfile(name);
+}
+
+function Profile(name) {
   //constructor
   this.name = name;
   this.topScores = [];
-  this.controls = [];
-  this.rank = 0;
+  this.grade = 0;
 }

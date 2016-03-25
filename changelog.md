@@ -3,6 +3,7 @@
 ### v0.4.0
   * FEATURE | Added Hyper mode.
   * FEATURE | Added third rotation button.
+  * FEATURE | Created local profile system.
   * CHANGE | Renamed difficulties.
   * FIX | Cleaned up some code, making creating additional modes easier
 
