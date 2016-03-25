@@ -1,8 +1,11 @@
 ## Changelog
 
+### v0.4.2
+  * FIX | Fixed issue with grade reverting to unranked.
+
 ### v0.4.1
   * FIX | Profile menu is now resseting properly.
-  
+
 ### v0.4.0
   * FEATURE | Added Hyper mode.
   * FEATURE | Added third rotation button.

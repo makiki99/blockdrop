@@ -160,11 +160,11 @@ function submitScore(score) {
       var sum = 0;
       if (score > currentProfile.topScores[9]) {
         currentProfile.topScores.splice(9,1,score);
-        for (i = 0; i < currentProfile.topScores.length; i++) {
-          sum += currentProfile.topScores[i];
-        }
-        sum /= 10;
       }
+      for (i = 0; i < currentProfile.topScores.length; i++) {
+        sum += currentProfile.topScores[i];
+      }
+      sum /= 10;
       updateGrade(sum);
     }
     currentProfile.topScores.sort(compareNumbers);
