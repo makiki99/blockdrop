@@ -18,11 +18,23 @@ function redrawProfile() {
     ctx.fillText(version,0,tilesize/2);
   }
 
-  if (profileMenu.substate === 1) {
+  if (profileMenu.substate === 1 || profileMenu.substate === 2) {
     ctx.font = tilesize*2 + "px 'Orbitron',monospace";
     ctx.fillStyle = "#ffffff";
     ctx.fillText("Enter profile name:",tilesize*3,tilesize*5);
     ctx.fillText(profileMenu.inputBuffer,tilesize*3,tilesize*8);
+  }
+
+  if (profileMenu.substate === 3) {
+    ctx.font = tilesize*2 + "px 'Orbitron',monospace";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText("Profile not found.",tilesize*3,tilesize*8);
+  }
+
+  if (profileMenu.substate === 4) {
+    ctx.font = tilesize*2 + "px 'Orbitron',monospace";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText("There is already a profile with this name.",tilesize*3,tilesize*8);
   }
 
 }

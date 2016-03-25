@@ -96,6 +96,9 @@ window.addEventListener("load",function(){
 
 document.body.addEventListener("keydown", function(e){
 	keys[e.keyCode] = true;
+  if (e.keyCode === 8) {
+    e.preventDefault();
+  }
 });
 
 document.body.addEventListener("keyup", function(e){

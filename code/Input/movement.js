@@ -239,6 +239,9 @@ function movement() {
   }
 
   if (keys[controls.keyCodes[7]]) {
+    if (deadFrame === 0) {
+      submitScore(game.score);
+    }
     deadFrame++;
   }
 

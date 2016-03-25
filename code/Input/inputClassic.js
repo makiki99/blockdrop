@@ -8,6 +8,7 @@ function inputClassic(submode) {
   if (game.level >= submode.endlevel && deadFrame === 0) {
     deadFrame++;
     modeClear = true;
+    submitScore(game.score);
   }
 
   if (countdown > 0) {
@@ -52,7 +53,7 @@ function inputClassic(submode) {
   scoreSegment = -1;
   while (game.level >= submode.scoreGain[scoreSegment+1][0]) {
     scoreSegment++;
-    if (submode.speedCurve[speedLevel+1] === undefined) {
+    if (submode.scoreGain[scoreSegment+1] === undefined) {
       break;
     }
   }
@@ -74,6 +75,7 @@ function inputClassic(submode) {
         var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0];
         if (matrix[y] === undefined) {
           //top out
+          submitScore(game.score);
           ++deadFrame;
           return;
         }

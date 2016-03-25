@@ -5,7 +5,8 @@
   * FEATURE | Added third rotation button.
   * FEATURE | Created local profile system.
   * CHANGE | Renamed difficulties.
-  * FIX | Cleaned up some code, making creating additional modes easier
+  * FIX | Cleaned up some code, making creating additional modes easier.
+  * FIX | Fixed score gain mechanism.
 
 ### v0.3.0
   * FEATURE | Added Classic|Easy.

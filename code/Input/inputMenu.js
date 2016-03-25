@@ -1,14 +1,13 @@
 var menu = {
   currentSelection : 0,
-  statelist : [2,3,4,5,1],
+  statelist : [2,3,4,5,1,-1],
   namelist : [
     "Easy",
     "Normal",
     "Hard",
     "Hyper",
-    //"",
-    //"",
-    "Controls"
+    "Controls",
+    "Switch profile"
   ]
 }, countdown = 0;
 
