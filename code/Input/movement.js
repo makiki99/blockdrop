@@ -39,9 +39,6 @@ function movement() {
       }
     }
     dasFrameLeft ++;
-    if (areFrame > 0) {
-      dasFrameLeft = das;
-    }
     dasFrameRight = 0;
   } else if (axisX == 1) {
     if (dasFrameRight === 0 || dasFrameRight >= das) {
@@ -54,9 +51,7 @@ function movement() {
     dasFrameRight ++;
     dasFrameLeft = 0;
   } else {
-    if (areFrame > 0) {
-      dasFrameRight = das;
-    }
+    dasFrameLeft = 0;
     dasFrameRight = 0;
   }
 
