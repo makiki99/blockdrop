@@ -1,4 +1,4 @@
-var version = "v0.4.3",
+var version = "v0.5.0",
   debug = {
     //debug toogles
     showScore: false
@@ -29,7 +29,7 @@ canvas.height = tilesize*24;
 var tiles;
 
 function main() {
-
+  checkFramerate();
   //update logic
   switch (gamestate) {
 

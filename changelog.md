@@ -1,6 +1,7 @@
 ## Changelog
 
-### v0.4.4
+### v0.5.0
+  * FEATURE | Added FPS counter.
   * CHANGE | Nerfed Hyper mode.
 
 ### v0.4.3
