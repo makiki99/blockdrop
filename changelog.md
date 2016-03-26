@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.4.4
+  * CHANGE | Nerfed Hyper mode.
+
 ### v0.4.3
   * CHANGE | Completely changed list of grades.
   * CHANGE | Nerfed Hard mode.
