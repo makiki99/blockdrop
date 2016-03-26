@@ -1,5 +1,10 @@
 ## Changelog
 
+### v0.4.3
+  * CHANGE | Completely changed list of grades.
+  * CHANGE | Nerfed Hard mode.
+  * CHANGE | Buffed Hyper mode.
+
 ### v0.4.2
   * FIX | Fixed issue with grade reverting to unranked.
   * FIX | Profile menu is NOW resseting properly... I hope.

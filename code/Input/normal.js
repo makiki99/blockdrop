@@ -32,6 +32,5 @@ var normal = {
     [900,3,1.8,-0.0286]
   ],
   endlevel: 1000,
-  ghostEnd: 100,
-  ranked: true
+  ghostEnd: 100
 };
