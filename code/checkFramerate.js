@@ -13,6 +13,6 @@ function checkFramerate() {
     return a + b;
   });
   fps /= fpsHistory.length;
-  fps = Math.round(fps);
+  fps = Math.round(100*fps)/100;
   lastLoop = thisLoop;
 }
