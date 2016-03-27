@@ -2,7 +2,8 @@
 
 ### v0.5.0
   * FEATURE | Added FPS counter.
-  * CHANGE | Nerfed Hyper mode.
+  * FEATURE | Added a possibility to flip the roation buttons.
+  * CHANGE | Fixed Hyper mode scoring.
   * CHANGE | Current profile's name and grade are now shown nearly everywhere.
   * CHANGE | Modified grade colors.
 

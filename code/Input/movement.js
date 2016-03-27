@@ -11,9 +11,9 @@ var das = 14,
   areDelay = 0,
   deadFrame = 0,
   floorkicks = 0,
-  cwIsPressed = false,
-  ccwIsPressed = false,
-  ccwAltIsPressed = false;
+  buttonAIsPressed = false,
+  buttonBIsPressed = false,
+  buttonCIsPressed = false;
 
 function movement() {
 
@@ -61,145 +61,41 @@ function movement() {
   }
 
   (function() {
-    //rotation
     if (keys[controls.keyCodes[2]]) {
-      //z - ccw rotation
-      if (!ccwIsPressed) {
-        var newRotation = game.currentRotation -1;
-        if (newRotation < 0) {
-          newRotation = 3;
-        }
-        if (colCheck(game.piecePos[0],game.piecePos[1],newRotation) === false) {
-          game.currentRotation = newRotation;
-          ccwIsPressed = true;
-        } else if (colCheck(game.piecePos[0],game.piecePos[1]-1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] -= 1;
-          ccwIsPressed = true;
-        } else if (colCheck(game.piecePos[0],game.piecePos[1]+1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] += 1;
-          ccwIsPressed = true;
-        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[0] += 1;
-          ccwIsPressed = true;
-        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]-1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] -= 1;
-          game.piecePos[0] += 1;
-          ccwIsPressed = true;
-        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]+1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] += 1;
-          game.piecePos[0] += 1;
-          ccwIsPressed = true;
-        } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) === false) {
-          if (floorkicks < 2) {
-            game.currentRotation = newRotation;
-            game.piecePos[0] -= 1;
-            ccwIsPressed = true;
-            floorkicks++;
-          }
+      // A button
+      if (!buttonAIsPressed){
+        if (rotateLeft()) {
+          buttonAIsPressed = true;
         }
       }
     } else {
-      ccwIsPressed = false;
+      buttonAIsPressed = false;
     }
   }());
 
   (function() {
     if (keys[controls.keyCodes[3]]) {
-      //x - cw rotation
-      if (!cwIsPressed) {
-        var newRotation = game.currentRotation + 1;
-        if (newRotation > 3) {
-          newRotation = 0;
-        }
-        if (colCheck(game.piecePos[0],game.piecePos[1],newRotation) === false) {
-          game.currentRotation = newRotation;
-          cwIsPressed = true;
-        } else if (colCheck(game.piecePos[0],game.piecePos[1]+1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] += 1;
-          cwIsPressed = true;
-        } else if (colCheck(game.piecePos[0],game.piecePos[1]-1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] -= 1;
-          cwIsPressed = true;
-        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[0] += 1;
-          cwIsPressed = true;
-        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]+1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] += 1;
-          game.piecePos[0] += 1;
-          cwIsPressed = true;
-        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]-1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] -= 1;
-          game.piecePos[0] += 1;
-          cwIsPressed = true;
-        } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) === false) {
-          if (floorkicks < 2) {
-            game.currentRotation = newRotation;
-            game.piecePos[0] -= 1;
-            cwIsPressed = true;
-            floorkicks++;
-          }
+      // B button
+      if (!buttonBIsPressed){
+        if (rotateRight()) {
+          buttonBIsPressed = true;
         }
       }
     } else {
-      cwIsPressed = false;
+      buttonBIsPressed = false;
     }
   }());
 
   (function() {
-    //rotation
     if (keys[controls.keyCodes[4]]) {
-      //c - alt ccw rotation
-      if (!ccwAltIsPressed) {
-        var newRotation = game.currentRotation -1;
-        if (newRotation < 0) {
-          newRotation = 3;
-        }
-        if (colCheck(game.piecePos[0],game.piecePos[1],newRotation) === false) {
-          game.currentRotation = newRotation;
-          ccwAltIsPressed = true;
-        } else if (colCheck(game.piecePos[0],game.piecePos[1]-1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] -= 1;
-          ccwAltIsPressed = true;
-        } else if (colCheck(game.piecePos[0],game.piecePos[1]+1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] += 1;
-          ccwAltIsPressed = true;
-        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[0] += 1;
-          ccwAltIsPressed = true;
-        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]-1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] -= 1;
-          game.piecePos[0] += 1;
-          ccwAltIsPressed = true;
-        } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]+1,newRotation) === false) {
-          game.currentRotation = newRotation;
-          game.piecePos[1] += 1;
-          game.piecePos[0] += 1;
-          ccwAltIsPressed = true;
-        } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) === false) {
-          if (floorkicks < 2) {
-            game.currentRotation = newRotation;
-            game.piecePos[0] -= 1;
-            ccwAltIsPressed = true;
-            floorkicks++;
-          }
+      // C button
+      if (!buttonCIsPressed){
+        if (rotateLeft()) {
+          buttonCIsPressed = true;
         }
       }
     } else {
-      ccwAltIsPressed = false;
+      buttonCIsPressed = false;
     }
   }());
 
@@ -245,4 +141,87 @@ function movement() {
     deadFrame++;
   }
 
+}
+
+function rotateLeft() {
+  var newRotation = game.currentRotation -1;
+  if (newRotation < 0) {
+    newRotation = 3;
+  }
+  if (colCheck(game.piecePos[0],game.piecePos[1],newRotation) === false) {
+    game.currentRotation = newRotation;
+    return true;
+  } else if (colCheck(game.piecePos[0],game.piecePos[1]-1,newRotation) === false) {
+    game.currentRotation = newRotation;
+    game.piecePos[1] -= 1;
+    return true;
+  } else if (colCheck(game.piecePos[0],game.piecePos[1]+1,newRotation) === false) {
+    game.currentRotation = newRotation;
+    game.piecePos[1] += 1;
+    return true;
+  } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) === false) {
+    game.currentRotation = newRotation;
+    game.piecePos[0] += 1;
+    return true;
+  } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]-1,newRotation) === false) {
+    game.currentRotation = newRotation;
+    game.piecePos[1] -= 1;
+    game.piecePos[0] += 1;
+    return true;
+  } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]+1,newRotation) === false) {
+    game.currentRotation = newRotation;
+    game.piecePos[1] += 1;
+    game.piecePos[0] += 1;
+    return true;
+  } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) === false) {
+    if (floorkicks < 2) {
+      game.currentRotation = newRotation;
+      game.piecePos[0] -= 1;
+      floorkicks++;
+      return true;
+    }
+  }
+  else {
+    return false;
+  }
+}
+
+function rotateRight() {
+  var newRotation = game.currentRotation + 1;
+  if (newRotation > 3) {
+    newRotation = 0;
+  }
+  if (colCheck(game.piecePos[0],game.piecePos[1],newRotation) === false) {
+    game.currentRotation = newRotation;
+    return true;
+  } else if (colCheck(game.piecePos[0],game.piecePos[1]+1,newRotation) === false) {
+    game.currentRotation = newRotation;
+    game.piecePos[1] += 1;
+    return true;
+  } else if (colCheck(game.piecePos[0],game.piecePos[1]-1,newRotation) === false) {
+    game.currentRotation = newRotation;
+    game.piecePos[1] -= 1;
+    return true;
+  } else if (colCheck(game.piecePos[0]+1,game.piecePos[1],newRotation) === false) {
+    game.currentRotation = newRotation;
+    game.piecePos[0] += 1;
+    return true;
+  } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]+1,newRotation) === false) {
+    game.currentRotation = newRotation;
+    game.piecePos[1] += 1;
+    game.piecePos[0] += 1;
+    return true;
+  } else if (colCheck(game.piecePos[0]+1,game.piecePos[1]-1,newRotation) === false) {
+    game.currentRotation = newRotation;
+    game.piecePos[1] -= 1;
+    game.piecePos[0] += 1;
+    return true;
+  } else if (colCheck(game.piecePos[0]-1,game.piecePos[1],newRotation) === false) {
+    if (floorkicks < 2) {
+      game.currentRotation = newRotation;
+      game.piecePos[0] -= 1;
+      floorkicks++;
+      return true;
+    }
+  }
 }
