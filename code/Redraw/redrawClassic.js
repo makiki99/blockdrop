@@ -197,22 +197,4 @@ function redrawClassic() {
     ctx.fillText("SCORE: " + game.score,tilesize*14,tilesize*18);
   }
 
-  //FPS counter
-  (function() {
-    offX = 21;
-    offY = 23.5;
-    ctx.font = tilesize/2 + "px 'Orbitron',monospace";
-    ctx.fillText("FPS: "+fps,offX*tilesize,offY*tilesize);
-  }());
-
-  //name
-  ctx.font = tilesize/2 + "px sans-serif";
-  if (!isGuest) {
-    ctx.fillText("PLAYER:",tilesize*13,tilesize/2);
-    ctx.fillText(currentProfile.name,tilesize*16,tilesize/2);
-    ctx.fillText("GRADE:",tilesize*13,tilesize);
-    ctx.fillStyle = grade[currentProfile.grade][0];
-    ctx.fillText(grade[currentProfile.grade][1],tilesize*16,tilesize);
-  }
-
 }

@@ -72,6 +72,7 @@ function main() {
 
   }
 
+  redrawOverlay();
   requestAnimationFrame(main);
 
 }

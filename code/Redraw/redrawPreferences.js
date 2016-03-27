@@ -21,14 +21,4 @@ function redrawPreferences() {
   //selector
   ctx.fillText(">",tilesize*1,tilesize*(2+prefMenu.currentSelection));
 
-  //name
-  ctx.font = tilesize/2 + "px sans-serif";
-  if (!isGuest) {
-    ctx.fillText("PLAYER:",tilesize*13,tilesize/2);
-    ctx.fillText(currentProfile.name,tilesize*16,tilesize/2);
-    ctx.fillText("GRADE:",tilesize*13,tilesize);
-    ctx.fillStyle = grade[currentProfile.grade][0];
-    ctx.fillText(grade[currentProfile.grade][1],tilesize*16,tilesize);
-  }
-
 }
