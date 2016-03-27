@@ -3,6 +3,8 @@
 ### v0.5.0
   * FEATURE | Added FPS counter.
   * CHANGE | Nerfed Hyper mode.
+  * CHANGE | Current profile's name and grade are now shown nearly everywhere.
+  * CHANGE | Modified grade colors.
 
 ### v0.4.3
   * CHANGE | Completely changed list of grades.

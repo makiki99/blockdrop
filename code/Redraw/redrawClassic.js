@@ -103,7 +103,7 @@ function redrawClassic() {
 
     //next piece
     offX = 15;
-    offY = 2;
+    offY = 2.5;
     for (i = 0; i < 4; i++) {
       if (areFrame > 0) {
         nextBuffer = game.currentPiece;
@@ -204,5 +204,15 @@ function redrawClassic() {
     ctx.font = tilesize/2 + "px 'Orbitron',monospace";
     ctx.fillText("FPS: "+fps,offX*tilesize,offY*tilesize);
   }());
+
+  //name
+  ctx.font = tilesize/2 + "px sans-serif";
+  if (!isGuest) {
+    ctx.fillText("PLAYER:",tilesize*13,tilesize/2);
+    ctx.fillText(currentProfile.name,tilesize*16,tilesize/2);
+    ctx.fillText("GRADE:",tilesize*13,tilesize);
+    ctx.fillStyle = grade[currentProfile.grade][0];
+    ctx.fillText(grade[currentProfile.grade][1],tilesize*16,tilesize);
+  }
 
 }
