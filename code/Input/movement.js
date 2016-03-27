@@ -64,8 +64,14 @@ function movement() {
     if (keys[controls.keyCodes[2]]) {
       // A button
       if (!buttonAIsPressed){
-        if (rotateLeft()) {
-          buttonAIsPressed = true;
+        if (!prefMenu.preflist[0]) {
+          if (rotateLeft()) {
+            buttonAIsPressed = true;
+          }
+        } else {
+          if (rotateRight()) {
+            buttonAIsPressed = true;
+          }
         }
       }
     } else {
@@ -77,8 +83,14 @@ function movement() {
     if (keys[controls.keyCodes[3]]) {
       // B button
       if (!buttonBIsPressed){
-        if (rotateRight()) {
-          buttonBIsPressed = true;
+        if (!prefMenu.preflist[0]) {
+          if (rotateRight()) {
+            buttonBIsPressed = true;
+          }
+        } else {
+          if (rotateLeft()) {
+            buttonBIsPressed = true;
+          }
         }
       }
     } else {
@@ -90,8 +102,14 @@ function movement() {
     if (keys[controls.keyCodes[4]]) {
       // C button
       if (!buttonCIsPressed){
-        if (rotateLeft()) {
-          buttonCIsPressed = true;
+        if (!prefMenu.preflist[0]) {
+          if (rotateLeft()) {
+            buttonCIsPressed = true;
+          }
+        } else {
+          if (rotateRight()) {
+            buttonCIsPressed = true;
+          }
         }
       }
     } else {
