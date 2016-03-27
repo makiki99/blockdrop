@@ -1,12 +1,14 @@
-var lastLoop = new Date(),
-  thisLoop = new Date(),
+var lastLoop = performance.now(),
+  thisLoop = performance.now(),
   fpsHistory = new Array(60),
+  instantFPS = 60,
   fps = 60;
 
 function checkFramerate() {
-  var thisLoop = new Date();
+  var thisLoop = performance.now();
   fpsHistory.shift();
-  fpsHistory.push(1000 / (thisLoop - lastLoop));
+  instantFPS = 1000 / (thisLoop - lastLoop);
+  fpsHistory.push(instantFPS);
   fps = fpsHistory.reduce(function(a, b) {
     return a + b;
   });
