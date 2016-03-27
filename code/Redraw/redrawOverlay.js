@@ -10,10 +10,12 @@ function redrawOverlay() {
 
   //FPS counter
   (function() {
-    offX = 20.5;
-    offY = 23.5;
-    ctx.font = tilesize/2 + "px 'Orbitron',monospace";
-    ctx.fillText("FPS: "+fps,offX*tilesize,offY*tilesize);
+    if (prefMenu.preflist[1]){
+				offX = 20.5;
+	    offY = 23.5;
+	    ctx.font = tilesize/2 + "px 'Orbitron',monospace";
+	    ctx.fillText("FPS: "+fps,offX*tilesize,offY*tilesize);
+		}
   }());
 
   //name
