@@ -107,8 +107,9 @@ function inputClassic(submode) {
       lockframe = 0;
       haveLockedPiece = true;
       floorkicks = 0;
-      cwIsPressed = false;
-      ccwIsPressed = false;
+		  buttonAIsPressed = false;
+		  buttonBIsPressed = false;
+		  buttonCIsPressed = false;
     }
   }
 
