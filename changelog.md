@@ -1,11 +1,14 @@
 ## Changelog
 
+### v0.5.3
+	* CHANGE | Added way more grades.
+
 ### v0.5.2
 	* FIX | Fixed the IRS behaviour.
 
 ### v0.5.1
   * NOTE | Yes, this is basically an improvement pack that would have been done in v0.5.0, but the bug with scoring forced me to push the update early. \*sigh\*
-  * CHANGE | FPS meter can be turned off.
+  * FEATURE | FPS meter can be turned off.
   * CHANGE | Moved player data to the bottom part of the screen.
 
 ### v0.5.0
