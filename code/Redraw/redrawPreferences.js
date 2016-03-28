@@ -15,7 +15,24 @@ function redrawPreferences() {
 
   ctx.fillStyle = "#ffffff";
   for (i = 0; i < prefMenu.preflist.length; i++) {
-    ctx.fillText(prefMenu.preflist[i],tilesize*15,tilesize*(2+i));
+		var prefString = "";
+		if (i === 0 || i === 1) {
+			if (prefMenu.preflist[i]) {
+				prefString = "Yes";
+			} else {
+				prefString = "No";
+			}
+		}
+		if (i === 2) {
+			if (prefMenu.preflist[i] === 0) {
+				prefString = "Left";
+			} else if (prefMenu.preflist[i] === 1) {
+				prefString = "Right";
+			} else {
+				prefString = "None";
+			}
+		}
+		ctx.fillText(prefString,tilesize*15,tilesize*(2+i));
   }
 
   //selector

@@ -1,9 +1,10 @@
 var prefMenu = {
   currentSelection : 0,
-  preflist : [false,false],
+  preflist : [false,false,2],
   namelist : [
     "Flip rotation buttons",
-		"Show framerate"
+		"Show framerate",
+		"Show level bar"
   ]
 };
 
@@ -34,6 +35,12 @@ function inputPreferences() {
         break;
 			case 1:
 				prefMenu.preflist[1] = !prefMenu.preflist[1];
+				break;
+			case 2:
+				prefMenu.preflist[2]++;
+				if (prefMenu.preflist[2] > 2) {
+					prefMenu.preflist[2] = 0;
+				}
 				break;
       default:
 

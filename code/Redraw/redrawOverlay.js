@@ -4,6 +4,7 @@ function redrawOverlay() {
 
   //version number
   (function() {
+		ctx.fillStyle = "#ffffff";
     ctx.font = tilesize/2 + "px sans-serif";
     ctx.fillText(version,0,tilesize/2);
   }());

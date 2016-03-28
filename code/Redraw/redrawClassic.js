@@ -115,7 +115,7 @@ function redrawClassic() {
       ctx.drawImage(tiles[minoData[nextBuffer].color-1],(x+offX)*tilesize,(y+offY)*tilesize);
     }
 
-    //lock delay bar for testing purposes
+    //lock delay bar
     if (deadFrame === 0) {
       offX = 2;
       offY = 21;
@@ -179,6 +179,18 @@ function redrawClassic() {
       ctx.fillText("GAME OVER",tilesize*3.5,tilesize*9);
     }
   }
+
+	//level bar
+	ctx.fillStyle = "#00ffff";
+	if (prefMenu.preflist[2] === 0){
+		offX = 1.5;
+	} else if (prefMenu.preflist[2] === 1) {
+		offX = 12.25;
+	}
+	offY = 1;
+	if (countdown === 0 && prefMenu.preflist[2] < 2){
+		ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level % 100)))*tilesize,4,0.2*(game.level % 100)*tilesize);
+	}
 
   //score
   if (deadFrame > 60) {
