@@ -1,5 +1,9 @@
 ## Changelog
 
+### v0.5.5
+* FIX | Fixed the FPS lock...
+* BUG | But broke the fps display in the process.
+
 ### v0.5.4
 * FEATURE | Added level bar, just like in Nullpomino.
 * FIX | Limited the framerate for monitors which have over 60Hz.

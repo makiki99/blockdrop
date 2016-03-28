@@ -3,7 +3,7 @@ var prefMenu = {
   preflist : [false,false,2],
   namelist : [
     "Flip rotation buttons",
-		"Show framerate",
+		"Show framerate(broken)",
 		"Show level bar"
   ]
 };

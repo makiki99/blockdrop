@@ -1,4 +1,4 @@
-var version = "v0.5.4",
+var version = "v0.5.5",
   debug = {
     //debug toogles
     showScore: false
@@ -25,67 +25,58 @@ var canvas = document.getElementById("canvas"),
 canvas.width = tilesize*24;
 canvas.height = tilesize*24;
 
-var now = 0,
-	then = 0,
-	delta = 0,
-	interval = 1000/60;
-
 //asset containers
 var tiles;
 
+
+
 function main() {
 
-  requestAnimationFrame(main);
+//  requestAnimationFrame(main);
 
-	now = performance.now();
-	delta = now - then;
+	//update logic
+  switch (gamestate) {
 
-	if (delta > interval) {
-		//update logic
-		checkFramerate();
-	  switch (gamestate) {
+    case -2:
+      inputPreferences();
+      redrawPreferences();
+      break;
+    case -1:
+      inputProfile();
+      redrawProfile();
+      break;
+    case 0:
+      //main menu (duh!)
+      inputMenu();
+      redrawMenu();
+      break;
+    case 1:
+      //controls
+      inputControls();
+      redrawControls();
+      break;
+    case 2:
+      inputClassic(easy);
+      redrawClassic();
+      break;
+    case 3:
+      inputClassic(normal);
+      redrawClassic();
+      break;
+    case 4:
+      inputClassic(hard);
+      redrawClassic();
+      break;
+    case 5:
+      inputClassic(hyper);
+      redrawClassic();
+      break;
+    default:
+      console.error("Unexpected gamestate id");
 
-	    case -2:
-	      inputPreferences();
-	      redrawPreferences();
-	      break;
-	    case -1:
-	      inputProfile();
-	      redrawProfile();
-	      break;
-	    case 0:
-	      //main menu (duh!)
-	      inputMenu();
-	      redrawMenu();
-	      break;
-	    case 1:
-	      //controls
-	      inputControls();
-	      redrawControls();
-	      break;
-	    case 2:
-	      inputClassic(easy);
-	      redrawClassic();
-	      break;
-	    case 3:
-	      inputClassic(normal);
-	      redrawClassic();
-	      break;
-	    case 4:
-	      inputClassic(hard);
-	      redrawClassic();
-	      break;
-	    case 5:
-	      inputClassic(hyper);
-	      redrawClassic();
-	      break;
-	    default:
-	      console.error("Unexpected gamestate id");
-
-	  }
-		redrawOverlay();
-		then = now - delta;
 	}
+	redrawOverlay();
+	checkFramerate();
 
 }
 
@@ -101,7 +92,9 @@ window.addEventListener("load",function(){
     document.getElementById("tileViolet"),
     document.getElementById("tileGray"),
   ];
-  requestAnimationFrame(main);
+	setInterval(function () {
+		requestAnimationFrame(main);
+	}, 1000/60);
 });
 
 document.body.addEventListener("keydown", function(e){
