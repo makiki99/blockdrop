@@ -26,3 +26,7 @@ function redrawControls() {
   ctx.fillText(">",tilesize*1,tilesize*(2+controls.currentSelection));
 
 }
+
+Number.prototype.toKeyName = function () {
+	var n = this.valueOf();
+};

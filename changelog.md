@@ -1,7 +1,8 @@
 ## Changelog
 
-### v0.6.0
+### v0.5.4
 * FEATURE | Added level bar, just like in Nullpomino.
+* FIX | Limited the framerate for monitors which have over 60Hz.
 
 ### v0.5.3
 * CHANGE | Added way more grades.
