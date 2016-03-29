@@ -1,4 +1,4 @@
-var version = "v0.5.5",
+var version = "v0.5.6",
   debug = {
     //debug toogles
     showScore: false
@@ -28,55 +28,65 @@ canvas.height = tilesize*24;
 //asset containers
 var tiles;
 
-
+var fps = 60;
+var now;
+var then = Date.now();
+var interval = 1000/fps;
+var delta;
 
 function main() {
 
-//  requestAnimationFrame(main);
+	requestAnimationFrame(main);
+
+	now = Date.now();
+	delta = now - then;
 
 	//update logic
-  switch (gamestate) {
+	if (delta > interval){
+		then = now - (delta % interval);
+	  switch (gamestate) {
 
-    case -2:
-      inputPreferences();
-      redrawPreferences();
-      break;
-    case -1:
-      inputProfile();
-      redrawProfile();
-      break;
-    case 0:
-      //main menu (duh!)
-      inputMenu();
-      redrawMenu();
-      break;
-    case 1:
-      //controls
-      inputControls();
-      redrawControls();
-      break;
-    case 2:
-      inputClassic(easy);
-      redrawClassic();
-      break;
-    case 3:
-      inputClassic(normal);
-      redrawClassic();
-      break;
-    case 4:
-      inputClassic(hard);
-      redrawClassic();
-      break;
-    case 5:
-      inputClassic(hyper);
-      redrawClassic();
-      break;
-    default:
-      console.error("Unexpected gamestate id");
+	    case -2:
+	      inputPreferences();
+	      redrawPreferences();
+	      break;
+	    case -1:
+	      inputProfile();
+	      redrawProfile();
+	      break;
+	    case 0:
+	      //main menu (duh!)
+	      inputMenu();
+	      redrawMenu();
+	      break;
+	    case 1:
+	      //controls
+	      inputControls();
+	      redrawControls();
+	      break;
+	    case 2:
+	      inputClassic(easy);
+	      redrawClassic();
+	      break;
+	    case 3:
+	      inputClassic(normal);
+	      redrawClassic();
+	      break;
+	    case 4:
+	      inputClassic(hard);
+	      redrawClassic();
+	      break;
+	    case 5:
+	      inputClassic(hyper);
+	      redrawClassic();
+	      break;
+	    default:
+	      console.error("Unexpected gamestate id");
 
+		}
+		redrawOverlay();
+		checkFramerate();
 	}
-	redrawOverlay();
-	checkFramerate();
 
 }
 
@@ -92,9 +102,9 @@ window.addEventListener("load",function(){
     document.getElementById("tileViolet"),
     document.getElementById("tileGray"),
   ];
-	setInterval(function () {
-		requestAnimationFrame(main);
-	}, 1000/60);
+	//setInterval(function() {
+	requestAnimationFrame(main);
+//	}, 1000/60);
 });
 
 document.body.addEventListener("keydown", function(e){

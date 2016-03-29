@@ -1,5 +1,10 @@
 ## Changelog
 
+### v0.5.6
+* FIX | FPS display is now working again.
+* FIX | FPS lock is now more accurate.
+* FIX | Timer is now accurate again.
+
 ### v0.5.5
 * FIX | Fixed the FPS lock...
 * BUG | But broke the fps display in the process.
