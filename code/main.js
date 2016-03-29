@@ -30,7 +30,7 @@ var tiles;
 
 var fps = 60;
 var now;
-var then = Date.now();
+var then = performance.now();
 var interval = 1000/fps;
 var delta;
 
@@ -38,7 +38,7 @@ function main() {
 
 	requestAnimationFrame(main);
 
-	now = Date.now();
+	now = performance.now();
 	delta = now - then;
 
 	//update logic
