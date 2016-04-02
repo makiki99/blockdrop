@@ -10,7 +10,8 @@ var controls = {
       "Soft Drop",
       "Suicide"
     ],
-    keyCodes : [
+    keyCodes : [],
+		defKeyCodes : [
       37,
       39,
       90,
@@ -19,17 +20,19 @@ var controls = {
       38,
       40,
       75
-    ]
+    ],
   },
   isChangingKeyCode = false;
 
 function keyCapture(e) {
   if (e.keyCode != 27) {
     controls.keyCodes[controls.currentSelection] = e.keyCode;
+		currentProfile.controls = controls.keyCodes.slice();
   }
   keys[e.keyCode] = false;
   document.body.removeEventListener("keydown",keyCapture);
   isChangingKeyCode = false;
+	saveProfile(currentProfile.name);
 }
 
 function inputControls() {

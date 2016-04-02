@@ -1,6 +1,7 @@
 ## Changelog
 
 ### v0.6.0
+* FEATURE | Configuration is now saved.
 * CHANGE | Made FPS lock optional.
 * CHANGE | Buffed Hyper mode.
 

@@ -1,6 +1,7 @@
 var prefMenu = {
   currentSelection : 0,
-  preflist : [false,false,2,true],
+  defPreflist : [false,false,2,true],
+	preflist : [false,false,2,true],
   namelist : [
     "Flip rotation buttons",
 		"Show framerate",
@@ -46,6 +47,7 @@ function inputPreferences() {
       default:
 
     }
+		saveProfile(currentProfile.name);
     keys[13] = false;
   }
 

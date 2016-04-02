@@ -13,6 +13,7 @@ function inputProfile() {
         switch (profileMenu.currentSelection) {
           case 0:
             isGuest = true;
+						controls.keyCodes = controls.defKeyCodes.slice();
             gamestate = 0;
             break;
           case 1:
@@ -137,15 +138,34 @@ function checkProfile(name) {
 }
 
 function loadProfile(name) {
-  currentProfile = JSON.parse(localStorage[name]);
+	if (localStorage[name] !== undefined) {
+	  currentProfile = JSON.parse(localStorage[name]);
+	}
+	controls.keyCodes = controls.defKeyCodes.slice();
+	if (currentProfile.controls === undefined) {
+		currentProfile.controls = controls.defKeyCodes.slice();
+	}
+	for (i = 0; i < controls.keyCodes.length; i++) {
+		controls.keyCodes[i] = currentProfile.controls[i];
+	}
+	if (currentProfile.preferences === undefined) {
+		currentProfile.preferences = prefMenu.defPreflist.slice();
+	}
+	for (i = 0; i < prefMenu.preflist.length; i++) {
+		prefMenu.preflist[i] = currentProfile.preferences[i];
+	}
+	saveProfile(name);
 }
 
 function saveProfile(name) {
+	if (!isGuest) {
   localStorage[name] = JSON.stringify(currentProfile);
+	}
 }
 
 function createProfile(name) {
   currentProfile = new Profile(name);
+	loadProfile(name);
   saveProfile(name);
 }
 
@@ -188,4 +208,6 @@ function Profile(name) {
   this.name = name;
   this.topScores = [];
   this.grade = 0;
+	this.controls = controls.defKeyCodes.slice();
+	this.preferences = prefMenu.preflist.slice();
 }
