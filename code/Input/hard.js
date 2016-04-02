@@ -27,5 +27,6 @@ var hard = {
     [900,4,2.4,-0.04]
   ],
   endlevel: 1000,
-  ghostEnd: 0
+  ghostEnd: 0,
+	invisible: false
 };

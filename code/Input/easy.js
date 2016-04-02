@@ -36,5 +36,6 @@ var easy = {
     [900,2,0.53,-0.005]
   ],
   endlevel: 1000,
-  ghostEnd: 500
+  ghostEnd: 500,
+	invisible: false
 };

@@ -36,6 +36,12 @@ function inputClassic(submode) {
     drawGhost = true;
   }
 
+	if (submode.invisible) {
+		invisMode = true;
+	} else {
+		invisMode = false;
+	}
+
   speedLevel = -1;
   while (game.level >= submode.speedCurve[speedLevel+1][0]) {
     speedLevel++;

@@ -80,6 +80,10 @@ function main() {
 	      inputClassic(hyper);
 	      redrawClassic();
 	      break;
+	    case 6:
+	      inputClassic(shadow);
+	      redrawClassic();
+	      break;
 	    default:
 	      console.error("Unexpected gamestate id");
 

@@ -1,6 +1,7 @@
 var lineClearAnim = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
   drawGhost = true,
   modeClear = false,
+	invisMode = false,
   nextBuffer = 0;
 
 function redrawClassic() {
@@ -38,17 +39,19 @@ function redrawClassic() {
 
     //placed pieces
     (function() {
-      for (x = 0; x < 10; x++) {
-        for (y = 0; y < 20; y++) {
-          if (matrix[y][x] > 0) {
-            if (deadFrame === 0){
-              ctx.drawImage(tiles[matrix[y][x]-1],(x+offX)*tilesize,(y+offY)*tilesize);
-            } else {
-              ctx.drawImage(tiles[7],(x+offX)*tilesize,(y+offY)*tilesize);
-            }
-          }
-        }
-      }
+      if (!invisMode || deadFrame > 0) {
+				for (x = 0; x < 10; x++) {
+	        for (y = 0; y < 20; y++) {
+	          if (matrix[y][x] > 0) {
+	            if (deadFrame === 0){
+	              ctx.drawImage(tiles[matrix[y][x]-1],(x+offX)*tilesize,(y+offY)*tilesize);
+	            } else {
+	              ctx.drawImage(tiles[7],(x+offX)*tilesize,(y+offY)*tilesize);
+	            }
+	          }
+	        }
+	      }
+			}
     }());
 
     (function() {

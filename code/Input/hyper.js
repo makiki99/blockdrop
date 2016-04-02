@@ -24,5 +24,6 @@ var hyper = {
     [900,6,2.5,-0.042],
   ],
   endlevel: 1000,
-  ghostEnd: 0
+  ghostEnd: 0,
+	invisible: false
 };
