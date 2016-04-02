@@ -4,6 +4,7 @@
 * FEATURE | Configuration is now saved.
 * CHANGE | Made FPS lock optional.
 * CHANGE | Buffed Hyper mode.
+* CHANGE | Made DAS faster.
 
 ### v0.5.6
 * FIX | FPS display is now working again.
