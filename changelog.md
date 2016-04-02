@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.6.0
+* CHANGE | Buffed Hyper mode.
+
 ### v0.5.6
 * FIX | FPS display is now working again.
 * FIX | FPS lock is now more accurate.
