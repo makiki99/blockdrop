@@ -1,6 +1,7 @@
 ## Changelog
 
 ### v0.6.0
+* CHANGE | Made FPS lock optional.
 * CHANGE | Buffed Hyper mode.
 
 ### v0.5.6

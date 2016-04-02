@@ -1,10 +1,11 @@
 var prefMenu = {
   currentSelection : 0,
-  preflist : [false,false,2],
+  preflist : [false,false,2,true],
   namelist : [
     "Flip rotation buttons",
-		"Show framerate(broken)",
-		"Show level bar"
+		"Show framerate",
+		"Show level bar",
+		"Lock framerate to 60"
   ]
 };
 

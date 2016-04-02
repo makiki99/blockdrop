@@ -42,7 +42,7 @@ function main() {
 	delta = now - then;
 
 	//update logic
-	if (delta > interval){
+	if (prefMenu.preflist[3] && delta > interval){
 		then = now - (delta % interval);
 	  switch (gamestate) {
 

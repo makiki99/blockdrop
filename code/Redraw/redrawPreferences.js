@@ -16,7 +16,7 @@ function redrawPreferences() {
   ctx.fillStyle = "#ffffff";
   for (i = 0; i < prefMenu.preflist.length; i++) {
 		var prefString = "";
-		if (i === 0 || i === 1) {
+		if (i === 0 || i === 1 || i === 3) {
 			if (prefMenu.preflist[i]) {
 				prefString = "Yes";
 			} else {
