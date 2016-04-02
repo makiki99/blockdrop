@@ -6,7 +6,7 @@ var prefMenu = {
     "Flip rotation buttons",
 		"Show framerate",
 		"Show level bar",
-		"Lock framerate to 60"
+		"Force 60 FPS"
   ]
 };
 
@@ -43,6 +43,9 @@ function inputPreferences() {
 				if (prefMenu.preflist[2] > 2) {
 					prefMenu.preflist[2] = 0;
 				}
+				break;
+			case 3:
+				prefMenu.preflist[3] = !prefMenu.preflist[3];
 				break;
       default:
 
