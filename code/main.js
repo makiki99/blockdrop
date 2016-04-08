@@ -46,6 +46,10 @@ function main() {
 		then = now - (delta % interval);
 	  switch (gamestate) {
 
+			case -3:
+				inputModeSelect();
+				redrawModeSelect();
+				break;
 	    case -2:
 	      inputPreferences();
 	      redrawPreferences();
