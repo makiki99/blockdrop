@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.6.1
+* FIX | Preferences are now properly saved.
+
 ### v0.6.0
 * FEATURE | Configuration is now saved.
 * CHANGE | Made FPS lock optional.

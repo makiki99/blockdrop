@@ -26,8 +26,7 @@ var controls = {
 
 function keyCapture(e) {
   if (e.keyCode != 27) {
-    controls.keyCodes[controls.currentSelection] = e.keyCode;
-		currentProfile.controls = controls.keyCodes.slice();
+		currentProfile.preferences = preferences.keyCodes.slice();
   }
   keys[e.keyCode] = false;
   document.body.removeEventListener("keydown",keyCapture);

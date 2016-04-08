@@ -50,6 +50,7 @@ function inputPreferences() {
       default:
 
     }
+		currentProfile.preferences = prefMenu.preflist.slice();
 		saveProfile(currentProfile.name);
     keys[13] = false;
   }
