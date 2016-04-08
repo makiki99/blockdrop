@@ -158,6 +158,7 @@ function loadProfile(name) {
 }
 
 function saveProfile(name) {
+	profileMenu.inputBuffer = "";
 	if (!isGuest) {
   localStorage[name] = JSON.stringify(currentProfile);
 	}

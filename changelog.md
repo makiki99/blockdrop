@@ -2,6 +2,7 @@
 
 ### v0.6.1
 * FIX | Preferences are now properly saved.
+* FIX | Fixed weird behaviour when loading diffrent profiles.
 
 ### v0.6.0
 * FEATURE | Configuration is now saved.
