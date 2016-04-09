@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.7.1
+* CHANGE | Made DAS faster on Another.
+
 ### v0.7.0
 * NOTE | The scoring system balance is now screwed up because of these changes.
 * FEATURE | Added Another and Phantom modes.
