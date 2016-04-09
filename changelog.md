@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.7.2
+* FIX | Changed Phantom mode's invisibility flag to `true`.
+
 ### v0.7.1
 * CHANGE | Made DAS faster on Another.
 

@@ -25,5 +25,5 @@ var phantom = {
   ],
   endlevel: 1000,
   ghostEnd: 0,
-	invisible: false
+	invisible: true
 };
