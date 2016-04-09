@@ -11,6 +11,7 @@ var das = 14,
   areDelay = 0,
   deadFrame = 0,
   floorkicks = 0,
+	canSoftDrop = true,
   buttonAIsPressed = false,
   buttonBIsPressed = false,
   buttonCIsPressed = false;
@@ -129,14 +130,19 @@ function movement() {
 
   if (axisY == -1) {
     miniTilesDown += 5120;
+		canSoftDrop = true;
   } else if (axisY == 1) {
-    miniTilesDown += softDropGravity;
-    if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation)) {
-      lockframe += 1000;
-    }
+		if (canSoftDrop) {
+    	miniTilesDown += softDropGravity;
+    	if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation)) {
+      	lockframe += 1000;
+				canSoftDrop = false;
+    	}
+		}
   } else {
     if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) === false) {
       miniTilesDown += gravity;
+			canSoftDrop = true;
     }
   }
 

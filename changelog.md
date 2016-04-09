@@ -1,8 +1,11 @@
 ## Changelog
 
+### v0.6.2
+* FIX | Reduced ammounts of potential misdrops with resseting the softdrop.
+
 ### v0.6.1
 * CHANGE | Separated mode select from main menu.
-* CHANGE | Hidden cursor from game screen
+* CHANGE | Hidden cursor from game screen.
 * FIX | Removed unused font.
 * FIX | Preferences are now properly saved.
 * FIX | Fixed weird behaviour when loading diffrent profiles.
