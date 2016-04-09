@@ -133,11 +133,15 @@ function movement() {
 		canSoftDrop = true;
   } else if (axisY == 1) {
 		if (canSoftDrop) {
-    	miniTilesDown += softDropGravity;
-    	if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation)) {
-      	lockframe += 1000;
+	  	miniTilesDown += softDropGravity;
+	  	if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation)) {
+	    	lockframe += 1000;
 				canSoftDrop = false;
-    	}
+	  	}
+		} else {
+			if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) === false) {
+	      miniTilesDown += gravity;
+	    }
 		}
   } else {
     if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) === false) {

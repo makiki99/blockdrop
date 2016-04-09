@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.6.3
+* FIX | Removed the fake 0G exploit.
+
 ### v0.6.2
 * FIX | Reduced ammounts of potential misdrops with resseting the softdrop.
 
