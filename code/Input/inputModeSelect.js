@@ -1,12 +1,14 @@
 var modeSelect = {
   currentSelection : 0,
-  statelist : [2,3,4,5,6],
+  statelist : [2,3,4,5,7,6,8],
   namelist : [
     "Easy",
     "Normal",
     "Hard",
     "Hyper",
-		"Shadow"
+		"Another",
+		"Shadow",
+		"Phantom"
   ]
 };
 

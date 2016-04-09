@@ -1,5 +1,11 @@
 ## Changelog
 
+### v0.7.0
+* NOTE | The scoring system balance is now screwed up because of these changes.
+* FEATURE | Added Another and Phantom modes.
+* CHANGE | Hard is faster now.
+* CHANGE | Reduced starting line delay on ALL modes.
+
 ### v0.6.3
 * FIX | Removed the fake 0G exploit.
 
