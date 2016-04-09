@@ -2,11 +2,31 @@
 @import url(https://fonts.googleapis.com/css?family=Orbitron:700);
 
 canvas {
-	border:1px solid #000000;
 	margin: 10px auto;
 	display:block;
+	cursor: none;
 }
 
 body {
 	background-color: #000000;
+}
+
+footer {
+	text-align: center;
+	color: #aaaaaa;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ffffff;
+	text-decoration: none;
 }
