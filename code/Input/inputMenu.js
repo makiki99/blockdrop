@@ -16,28 +16,28 @@ var menu = {
 
 function inputMenu() {
 
-  if (keys[13]) {
+  if (keys[controls.keyCodes[10]]) {
     //enter
     gamestate = menu.statelist[menu.currentSelection];
-    keys[13] = false;
+    keys[controls.keyCodes[10]] = false;
   }
 
-  if (keys[38]) {
+  if (keys[controls.keyCodes[8]]) {
     //up arrow
     menu.currentSelection--;
     if (menu.currentSelection < 0) {
       menu.currentSelection = menu.statelist.length-1;
     }
-    keys[38] = false;
+    keys[controls.keyCodes[8]] = false;
   }
 
-  if (keys[40]) {
+  if (keys[controls.keyCodes[9]]) {
     //down arrow
     menu.currentSelection++;
     if (menu.currentSelection > menu.statelist.length-1) {
       menu.currentSelection = 0;
     }
-    keys[40] = false;
+    keys[controls.keyCodes[9]] = false;
   }
 
 }

@@ -14,7 +14,7 @@ var modeSelect = {
 
 function inputModeSelect() {
 
-	  if (keys[13]) {
+	  if (keys[controls.keyCodes[10]]) {
 	    //enter
 	    gamestate = modeSelect.statelist[modeSelect.currentSelection];
 
@@ -59,28 +59,28 @@ function inputModeSelect() {
 	    game.history.push(randomNum);
 	    modeClear = false;
 	    generatePiece();
-	    keys[13] = false;
+	    keys[controls.keyCodes[10]] = false;
 	  }
 
-	  if (keys[38]) {
+	  if (keys[controls.keyCodes[8]]) {
 	    //up arrow
 	    modeSelect.currentSelection--;
 	    if (modeSelect.currentSelection < 0) {
 	      modeSelect.currentSelection = modeSelect.statelist.length-1;
 	    }
-	    keys[38] = false;
+	    keys[controls.keyCodes[8]] = false;
 	  }
 
-	  if (keys[40]) {
+	  if (keys[controls.keyCodes[9]]) {
 	    //down arrow
 	    modeSelect.currentSelection++;
 	    if (modeSelect.currentSelection > modeSelect.statelist.length-1) {
 	      modeSelect.currentSelection = 0;
 	    }
-	    keys[40] = false;
+	    keys[controls.keyCodes[9]] = false;
 	  }
 
-		if (keys[27]) {
+		if (keys[controls.keyCodes[11]]) {
 	    //escape
 	    gamestate = 0;
 	  }

@@ -11,25 +11,25 @@ var prefMenu = {
 };
 
 function inputPreferences() {
-  if (keys[38]) {
+  if (keys[controls.keyCodes[8]]) {
     //up arrow
     prefMenu.currentSelection--;
     if (prefMenu.currentSelection < 0) {
       prefMenu.currentSelection = prefMenu.preflist.length-1;
     }
-    keys[38] = false;
+    keys[controls.keyCodes[8]] = false;
   }
 
-  if (keys[40]) {
+  if (keys[controls.keyCodes[9]]) {
     //down arrow
     prefMenu.currentSelection++;
     if (prefMenu.currentSelection > prefMenu.preflist.length-1) {
       prefMenu.currentSelection = 0;
     }
-    keys[40] = false;
+    keys[controls.keyCodes[9]] = false;
   }
 
-  if (keys[13]) {
+  if (keys[controls.keyCodes[10]]) {
     //enter
     switch (prefMenu.currentSelection) {
       case 0:
@@ -52,10 +52,10 @@ function inputPreferences() {
     }
 		currentProfile.preferences = prefMenu.preflist.slice();
 		saveProfile(currentProfile.name);
-    keys[13] = false;
+    keys[controls.keyCodes[10]] = false;
   }
 
-  if (keys[27]) {
+  if (keys[controls.keyCodes[11]]) {
     //escape
     gamestate = 0;
   }

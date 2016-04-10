@@ -1,6 +1,7 @@
 ## Changelog
 
 ### v0.7.3
+* FEATURE | The menu controls are now changeable.
 * FIX | Fixed control scheme change not working.
 
 ### v0.7.2

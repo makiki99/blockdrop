@@ -8,7 +8,11 @@ var controls = {
       "C (Rotate L/R)",
       "Sonic Drop",
       "Soft Drop",
-      "Suicide"
+      "Suicide",
+			"Menu up",
+			"Menu down",
+			"Menu select",
+			"Menu back"
     ],
     keyCodes : [],
 		defKeyCodes : [
@@ -19,7 +23,11 @@ var controls = {
       67,
       38,
       40,
-      75
+      75,
+			38,
+			40,
+			13,
+			27
     ],
   },
   isChangingKeyCode = false;

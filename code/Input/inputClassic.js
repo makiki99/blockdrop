@@ -21,10 +21,10 @@ function inputClassic(submode) {
   }
 
   if (deadFrame > 0) {
-    if (keys[13] || keys[27]) {
+    if (keys[controls.keyCodes[10]] || keys[controls.keyCodes[11]]) {
       gamestate = 0;
-      keys[13] = false;
-      keys[27] = false;
+      keys[controls.keyCodes[10]] = false;
+      keys[controls.keyCodes[11]] = false;
     }
     deadFrame++;
     return;
