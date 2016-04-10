@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.7.4
+* FIX | Fixed broken menu after loading pre-v.0.7.3 profile.
+
 ### v0.7.3
 * FEATURE | The menu controls are now changeable.
 * FIX | Fixed control scheme change not working.

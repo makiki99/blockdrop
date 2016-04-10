@@ -146,13 +146,21 @@ function loadProfile(name) {
 		currentProfile.controls = controls.defKeyCodes.slice();
 	}
 	for (i = 0; i < controls.keyCodes.length; i++) {
-		controls.keyCodes[i] = currentProfile.controls[i];
+		if (currentProfile.controls[i]) {
+			controls.keyCodes[i] = currentProfile.controls[i];
+		} else {
+			controls.keyCodes[i] = controls.defKeyCodes[i];
+		}
 	}
 	if (currentProfile.preferences === undefined) {
 		currentProfile.preferences = prefMenu.defPreflist.slice();
 	}
 	for (i = 0; i < prefMenu.preflist.length; i++) {
-		prefMenu.preflist[i] = currentProfile.preferences[i];
+		if (currentProfile.preferences[i]) {
+			prefMenu.preflist[i] = currentProfile.preferences[i];
+		} else {
+			prefMenu.preflist[i] = prefMenu.defPreflist[i];
+		}
 	}
 	saveProfile(name);
 }
@@ -167,7 +175,6 @@ function saveProfile(name) {
 function createProfile(name) {
   currentProfile = new Profile(name);
 	loadProfile(name);
-  saveProfile(name);
 }
 
 function submitScore(score) {
