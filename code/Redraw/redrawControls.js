@@ -25,8 +25,18 @@ function redrawControls() {
   //selector
   ctx.fillText(">",tilesize*1,tilesize*(2+controls.currentSelection));
 
+	//hints
+	if (isChangingKeyCode) {
+		ctx.fillText("Changing keybind...",tilesize*1,tilesize*20);
+		ctx.fillText("Escape - cancel",tilesize*1,tilesize*21);
+	} else {
+		ctx.fillText("Up/Down arrows - move selection",tilesize*1,tilesize*20);
+		ctx.fillText("Enter - select keybind",tilesize*1,tilesize*21);
+		ctx.fillText("Escape - go back to main menu",tilesize*1,tilesize*22);
+	}
+
 }
 
-Number.prototype.toKeyName = function () {
-	var n = this.valueOf();
-};
+function getKeyname(x) {
+	//aaa
+}

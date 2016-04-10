@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.7.3
+* FIX | Fixed control scheme change not working.
+
 ### v0.7.2
 * FIX | Changed Phantom mode's invisibility flag to `true`.
 
