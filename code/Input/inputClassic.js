@@ -1,10 +1,12 @@
 var scoreSegment = -1,
   speedLevel = -1,
   haveLockedPiece = false,
-  linesCleared = 0;
+  linesCleared = 0,
+	diffMult = 0;
 
 function inputClassic(submode) {
 
+	// special checks
   if (game.level >= submode.endlevel && deadFrame === 0) {
     deadFrame++;
     modeClear = true;
@@ -16,10 +18,6 @@ function inputClassic(submode) {
     return;
   }
 
-  if (deadFrame === 0) {
-    framecount++;
-  }
-
   if (deadFrame > 0) {
     if (keys[controls.keyCodes[10]] || keys[controls.keyCodes[11]]) {
       gamestate = 0;
@@ -29,6 +27,11 @@ function inputClassic(submode) {
     deadFrame++;
     return;
   }
+
+	if (deadFrame === 0) {
+		framecount++;
+	}
+
 
   if (game.level >= submode.ghostEnd) {
     drawGhost = false;
@@ -56,14 +59,30 @@ function inputClassic(submode) {
     }
   }
 
-  scoreSegment = -1;
-  while (game.level >= submode.scoreGain[scoreSegment+1][0]) {
-    scoreSegment++;
-    if (submode.scoreGain[scoreSegment+1] === undefined) {
-      break;
-    }
-  }
-  game.score += submode.scoreGain[scoreSegment][3];
+  // scoreSegment = -1;
+  // while (game.level >= submode.scoreGain[scoreSegment+1][0]) {
+  //   scoreSegment++;
+  //   if (submode.scoreGain[scoreSegment+1] === undefined) {
+  //     break;
+  //   }
+  // }
+
+	//check difficulty score multipler
+	(function() {
+		if (gravity < 5120) {
+			diffMult = 0.9371+Math.sqrt(gravity)/32;
+		} else {
+			diffMult = (60-areDelay)/50+(100-lineDelay)/300+(30/lockDelay)+0.48;
+		}
+		diffMult *= 1+Math.round(game.level/100)/56;
+		if (invisMode) {
+			diffMult *= 3.33;
+		}
+	}());
+
+	if (areFrame === 0) {
+		game.score -= diffMult/(15+lockDelay/2);
+	}
 
   movement();
 
@@ -126,22 +145,22 @@ function inputClassic(submode) {
   //process level and score
   if (haveLockedPiece && (game.level + 1) % 100 !== 0) {
     game.level++;
-    game.score += submode.scoreGain[scoreSegment][2];
+    game.score += diffMult;
   }
   game.level += linesCleared;
-  game.score += linesCleared*submode.scoreGain[scoreSegment][2];
+  game.score += linesCleared*diffMult;
   switch (linesCleared) {
     case 1:
-      game.score += submode.scoreGain[scoreSegment][1]*0.1;
+      game.score += diffMult*0.1;
       break;
     case 2:
-      game.score += submode.scoreGain[scoreSegment][1]*0.8;
+      game.score += diffMult*0.6;
       break;
     case 3:
-      game.score += submode.scoreGain[scoreSegment][1]*2.4;
+      game.score += diffMult*1.8;
       break;
     case 4:
-      game.score += submode.scoreGain[scoreSegment][1]*6.4;
+      game.score += diffMult*3.6;
       break;
   }
   if (linesCleared > 0) {

@@ -1,5 +1,8 @@
 ## Changelog
 
+### v0.8.0
+* CHANGE | Basically rebalanced EVERYTHING in scoring system.
+
 ### v0.7.4
 * FIX | Fixed broken menu after loading pre-v.0.7.3 profile.
 
