@@ -2,6 +2,7 @@
 
 ### v1.0.0
 * NOTE | Scores from previous versions have been wiped out. Sorry, it won't happen anymore.
+* FEATURE | Mode name is now shown in the play.
 * CHANGE | Basically rebalanced EVERYTHING in scoring system.
 * CHANGE | Replaced grading system with new one.
 * FIX | Fixed issue with part of profile being not loaded properly.

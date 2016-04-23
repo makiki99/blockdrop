@@ -12,14 +12,49 @@ function redrawClassic() {
   ctx.fillStyle = "#000000";
   ctx.fillRect(0,0,canvas.width,canvas.height);
 
+	//mode name
+	offX = 16;
+	offY = 13;
+
+	ctx.fillStyle = "#ffffff";
+	ctx.font = tilesize + "px 'Orbitron',monospace";
+	ctx.textAlign = "center";
+	(function() {
+		switch (gamestate) {
+			case 2:
+				ctx.fillText("Easy",offX*tilesize,offY*tilesize);
+				break;
+			case 3:
+				ctx.fillText("Normal",offX*tilesize,offY*tilesize);
+				break;
+			case 4:
+				ctx.fillText("Hard",offX*tilesize,offY*tilesize);
+				break;
+			case 5:
+				ctx.fillText("Hyper",offX*tilesize,offY*tilesize);
+				break;
+			case 6:
+				ctx.fillText("Shadow",offX*tilesize,offY*tilesize);
+				break;
+			case 7:
+				ctx.fillText("Another",offX*tilesize,offY*tilesize);
+				break;
+			case 8:
+				ctx.fillText("Phantom",offX*tilesize,offY*tilesize);
+				break;
+			default:
+				ctx.fillText("ERROR",offX*tilesize,offY*tilesize);
+		}
+	}());
+
   //level
-  offX = 14;
+  offX = 16;
   offY = 15;
 
-  ctx.fillStyle = "#ffffff";
-  ctx.font = tilesize + "px 'Orbitron',monospace";
-  ctx.fillText("LVL",offX*tilesize,(offY-1.5)*tilesize);
-  ctx.fillText(game.level,offX*tilesize,offY*tilesize);
+  ctx.fillText("LVL",offX*tilesize,offY*tilesize);
+  ctx.fillText(game.level,offX*tilesize,(offY+1.5)*tilesize);
+
+	ctx.textAlign = "left";
 
   //matrix and minos
   offX = 2;
