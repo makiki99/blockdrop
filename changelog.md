@@ -4,6 +4,7 @@
 * NOTE | Scores from previous versions have been wiped out. Sorry, it won't happen anymore.
 * CHANGE | Basically rebalanced EVERYTHING in scoring system.
 * CHANGE | Replaced grading system with new one.
+* FIX | Fixed issue with part of profile being not loaded properly.
 
 ### v0.7.4
 * FIX | Fixed broken menu after loading pre-v.0.7.3 profile.

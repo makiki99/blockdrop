@@ -146,17 +146,18 @@ function loadProfile(name) {
 		currentProfile.controls = controls.defKeyCodes.slice();
 	}
 	for (i = 0; i < controls.keyCodes.length; i++) {
-		if (currentProfile.controls[i]) {
+		if (currentProfile.controls[i] !== undefined) {
 			controls.keyCodes[i] = currentProfile.controls[i];
 		} else {
 			controls.keyCodes[i] = controls.defKeyCodes[i];
 		}
 	}
+	prefMenu.preflist = prefMenu.defPreflist.slice();
 	if (currentProfile.preferences === undefined) {
 		currentProfile.preferences = prefMenu.defPreflist.slice();
 	}
 	for (i = 0; i < prefMenu.preflist.length; i++) {
-		if (currentProfile.preferences[i]) {
+		if (currentProfile.preferences[i] !== undefined) {
 			prefMenu.preflist[i] = currentProfile.preferences[i];
 		} else {
 			prefMenu.preflist[i] = prefMenu.defPreflist[i];
