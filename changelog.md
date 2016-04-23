@@ -5,6 +5,7 @@
 * CHANGE | Basically rebalanced EVERYTHING in scoring system.
 * CHANGE | Replaced grading system with new one.
 * FIX | Fixed issue with part of profile being not loaded properly.
+* FIX | Fixed version number being drawn twice while being in profile menu.
 
 ### v0.7.4
 * FIX | Fixed broken menu after loading pre-v.0.7.3 profile.

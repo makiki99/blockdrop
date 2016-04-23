@@ -15,7 +15,6 @@ function redrawProfile() {
     ctx.fillText(">",tilesize*1,tilesize*(3+profileMenu.currentSelection*2));
 
     ctx.font = tilesize/2 + "px sans-serif";
-    ctx.fillText(version,0,tilesize/2);
   }
 
   if (profileMenu.substate === 1 || profileMenu.substate === 2) {

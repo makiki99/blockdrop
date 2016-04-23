@@ -68,12 +68,16 @@ function inputClassic(submode) {
 		}
 		diffMult *= 1+Math.round(game.level/100)/56;
 		if (invisMode) {
-			diffMult *= 3.2;
+			diffMult *= 2.75;
 		}
 	}());
 
 	if (areFrame === 0) {
-		game.score -= diffMult/30;
+		if (invisMode) {
+			game.score -= diffMult/54;
+		} else {
+			game.score -= diffMult/30;
+		}
 	}
 
   movement();
