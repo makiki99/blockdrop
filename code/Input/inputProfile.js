@@ -190,9 +190,42 @@ function submitScore(score) {
         currentProfile.topScores.splice(9,1,score);
       }
       for (i = 0; i < currentProfile.topScores.length; i++) {
-        sum += currentProfile.topScores[i];
+				switch (i) {
+					case 0:
+						sum += currentProfile.topScores[i]*18;
+						break;
+					case 1:
+						sum += currentProfile.topScores[i]*14;
+						break;
+					case 2:
+						sum += currentProfile.topScores[i]*12;
+						break;
+					case 3:
+						sum += currentProfile.topScores[i]*11;
+						break;
+					case 4:
+						sum += currentProfile.topScores[i]*10;
+						break;
+					case 5:
+						sum += currentProfile.topScores[i]*9;
+						break;
+					case 6:
+						sum += currentProfile.topScores[i]*8;
+						break;
+					case 7:
+						sum += currentProfile.topScores[i]*7;
+						break;
+					case 8:
+						sum += currentProfile.topScores[i]*6;
+						break;
+					case 9:
+						sum += currentProfile.topScores[i]*5;
+						break;
+					default:
+
+				}
       }
-      sum /= 10;
+      sum /= 100;
       updateGrade(sum);
     }
     currentProfile.topScores.sort(compareNumbers);

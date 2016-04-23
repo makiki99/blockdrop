@@ -59,29 +59,21 @@ function inputClassic(submode) {
     }
   }
 
-  // scoreSegment = -1;
-  // while (game.level >= submode.scoreGain[scoreSegment+1][0]) {
-  //   scoreSegment++;
-  //   if (submode.scoreGain[scoreSegment+1] === undefined) {
-  //     break;
-  //   }
-  // }
-
 	//check difficulty score multipler
 	(function() {
 		if (gravity < 5120) {
 			diffMult = 0.9371+Math.sqrt(gravity)/32;
 		} else {
-			diffMult = (60-areDelay)/50+(100-lineDelay)/300+(30/lockDelay)+0.48;
+			diffMult = (57-areDelay)/48+(90-lineDelay)/275+Math.pow(30/lockDelay,1.75)+0.55;
 		}
 		diffMult *= 1+Math.round(game.level/100)/56;
 		if (invisMode) {
-			diffMult *= 3.33;
+			diffMult *= 3.2;
 		}
 	}());
 
 	if (areFrame === 0) {
-		game.score -= diffMult/(15+lockDelay/2);
+		game.score -= diffMult/30;
 	}
 
   movement();

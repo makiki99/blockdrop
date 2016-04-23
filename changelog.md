@@ -1,7 +1,9 @@
 ## Changelog
 
-### v0.8.0
+### v1.0.0
+* NOTE | Scores from previous versions have been wiped out. Sorry, it won't happen anymore.
 * CHANGE | Basically rebalanced EVERYTHING in scoring system.
+* CHANGE | Replaced grading system with new one.
 
 ### v0.7.4
 * FIX | Fixed broken menu after loading pre-v.0.7.3 profile.
