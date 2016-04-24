@@ -1,11 +1,12 @@
 ## Changelog
 
 ### v1.0.0
-* NOTE | Scores from previous versions have been wiped out. Sorry, it won't happen anymore.
+* NOTE | Profiles from previous versions are incompatibile with current version.
 * FEATURE | Mode name is now shown in the play.
 * CHANGE | Basically rebalanced EVERYTHING in scoring system.
 * CHANGE | Replaced grading system with new one.
 * CHANGE | Reduced DAS in most modes.
+* CHANGE | Profiles are now using a (kind of) namespace.
 * FIX | Fixed issue with part of profile being not loaded properly.
 * FIX | Fixed version number being drawn twice while being in profile menu.
 
