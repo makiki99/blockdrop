@@ -130,7 +130,7 @@ var currentProfile = {},
   profileList = [];
 
 function checkProfile(name) {
-  if (localStorage[name] !== undefined) {
+  if (localStorage["BLOCKDROP_"+name] !== undefined) {
     return true;
   } else {
     return false;
@@ -138,8 +138,8 @@ function checkProfile(name) {
 }
 
 function loadProfile(name) {
-	if (localStorage[name] !== undefined) {
-	  currentProfile = JSON.parse(localStorage[name]);
+	if (localStorage["BLOCKDROP_"+name] !== undefined) {
+	  currentProfile = JSON.parse(localStorage["BLOCKDROP_"+name]);
 	}
 	controls.keyCodes = controls.defKeyCodes.slice();
 	if (currentProfile.controls === undefined) {
@@ -169,7 +169,7 @@ function loadProfile(name) {
 function saveProfile(name) {
 	profileMenu.inputBuffer = "";
 	if (!isGuest) {
-  localStorage[name] = JSON.stringify(currentProfile);
+  localStorage["BLOCKDROP_"+name] = JSON.stringify(currentProfile);
 	}
 }
 

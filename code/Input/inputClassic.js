@@ -66,9 +66,9 @@ function inputClassic(submode) {
 		} else {
 			diffMult = (57-areDelay)/48+(90-lineDelay)/275+Math.pow(30/lockDelay,1.75)+0.55;
 		}
-		diffMult *= 1+Math.round(game.level/100)/56;
+		diffMult *= 1+Math.floor(game.level/100)/50;
 		if (invisMode) {
-			diffMult *= 2.75;
+			diffMult *= 2+Math.floor(game.level/100)/10;
 		}
 	}());
 
