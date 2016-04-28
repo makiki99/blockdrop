@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.0.1
+* CHANGE | Increased grade requirements.
+
 ### v1.0.0
 * NOTE | Profiles from previous versions are incompatibile with current version.
 * FEATURE | Mode name is now shown in the play.
