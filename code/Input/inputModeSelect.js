@@ -1,6 +1,6 @@
 var modeSelect = {
   currentSelection : 0,
-  statelist : [2,3,4,5,7,6,8],
+  statelist : [2,3,4,5,7,6,8,9],
   namelist : [
     "Easy",
     "Normal",
@@ -8,7 +8,8 @@ var modeSelect = {
     "Hyper",
 		"Another",
 		"Shadow",
-		"Phantom"
+		"Phantom",
+		"Time Attack"
   ]
 };
 
@@ -60,6 +61,7 @@ function inputModeSelect() {
 	    modeClear = false;
 	    generatePiece();
 	    keys[controls.keyCodes[10]] = false;
+			timeAttack.speedLevel = 1;
 	  }
 
 	  if (keys[controls.keyCodes[8]]) {

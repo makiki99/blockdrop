@@ -96,6 +96,10 @@ function main() {
 	      inputClassic(phantom);
 	      redrawClassic();
 	      break;
+	    case 9:
+	      inputTimeAttack();
+	      redrawClassic();
+	      break;
 	    default:
 	      console.error("Unexpected gamestate id");
 

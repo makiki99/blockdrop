@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.1.0
+* FEATURE | Added Time Atttack mode.
+
 ### v1.0.1
 * CHANGE | Increased grade requirements.
 

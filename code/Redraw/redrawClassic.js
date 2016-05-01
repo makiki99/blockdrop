@@ -42,6 +42,9 @@ function redrawClassic() {
 			case 8:
 				ctx.fillText("Phantom",offX*tilesize,offY*tilesize);
 				break;
+			case 9:
+				ctx.fillText("Time Attack",offX*tilesize,offY*tilesize);
+				break;
 			default:
 				ctx.fillText("ERROR",offX*tilesize,offY*tilesize);
 		}
@@ -227,11 +230,15 @@ function redrawClassic() {
 	}
 	offY = 1;
 	if (countdown === 0 && prefMenu.preflist[2] < 2){
-		ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level % 100)))*tilesize,4,0.2*(game.level % 100)*tilesize);
+		if (gamestate == 9) {
+			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level/3)))*tilesize,4,0.2*(game.level/3)*tilesize);
+		} else {
+			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level % 100)))*tilesize,4,0.2*(game.level % 100)*tilesize);
+		}
 	}
 
   //score
-  if (deadFrame > 60) {
+  if (deadFrame > 60 && gamestate <= 8) {
     ctx.font = tilesize + "px 'Orbitron',monospace";
     ctx.fillStyle = "#ffffff";
     ctx.strokeStyle = "#000000";
