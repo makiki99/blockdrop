@@ -146,7 +146,7 @@
 * CHANGE | Modified scoring and added a debug toogle for it.
 
 ### v0.0.5
-* CHANGE | [Xershh |(http://steamcommunity.com/id/xershh/) made me a tileset, so now you have a much better graphics!
+* CHANGE | [Xershh](http://steamcommunity.com/id/xershh/) made me a tileset, so now you have a much better graphics!
 
 ### v0.0.4a
 * FIX | Levels 500+ are now playable.
