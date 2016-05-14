@@ -142,19 +142,6 @@ function redrawClassic() {
       }
     }
 
-    //next piece
-    offX = 15;
-    offY = 2.5;
-    for (i = 0; i < 4; i++) {
-      if (areFrame > 0) {
-        nextBuffer = game.currentPiece;
-      } else {
-        nextBuffer = game.nextPiece;
-      }
-      var x = minoData[nextBuffer].rotation0[i][0];
-      var y = minoData[nextBuffer].rotation0[i][1];
-      ctx.drawImage(tiles[minoData[nextBuffer].color-1],(x+offX)*tilesize,(y+offY)*tilesize);
-    }
 
     //lock delay bar
     if (deadFrame === 0) {
@@ -185,6 +172,20 @@ function redrawClassic() {
       ctx.fillText(minutes+":"+seconds+"."+centiseconds,tilesize*offX,tilesize*offY);
     }());
   }
+
+	//next piece
+	offX = 15;
+	offY = 2.5;
+	for (i = 0; i < 4; i++) {
+		if (areFrame > 0 || countdown > 0) {
+			nextBuffer = game.currentPiece;
+		} else {
+			nextBuffer = game.nextPiece;
+		}
+		var x = minoData[nextBuffer].rotation0[i][0];
+		var y = minoData[nextBuffer].rotation0[i][1];
+		ctx.drawImage(tiles[minoData[nextBuffer].color-1],(x+offX)*tilesize,(y+offY)*tilesize);
+	}
 
   //countdown
   offX = 5.5;

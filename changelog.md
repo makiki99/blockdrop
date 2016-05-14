@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.1.1
+* CHANGE | Now the game shows next piece during starting countdown.
+
 ### v1.1.0
 * FEATURE | Added Time Atttack mode.
 
