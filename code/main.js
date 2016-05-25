@@ -1,4 +1,4 @@
-var version = "v1.1.1",
+var version = "v1.1.2",
   debug = {
     //debug toogles
     showScore: false
@@ -25,25 +25,28 @@ var canvas = document.getElementById("canvas"),
 canvas.width = tilesize*24;
 canvas.height = tilesize*24;
 
-//asset containers
+// asset containers
 var tiles;
 
-var fps = 60;
-var now;
-var then = performance.now();
-var interval = 1000/fps;
-var delta;
+// fps lock variables
+var fpsLock = {
+	fps : 60,
+	start : performance.now(),
+	count : 0,
+	now : 0,
+	suspectedTime : 0,
+};
 
 function main() {
 
 	requestAnimationFrame(main);
 
-	now = performance.now();
-	delta = now - then;
+	fpsLock.now = performance.now();
+	fpsLock.suspectedTime = fpsLock.start + fpsLock.count*(1000/fpsLock.fps);
 
 	//update logic
-	if (!prefMenu.preflist[3] || delta > interval){
-		then = now - (delta % interval);
+	if (/*!prefMenu.preflist[3] ||*/ fpsLock.now > fpsLock.suspectedTime){
+
 	  switch (gamestate) {
 
 			case -3:
@@ -106,6 +109,7 @@ function main() {
 		}
 		redrawOverlay();
 		checkFramerate();
+		fpsLock.count++;
 	}
 
 }

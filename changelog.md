@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.1.2
+* FIX | Fixed FPS lock mechanism.
+
 ### v1.1.1
 * CHANGE | Now the game shows next piece during starting countdown.
 
