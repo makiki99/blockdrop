@@ -1,4 +1,4 @@
-var version = "v1.1.1",
+var version = "v1.1.2",
   debug = {
     //debug toogles
     showScore: false
@@ -28,22 +28,23 @@ canvas.height = tilesize*24;
 //asset containers
 var tiles;
 
-var fps = 60;
-var now;
-var then = performance.now();
-var interval = 1000/fps;
-var delta;
+var fpsLock = {
+	now : 0,
+	then : performance.now(),
+	interval : 1000/60,
+	delta : 0,
+};
 
 function main() {
 
 	requestAnimationFrame(main);
 
-	now = performance.now();
-	delta = now - then;
+	fpsLock.now = performance.now();
+	fpsLock.delta = fpsLock.now - fpsLock.then;
 
 	//update logic
-	if (!prefMenu.preflist[3] || delta > interval){
-		then = now - (delta % interval);
+	if (!prefMenu.preflist[3] || fpsLock.delta > fpsLock.interval){
+		fpsLock.then = fpsLock.now - (fpsLock.delta % fpsLock.interval);
 	  switch (gamestate) {
 
 			case -3:

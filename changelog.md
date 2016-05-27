@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.1.2
+* FIX | Fixed variable name collision.
+
 ### v1.1.1
 * CHANGE | Now the game shows next piece during starting countdown.
 
