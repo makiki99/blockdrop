@@ -28,23 +28,24 @@ canvas.height = tilesize*24;
 //asset containers
 var tiles;
 
-var fps = 60;
-var now;
-var then = performance.now();
-var interval = 1000/fps;
-var delta;
+fpsLock = {
+	now : 0,
+	then : performance.now(),
+	interval : 1000/60,
+	delta : 0,
+};
 
 function main() {
 
 	requestAnimationFrame(main);
 
-	now = performance.now();
-	delta = now - then;
+	fpsLock.now = performance.now();
+	fpsLock.delta = fpsLock.now - fpsLock.then;
+	var deltaFrames = Math.floor(fpsLock.delta / fpsLock.interval);
 
 	//update logic
-	if (!prefMenu.preflist[3] || delta > interval){
-		then = now - (delta % interval);
-	  switch (gamestate) {
+	while (deltaFrames > 0){
+		switch (gamestate) {
 
 			case -3:
 				inputModeSelect();
@@ -106,6 +107,8 @@ function main() {
 		}
 		redrawOverlay();
 		checkFramerate();
+		deltaFrames--;
+		fpsLock.then += fpsLock.interval;
 	}
 
 }
