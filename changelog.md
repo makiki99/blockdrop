@@ -1,6 +1,7 @@
 ## Changelog
 
 ### v1.2.0
+* FEATURE | Added 200 Lines mode.
 * CHANGE | Modified the select mode menu.
 
 ### v1.1.2

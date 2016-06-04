@@ -1,4 +1,4 @@
-var version = "v1.1.2",
+var version = "v1.2.0",
   debug = {
     //debug toogles
     showScore: false
@@ -99,6 +99,10 @@ function main() {
 	      break;
 	    case 9:
 	      inputTimeAttack();
+	      redrawClassic();
+	      break;
+	    case 10:
+	      inputMarathon();
 	      redrawClassic();
 	      break;
 	    default:

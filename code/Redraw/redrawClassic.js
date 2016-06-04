@@ -45,6 +45,9 @@ function redrawClassic() {
 			case 9:
 				ctx.fillText("Time Attack",offX*tilesize,offY*tilesize);
 				break;
+			case 10:
+				ctx.fillText("200 lines",offX*tilesize,offY*tilesize);
+				break;
 			default:
 				ctx.fillText("ERROR",offX*tilesize,offY*tilesize);
 		}
@@ -54,7 +57,11 @@ function redrawClassic() {
   offX = 16;
   offY = 15;
 
-  ctx.fillText("LVL",offX*tilesize,offY*tilesize);
+	if (gamestate === 10) {
+		ctx.fillText("LINE",offX*tilesize,offY*tilesize);		
+	} else {
+		ctx.fillText("LVL",offX*tilesize,offY*tilesize);
+	}
   ctx.fillText(game.level,offX*tilesize,(offY+1.5)*tilesize);
 
 	ctx.textAlign = "left";
@@ -177,13 +184,13 @@ function redrawClassic() {
 	offX = 15;
 	offY = 2.5;
 	for (i = 0; i < 4; i++) {
+		x = minoData[nextBuffer].rotation0[i][0];
+		y = minoData[nextBuffer].rotation0[i][1];
 		if (areFrame > 0 || countdown > 0) {
 			nextBuffer = game.currentPiece;
 		} else {
 			nextBuffer = game.nextPiece;
 		}
-		var x = minoData[nextBuffer].rotation0[i][0];
-		var y = minoData[nextBuffer].rotation0[i][1];
 		ctx.drawImage(tiles[minoData[nextBuffer].color-1],(x+offX)*tilesize,(y+offY)*tilesize);
 	}
 
@@ -231,15 +238,17 @@ function redrawClassic() {
 	}
 	offY = 1;
 	if (countdown === 0 && prefMenu.preflist[2] < 2){
-		if (gamestate == 9) {
+		if (gamestate === 9) {
 			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level/3)))*tilesize,4,0.2*(game.level/3)*tilesize);
+		} if (gamestate === 10) {
+			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level/2)))*tilesize,4,0.2*(game.level/3)*tilesize);
 		} else {
 			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level % 100)))*tilesize,4,0.2*(game.level % 100)*tilesize);
 		}
 	}
 
   //score
-  if (deadFrame > 60 && gamestate <= 8) {
+  if (deadFrame > 60 && (gamestate <= 8 || gamestate === 10)) {
     ctx.font = tilesize + "px 'Orbitron',monospace";
     ctx.fillStyle = "#ffffff";
     ctx.strokeStyle = "#000000";

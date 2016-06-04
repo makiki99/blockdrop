@@ -19,9 +19,10 @@ var modeSelect = {
 			]
 		},
 		{
-			statelist:[9],
+			statelist:[9,10],
 			nameList:[
-				"Time Attack"
+				"Time Attack",
+				"200 lines"
 			]
 		},
 	],
@@ -66,7 +67,11 @@ function inputModeSelect() {
 			];
 			deadFrame = 0;
 			game.history = [0,1,0,1];
-			game.level = 1;
+			if (gamestate === 10) {
+				game.level = 0;
+			} else {
+				game.level = 1;
+			}
 			game.score = 0;
 			speedLevel = 0;
 			dasFrameLeft = 0;
@@ -82,8 +87,13 @@ function inputModeSelect() {
 			game.history.push(randomNum);
 			modeClear = false;
 			generatePiece();
-			keys[controls.keyCodes[10]] = false;
 			timeAttack.speedLevel = 1;
+			marathon.lineClears.single = 0;
+			marathon.lineClears.double = 0;
+			marathon.lineClears.triple = 0;
+			marathon.lineClears.quad = 0;
+			marathon.b2bBonus = 0;
+			marathon.b2b = true;
 			modeSelect.substate = 0;
 
 		}
