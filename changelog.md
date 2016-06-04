@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.2.0
+* CHANGE | Modified the select mode menu.
+
 ### v1.1.2
 * FIX | Fixed variable name collision.
 

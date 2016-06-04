@@ -1,13 +1,8 @@
 var menu = {
   currentSelection : 0,
-  statelist : [-3,/*2,3,4,5,6,*/1,-2,-1],
+  statelist : [-3,1,-2,-1],
   namelist : [
 		"Start Game",
-    // "Easy",
-    // "Normal",
-    // "Hard",
-    // "Hyper",
-		// "Shadow",
     "Controls",
     "Preferences",
     "Switch profile"
