@@ -115,7 +115,7 @@ function main() {
 
 }
 
-var imageCount = 14; //always increase it by 7 when adding a new tileset
+var imageCount = 21; //always increase it by 7 when adding a new tileset
 var imagesLoaded = 0;
 function loadImage(src) {
 	var img = new Image();
@@ -157,6 +157,15 @@ window.addEventListener("load",function(){
 		loadImage("assets/tileset1/tileCyan.png"),
 		loadImage("assets/tileset1/tileViolet.png"),
 		loadImage("assets/tileset1/tileGray.png"),
+  ],[
+    loadImage("assets/tileset2/tileRed.png"),
+    loadImage("assets/tileset2/tileGreen.png"),
+		loadImage("assets/tileset2/tileYellow.png"),
+		loadImage("assets/tileset2/tileBlue.png"),
+		loadImage("assets/tileset2/tileOrange.png"),
+		loadImage("assets/tileset2/tileCyan.png"),
+		loadImage("assets/tileset2/tileViolet.png"),
+		loadImage("assets/tileset2/tileGray.png"),
   ]
 	];
 });
