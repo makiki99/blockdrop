@@ -149,14 +149,14 @@ window.addEventListener("load",function(){
 		loadImage("assets/tileset0/tileViolet.png"),
 		loadImage("assets/tileset0/tileGray.png"),
   ],[
-    loadImage("assets/tileset0/tileRed.png"),
-    loadImage("assets/tileset0/tileGreen.png"),
-		loadImage("assets/tileset0/tileYellow.png"),
-		loadImage("assets/tileset0/tileBlue.png"),
-		loadImage("assets/tileset0/tileOrange.png"),
-		loadImage("assets/tileset0/tileCyan.png"),
-		loadImage("assets/tileset0/tileViolet.png"),
-		loadImage("assets/tileset0/tileGray.png"),
+    loadImage("assets/tileset1/tileRed.png"),
+    loadImage("assets/tileset1/tileGreen.png"),
+		loadImage("assets/tileset1/tileYellow.png"),
+		loadImage("assets/tileset1/tileBlue.png"),
+		loadImage("assets/tileset1/tileOrange.png"),
+		loadImage("assets/tileset1/tileCyan.png"),
+		loadImage("assets/tileset1/tileViolet.png"),
+		loadImage("assets/tileset1/tileGray.png"),
   ]
 	];
 });
