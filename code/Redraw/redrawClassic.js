@@ -58,7 +58,7 @@ function redrawClassic() {
   offY = 15;
 
 	if (gamestate === 10) {
-		ctx.fillText("LINE",offX*tilesize,offY*tilesize);		
+		ctx.fillText("LINE",offX*tilesize,offY*tilesize);
 	} else {
 		ctx.fillText("LVL",offX*tilesize,offY*tilesize);
 	}
@@ -89,9 +89,9 @@ function redrawClassic() {
 	        for (y = 0; y < 20; y++) {
 	          if (matrix[y][x] > 0) {
 	            if (deadFrame === 0){
-	              ctx.drawImage(tiles[matrix[y][x]-1],(x+offX)*tilesize,(y+offY)*tilesize);
+	              ctx.drawImage(tiles[prefMenu.preflist[4]][matrix[y][x]-1],(x+offX)*tilesize,(y+offY)*tilesize);
 	            } else {
-	              ctx.drawImage(tiles[7],(x+offX)*tilesize,(y+offY)*tilesize);
+	              ctx.drawImage(tiles[prefMenu.preflist[4]][7],(x+offX)*tilesize,(y+offY)*tilesize);
 	            }
 	          }
 	        }
@@ -131,9 +131,9 @@ function redrawClassic() {
           var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0];
 
           if (deadFrame === 0){
-            ctx.drawImage(tiles[minoData[game.currentPiece].color-1],(x+offX)*tilesize,(y+offY)*tilesize);
+            ctx.drawImage(tiles[prefMenu.preflist[4]][minoData[game.currentPiece].color-1],(x+offX)*tilesize,(y+offY)*tilesize);
           } else {
-            ctx.drawImage(tiles[7],(x+offX)*tilesize,(y+offY)*tilesize);
+            ctx.drawImage(tiles[prefMenu.preflist[4]][7],(x+offX)*tilesize,(y+offY)*tilesize);
           }
 
         }
@@ -191,7 +191,7 @@ function redrawClassic() {
 		} else {
 			nextBuffer = game.nextPiece;
 		}
-		ctx.drawImage(tiles[minoData[nextBuffer].color-1],(x+offX)*tilesize,(y+offY)*tilesize);
+		ctx.drawImage(tiles[prefMenu.preflist[4]][minoData[nextBuffer].color-1],(x+offX)*tilesize,(y+offY)*tilesize);
 	}
 
   //countdown

@@ -1,12 +1,13 @@
 var prefMenu = {
   currentSelection : 0,
-  defPreflist : [false,false,2,true],
-	preflist : [false,false,2,true],
+  defPreflist : [false,false,2,true,0],
+	preflist : [false,false,2,true,0],
   namelist : [
     "Flip rotation buttons",
 		"Show framerate",
 		"Show level bar",
-		"Force 60 FPS"
+		"Force 60 FPS",
+		"Tileset"
   ]
 };
 
@@ -46,6 +47,12 @@ function inputPreferences() {
 				break;
 			case 3:
 				prefMenu.preflist[3] = !prefMenu.preflist[3];
+				break;
+			case 4:
+				prefMenu.preflist[4]++;
+				if (prefMenu.preflist[4] > tiles.length-1) {
+					prefMenu.preflist[4] = 0;
+				}
 				break;
       default:
 

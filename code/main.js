@@ -115,9 +115,13 @@ function main() {
 
 }
 
+function loadImage() {
+
+}
+
 window.addEventListener("load",function(){
   // assets
-  tiles = [
+  tiles = [[
     document.getElementById("tileRed"),
     document.getElementById("tileGreen"),
     document.getElementById("tileYellow"),
@@ -126,10 +130,18 @@ window.addEventListener("load",function(){
     document.getElementById("tileCyan"),
     document.getElementById("tileViolet"),
     document.getElementById("tileGray"),
-  ];
-	//setInterval(function() {
+  ],[
+    document.getElementById("tileRed"),
+    document.getElementById("tileGreen"),
+    document.getElementById("tileYellow"),
+    document.getElementById("tileBlue"),
+    document.getElementById("tileOrange"),
+    document.getElementById("tileCyan"),
+    document.getElementById("tileViolet"),
+    document.getElementById("tileGray"),
+  ]
+	];
 	requestAnimationFrame(main);
-//	}, 1000/60);
 });
 
 document.body.addEventListener("keydown", function(e){

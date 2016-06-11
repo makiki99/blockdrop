@@ -13,6 +13,7 @@ function redrawPreferences() {
     ctx.fillText(prefMenu.namelist[i],tilesize*2,tilesize*(2+i));
   }
 
+	//options
   ctx.fillStyle = "#ffffff";
   for (i = 0; i < prefMenu.preflist.length; i++) {
 		var prefString = "";
@@ -30,6 +31,12 @@ function redrawPreferences() {
 				prefString = "Right";
 			} else {
 				prefString = "None";
+			}
+		}
+		if (i === 4) {
+			prefString = prefMenu.preflist[4];
+			for (ii = 0; ii < tiles[prefMenu.preflist[4]].length; ii++) {
+				ctx.drawImage(tiles[prefMenu.preflist[4]][ii],tilesize*(16+ii),tilesize*(2+i-1)+3);
 			}
 		}
 		ctx.fillText(prefString,tilesize*15,tilesize*(2+i));
