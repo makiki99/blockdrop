@@ -136,7 +136,7 @@ function loadImage(src) {
 	return img;
 }
 
-imageCount = 21;
+imageCount = 24;
 window.addEventListener("load",function(){
   // assets
   tiles = [[
