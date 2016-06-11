@@ -137,23 +137,23 @@ function loadImage(src) {
 window.addEventListener("load",function(){
   // assets
   tiles = [[
-    loadImage("assets/tileRed.png"),
-    loadImage("assets/tileGreen.png"),
-		loadImage("assets/tileYellow.png"),
-		loadImage("assets/tileBlue.png"),
-		loadImage("assets/tileOrange.png"),
-		loadImage("assets/tileCyan.png"),
-		loadImage("assets/tileViolet.png"),
-		loadImage("assets/tileGray.png"),
+    loadImage("assets/tileset0/tileRed.png"),
+    loadImage("assets/tileset0/tileGreen.png"),
+		loadImage("assets/tileset0/tileYellow.png"),
+		loadImage("assets/tileset0/tileBlue.png"),
+		loadImage("assets/tileset0/tileOrange.png"),
+		loadImage("assets/tileset0/tileCyan.png"),
+		loadImage("assets/tileset0/tileViolet.png"),
+		loadImage("assets/tileset0/tileGray.png"),
   ],[
-    loadImage("assets/tileRed.png"),
-    loadImage("assets/tileGreen.png"),
-		loadImage("assets/tileYellow.png"),
-		loadImage("assets/tileBlue.png"),
-		loadImage("assets/tileOrange.png"),
-		loadImage("assets/tileCyan.png"),
-		loadImage("assets/tileViolet.png"),
-		loadImage("assets/tileGray.png"),
+    loadImage("assets/tileset0/tileRed.png"),
+    loadImage("assets/tileset0/tileGreen.png"),
+		loadImage("assets/tileset0/tileYellow.png"),
+		loadImage("assets/tileset0/tileBlue.png"),
+		loadImage("assets/tileset0/tileOrange.png"),
+		loadImage("assets/tileset0/tileCyan.png"),
+		loadImage("assets/tileset0/tileViolet.png"),
+		loadImage("assets/tileset0/tileGray.png"),
   ]
 	];
 });
