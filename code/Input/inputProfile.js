@@ -4,6 +4,7 @@ var profileMenu = {
   substate : 0,
   inputBuffer: ""
 };
+var isGuest = true;
 
 function inputProfile() {
   switch (profileMenu.substate) {
@@ -125,8 +126,7 @@ function inputProfile() {
 
 }
 
-var currentProfile = {},
-  isGuest = true,
+var currentProfile = {};
   profileList = [];
 
 function checkProfile(name) {
@@ -169,7 +169,7 @@ function loadProfile(name) {
 function saveProfile(name) {
 	profileMenu.inputBuffer = "";
 	if (!isGuest) {
-  localStorage["BLOCKDROP_"+name] = JSON.stringify(currentProfile);
+  	localStorage["BLOCKDROP_"+name] = JSON.stringify(currentProfile);
 	}
 }
 

@@ -115,33 +115,47 @@ function main() {
 
 }
 
-function loadImage() {
-
+var imageCount = 14; //always increase it by 7 when adding a new tileset
+var imagesLoaded = 0;
+function loadImage(src) {
+	var img = new Image();
+	img.src = src;
+	img.onload = function() {
+		imagesLoaded++;
+		if (imagesLoaded >= imageCount) {
+			requestAnimationFrame(main);
+		} else {
+			ctx.fillStyle = "black";
+			ctx.fillRect(0,0,canvas.width,canvas.height);
+			ctx.fillStyle = "white";
+			ctx.fillText("Loading ("+imagesLoaded+"/"+imageCount+")");
+		}
+	};
+	return img;
 }
 
 window.addEventListener("load",function(){
   // assets
   tiles = [[
-    document.getElementById("tileRed"),
-    document.getElementById("tileGreen"),
-    document.getElementById("tileYellow"),
-    document.getElementById("tileBlue"),
-    document.getElementById("tileOrange"),
-    document.getElementById("tileCyan"),
-    document.getElementById("tileViolet"),
-    document.getElementById("tileGray"),
+    loadImage("assets/tileRed.png"),
+    loadImage("assets/tileGreen.png"),
+		loadImage("assets/tileYellow.png"),
+		loadImage("assets/tileBlue.png"),
+		loadImage("assets/tileOrange.png"),
+		loadImage("assets/tileCyan.png"),
+		loadImage("assets/tileViolet.png"),
+		loadImage("assets/tileGray.png"),
   ],[
-    document.getElementById("tileRed"),
-    document.getElementById("tileGreen"),
-    document.getElementById("tileYellow"),
-    document.getElementById("tileBlue"),
-    document.getElementById("tileOrange"),
-    document.getElementById("tileCyan"),
-    document.getElementById("tileViolet"),
-    document.getElementById("tileGray"),
+    loadImage("assets/tileRed.png"),
+    loadImage("assets/tileGreen.png"),
+		loadImage("assets/tileYellow.png"),
+		loadImage("assets/tileBlue.png"),
+		loadImage("assets/tileOrange.png"),
+		loadImage("assets/tileCyan.png"),
+		loadImage("assets/tileViolet.png"),
+		loadImage("assets/tileGray.png"),
   ]
 	];
-	requestAnimationFrame(main);
 });
 
 document.body.addEventListener("keydown", function(e){
