@@ -75,7 +75,6 @@ function inputTimeAttack() {
 				var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0];
 				if (matrix[y] === undefined) {
 					//top out
-					submitScore(game.score);
 					++deadFrame;
 					return;
 				}
