@@ -1,4 +1,4 @@
-var version = "v1.2.0",
+var version = "v1.3.0",
   debug = {
     //debug toogles
     showScore: false
@@ -128,8 +128,11 @@ function loadImage(src) {
 			ctx.fillStyle = "black";
 			ctx.fillRect(0,0,canvas.width,canvas.height);
 			ctx.fillStyle = "white";
-			ctx.fillText("Loading ("+imagesLoaded+"/"+imageCount+")");
+			ctx.fillText("Loading ("+imagesLoaded+"/"+imageCount+")",24,24);
 		}
+	};
+	img.onerror = function() {
+		console.error("loading failed from source "+src);
 	};
 	return img;
 }

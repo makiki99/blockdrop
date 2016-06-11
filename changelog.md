@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.3.0
+* FEATURE | You can now select your favourite tileset in preferences menu!
+
 ### v1.2.0
 * FEATURE | Added 200 Lines mode.
 * CHANGE | Modified the select mode menu.
