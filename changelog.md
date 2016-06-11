@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.3.2
+* ADD | Added a tileset by [Sinewave](https://twitter.com/sinewaveslicer).
+
 ### v1.3.1
 * FIX | Fixed crazy frame rate issue.
 

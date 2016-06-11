@@ -1,4 +1,4 @@
-var version = "v1.3.1",
+var version = "v1.3.2",
   debug = {
     //debug toogles
     showScore: false
@@ -136,7 +136,7 @@ function loadImage(src) {
 	return img;
 }
 
-imageCount = 24;
+imageCount = 32;
 window.addEventListener("load",function(){
   // assets
   tiles = [[
@@ -166,6 +166,15 @@ window.addEventListener("load",function(){
 		loadImage("assets/tileset2/tileCyan.png"),
 		loadImage("assets/tileset2/tileViolet.png"),
 		loadImage("assets/tileset2/tileGray.png"),
+  ],[
+    loadImage("assets/tileset3/red.png"),
+    loadImage("assets/tileset3/green.png"),
+		loadImage("assets/tileset3/yellow.png"),
+		loadImage("assets/tileset3/blue.png"),
+		loadImage("assets/tileset3/orange.png"),
+		loadImage("assets/tileset3/cyan.png"),
+		loadImage("assets/tileset3/violet.png"),
+		loadImage("assets/tileset3/gray.png"),
   ]
 	];
 
