@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.3.1
+* FIX | Fixed crazy frame rate issue.
+
 ### v1.3.0
 * FEATURE | You can now select your favourite tileset in preferences menu!
 

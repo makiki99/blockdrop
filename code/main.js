@@ -1,4 +1,4 @@
-var version = "v1.3.0",
+var version = "v1.3.1",
   debug = {
     //debug toogles
     showScore: false
@@ -27,6 +27,8 @@ canvas.height = tilesize*24;
 
 //asset containers
 var tiles;
+var imageCount; //always increase it by 7 when adding a new tileset
+var imagesLoaded = 0;
 
 var fpsLock = {
 	now : 0,
@@ -38,6 +40,13 @@ var fpsLock = {
 function main() {
 
 	requestAnimationFrame(main);
+	if (imagesLoaded < imageCount) {
+		ctx.fillStyle = "black";
+		ctx.fillRect(0,0,canvas.width,canvas.height);
+		ctx.fillStyle = "white";
+		ctx.fillText("Loading ("+imagesLoaded+"/"+imageCount+")",24,24);
+		return;
+	}
 
 	fpsLock.now = performance.now();
 	fpsLock.delta = fpsLock.now - fpsLock.then;
@@ -115,21 +124,11 @@ function main() {
 
 }
 
-var imageCount = 21; //always increase it by 7 when adding a new tileset
-var imagesLoaded = 0;
 function loadImage(src) {
 	var img = new Image();
 	img.src = src;
 	img.onload = function() {
 		imagesLoaded++;
-		if (imagesLoaded >= imageCount) {
-			requestAnimationFrame(main);
-		} else {
-			ctx.fillStyle = "black";
-			ctx.fillRect(0,0,canvas.width,canvas.height);
-			ctx.fillStyle = "white";
-			ctx.fillText("Loading ("+imagesLoaded+"/"+imageCount+")",24,24);
-		}
 	};
 	img.onerror = function() {
 		console.error("loading failed from source "+src);
@@ -137,6 +136,7 @@ function loadImage(src) {
 	return img;
 }
 
+imageCount = 21;
 window.addEventListener("load",function(){
   // assets
   tiles = [[
@@ -168,6 +168,8 @@ window.addEventListener("load",function(){
 		loadImage("assets/tileset2/tileGray.png"),
   ]
 	];
+
+	requestAnimationFrame(main);
 });
 
 document.body.addEventListener("keydown", function(e){
