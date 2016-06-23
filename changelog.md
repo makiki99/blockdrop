@@ -2,6 +2,7 @@
 
 ### v1.3.3
 * FIX | Removed 200L exploit which could be used to increase the grade without any effort.
+
 ### v1.3.2
 * ADD | Added a tileset by [Sinewave](https://twitter.com/sinewaveslicer).
 

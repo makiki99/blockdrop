@@ -27,7 +27,7 @@ canvas.height = tilesize*24;
 
 //asset containers
 var tiles;
-var imageCount; //always increase it by 7 when adding a new tileset
+var imageCount; //always increase it by 8 when adding a new tileset
 var imagesLoaded = 0;
 
 var fpsLock = {
