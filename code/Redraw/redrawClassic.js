@@ -48,6 +48,9 @@ function redrawClassic() {
 			case 10:
 				ctx.fillText("200 lines",offX*tilesize,offY*tilesize);
 				break;
+			case 11:
+				ctx.fillText("Survival",offX*tilesize,offY*tilesize);
+				break;
 			default:
 				ctx.fillText("ERROR",offX*tilesize,offY*tilesize);
 		}
