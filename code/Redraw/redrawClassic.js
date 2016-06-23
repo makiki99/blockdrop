@@ -59,10 +59,14 @@ function redrawClassic() {
 
 	if (gamestate === 10) {
 		ctx.fillText("LINE",offX*tilesize,offY*tilesize);
+	} else if (gamestate === 11) {
+		// draw nuttin'
 	} else {
 		ctx.fillText("LVL",offX*tilesize,offY*tilesize);
 	}
-  ctx.fillText(game.level,offX*tilesize,(offY+1.5)*tilesize);
+	if (gamestate !== 11) {
+		ctx.fillText(game.level,offX*tilesize,(offY+1.5)*tilesize);
+	}
 
 	ctx.textAlign = "left";
 
@@ -240,8 +244,10 @@ function redrawClassic() {
 	if (countdown === 0 && prefMenu.preflist[2] < 2){
 		if (gamestate === 9) {
 			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level/3)))*tilesize,4,0.2*(game.level/3)*tilesize);
-		} if (gamestate === 10) {
+		} else if (gamestate === 10) {
 			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level/2)))*tilesize,4,0.2*(game.level/3)*tilesize);
+		} else if (gamestate === 11) {
+			// draw nuttin'
 		} else {
 			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level % 100)))*tilesize,4,0.2*(game.level % 100)*tilesize);
 		}

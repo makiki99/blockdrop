@@ -1,5 +1,8 @@
 ## Changelog
 
+### V1.4.0
+* FEATURE | Added Survival mode.
+
 ### v1.3.3
 * FIX | Removed 200L exploit which could be used to increase the grade without any effort.
 

@@ -19,10 +19,11 @@ var modeSelect = {
 			]
 		},
 		{
-			statelist:[9,10],
+			statelist:[9,10,11],
 			nameList:[
 				"Time Attack",
-				"200 lines"
+				"200 lines",
+				"Survival"
 			]
 		},
 	],

@@ -1,4 +1,4 @@
-var version = "v1.3.3",
+var version = "v1.4.0",
   debug = {
     //debug toogles
     showScore: false
@@ -112,6 +112,10 @@ function main() {
 	      break;
 	    case 10:
 	      inputMarathon();
+	      redrawClassic();
+	      break;
+	    case 11:
+	      inputSurvival();
 	      redrawClassic();
 	      break;
 	    default:
