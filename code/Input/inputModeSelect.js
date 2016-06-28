@@ -1,6 +1,6 @@
 var modeSelect = {
 	substate : 0,
-  currentSelection : 0,
+	currentSelection : 0,
 	menuList: [
 		{name:"Ranked", substate: 1},
 		{name:"Unranked", substate: 2}
@@ -10,9 +10,9 @@ var modeSelect = {
 			statelist:[2,3,4,5,7,6,8],
 			nameList:[
 				"Easy",
-		    "Normal",
-		    "Hard",
-		    "Hyper",
+				"Normal",
+				"Hard",
+				"Hyper",
 				"Another",
 				"Shadow",
 				"Phantom",
@@ -104,7 +104,7 @@ function inputModeSelect() {
 
 	}
 
-	  if (keys[controls.keyCodes[8]]) {
+		if (keys[controls.keyCodes[8]]) {
 			//up arrow
 			modeSelect.currentSelection--;
 			if (modeSelect.substate === 0) {
@@ -116,10 +116,10 @@ function inputModeSelect() {
 					modeSelect.currentSelection = modeSelect.submenuList[modeSelect.substate-1].statelist.length-1;
 				}
 			}
-	    keys[controls.keyCodes[8]] = false;
-	  }
+			keys[controls.keyCodes[8]] = false;
+		}
 
-	  if (keys[controls.keyCodes[9]]) {
+		if (keys[controls.keyCodes[9]]) {
 			//down arrow
 			modeSelect.currentSelection++;
 			if (modeSelect.substate === 0) {
@@ -132,10 +132,10 @@ function inputModeSelect() {
 				}
 			}
 			keys[controls.keyCodes[9]] = false;
-	  }
+		}
 
 		if (keys[controls.keyCodes[11]]) {
-	    //escape
+			//escape
 			if (modeSelect.substate === 0) {
 				gamestate = 0;
 			} else {
@@ -144,6 +144,6 @@ function inputModeSelect() {
 
 			modeSelect.currentSelection = 0;
 			keys[controls.keyCodes[11]] = false;
-	  }
+		}
 
 }

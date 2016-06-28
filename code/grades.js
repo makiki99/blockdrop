@@ -1,5 +1,5 @@
 grade = [
-  ["#FFFFFF","Unranked", 0],
+	["#FFFFFF","Unranked", 0],
 	// beginner kyu
 	["#FFFFFF","30th kyu", 1],
 	["#FFFFFF","29th kyu", 65],

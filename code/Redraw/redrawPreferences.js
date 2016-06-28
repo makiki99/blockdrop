@@ -1,21 +1,21 @@
 function redrawPreferences() {
 
-  var offX, offY;
+	var offX, offY;
 
-  //screen clear
-  ctx.fillStyle = "#000000";
-  ctx.fillRect(0,0,canvas.width,canvas.height);
+	//screen clear
+	ctx.fillStyle = "#000000";
+	ctx.fillRect(0,0,canvas.width,canvas.height);
 
-  //selections
-  ctx.font = tilesize + "px 'Orbitron',monospace";
-  ctx.fillStyle = "#ffffff";
-  for (var i = 0; i < prefMenu.preflist.length; i++) {
-    ctx.fillText(prefMenu.namelist[i],tilesize*2,tilesize*(2+i));
-  }
+	//selections
+	ctx.font = tilesize + "px 'Orbitron',monospace";
+	ctx.fillStyle = "#ffffff";
+	for (var i = 0; i < prefMenu.preflist.length; i++) {
+		ctx.fillText(prefMenu.namelist[i],tilesize*2,tilesize*(2+i));
+	}
 
 	//options
-  ctx.fillStyle = "#ffffff";
-  for (i = 0; i < prefMenu.preflist.length; i++) {
+	ctx.fillStyle = "#ffffff";
+	for (i = 0; i < prefMenu.preflist.length; i++) {
 		var prefString = "";
 		if (i === 0 || i === 1 || i === 3) {
 			if (prefMenu.preflist[i]) {
@@ -40,9 +40,9 @@ function redrawPreferences() {
 			}
 		}
 		ctx.fillText(prefString,tilesize*15,tilesize*(2+i));
-  }
+	}
 
-  //selector
-  ctx.fillText(">",tilesize*1,tilesize*(2+prefMenu.currentSelection));
+	//selector
+	ctx.fillText(">",tilesize*1,tilesize*(2+prefMenu.currentSelection));
 
 }

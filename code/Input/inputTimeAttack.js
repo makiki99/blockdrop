@@ -1,6 +1,6 @@
 var timeAttack = {
 	speedCurve : [
-    [1,0,30,10,30,10], // [level,gravity,ARE,line delay,lock delay,DAS]
+		[1,0,30,10,30,10], // [level,gravity,ARE,line delay,lock delay,DAS]
 		[100,0,27,9,30,9],
 		[200,0,24,8,30,9],
 		[300,0,21,7,30,9],
@@ -10,7 +10,7 @@ var timeAttack = {
 		[700,0,10,3,30,7],
 		[800,0,10,2,30,7],
 		[900,0,10,1,30,7],
-  ],
+	],
 	endlevel: 300,
 	speedLevel : 1,
 };

@@ -1,41 +1,41 @@
 var prefMenu = {
-  currentSelection : 0,
-  defPreflist : [false,false,2,true,0],
+	currentSelection : 0,
+	defPreflist : [false,false,2,true,0],
 	preflist : [false,false,2,true,0],
-  namelist : [
-    "Flip rotation buttons",
+	namelist : [
+		"Flip rotation buttons",
 		"Show framerate",
 		"Show level bar",
 		"Force 60 FPS",
 		"Tileset"
-  ]
+	]
 };
 
 function inputPreferences() {
-  if (keys[controls.keyCodes[8]]) {
-    //up arrow
-    prefMenu.currentSelection--;
-    if (prefMenu.currentSelection < 0) {
-      prefMenu.currentSelection = prefMenu.preflist.length-1;
-    }
-    keys[controls.keyCodes[8]] = false;
-  }
+	if (keys[controls.keyCodes[8]]) {
+		//up arrow
+		prefMenu.currentSelection--;
+		if (prefMenu.currentSelection < 0) {
+			prefMenu.currentSelection = prefMenu.preflist.length-1;
+		}
+		keys[controls.keyCodes[8]] = false;
+	}
 
-  if (keys[controls.keyCodes[9]]) {
-    //down arrow
-    prefMenu.currentSelection++;
-    if (prefMenu.currentSelection > prefMenu.preflist.length-1) {
-      prefMenu.currentSelection = 0;
-    }
-    keys[controls.keyCodes[9]] = false;
-  }
+	if (keys[controls.keyCodes[9]]) {
+		//down arrow
+		prefMenu.currentSelection++;
+		if (prefMenu.currentSelection > prefMenu.preflist.length-1) {
+			prefMenu.currentSelection = 0;
+		}
+		keys[controls.keyCodes[9]] = false;
+	}
 
-  if (keys[controls.keyCodes[10]]) {
-    //enter
-    switch (prefMenu.currentSelection) {
-      case 0:
-        prefMenu.preflist[0] = !prefMenu.preflist[0];
-        break;
+	if (keys[controls.keyCodes[10]]) {
+		//enter
+		switch (prefMenu.currentSelection) {
+			case 0:
+				prefMenu.preflist[0] = !prefMenu.preflist[0];
+				break;
 			case 1:
 				prefMenu.preflist[1] = !prefMenu.preflist[1];
 				break;
@@ -54,16 +54,16 @@ function inputPreferences() {
 					prefMenu.preflist[4] = 0;
 				}
 				break;
-      default:
+			default:
 
-    }
+		}
 		currentProfile.preferences = prefMenu.preflist.slice();
 		saveProfile(currentProfile.name);
-    keys[controls.keyCodes[10]] = false;
-  }
+		keys[controls.keyCodes[10]] = false;
+	}
 
-  if (keys[controls.keyCodes[11]]) {
-    //escape
-    gamestate = 0;
-  }
+	if (keys[controls.keyCodes[11]]) {
+		//escape
+		gamestate = 0;
+	}
 }
