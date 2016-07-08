@@ -1,4 +1,4 @@
-function inputClassic() {
+function inputSpecial() {
 
 	// special checks
 	if (game.level >= normal.endlevel && deadFrame === 0) {
