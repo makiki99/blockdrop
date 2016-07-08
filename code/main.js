@@ -118,6 +118,22 @@ function main() {
 				inputSurvival();
 				redrawClassic();
 				break;
+			case 12:
+				inputSpecial();
+				redrawClassic();
+				break;
+			case 13:
+				inputSpecial();
+				redrawClassic();
+				break;
+			case 14:
+				inputSpecial();
+				redrawClassic();
+				break;
+			case 15:
+				inputSpecial();
+				redrawClassic();
+				break;
 			default:
 				console.error("Unexpected gamestate id");
 

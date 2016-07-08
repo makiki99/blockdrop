@@ -8,6 +8,11 @@ function redrawClassic() {
 
 	var offX, offY;
 
+	if (gamestate === 12) {
+		canvas.style.transform = "scaleY(-1)";
+	} else {
+		canvas.style.transform = "none";
+	}
 	//screen clear
 	ctx.fillStyle = "#000000";
 	ctx.fillRect(0,0,canvas.width,canvas.height);
@@ -50,6 +55,18 @@ function redrawClassic() {
 				break;
 			case 11:
 				ctx.fillText("Survival",offX*tilesize,offY*tilesize);
+				break;
+			case 12:
+				ctx.fillText("Blockflip",offX*tilesize,offY*tilesize);
+				break;
+			case 13:
+				ctx.fillText("Time Rush",offX*tilesize,offY*tilesize);
+				break;
+			case 14:
+				ctx.fillText("Claustrophobia",offX*tilesize,offY*tilesize);
+				break;
+			case 15:
+				ctx.fillText("Negative Shadow",offX*tilesize,offY*tilesize);
 				break;
 			default:
 				ctx.fillText("ERROR",offX*tilesize,offY*tilesize);

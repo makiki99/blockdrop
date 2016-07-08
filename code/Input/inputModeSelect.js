@@ -3,7 +3,8 @@ var modeSelect = {
 	currentSelection : 0,
 	menuList: [
 		{name:"Ranked", substate: 1},
-		{name:"Unranked", substate: 2}
+		{name:"Unranked", substate: 2},
+		{name:"Special", substate: 3}
 	],
 	submenuList: [
 		{
@@ -26,6 +27,15 @@ var modeSelect = {
 				"Survival"
 			]
 		},
+		{
+			statelist:[12,13,14,15],
+			nameList:[
+				"Blockflip",
+				"Time Rush",
+				"Claustrophobia",
+				"Negative Shadow"
+			]
+		}
 	],
 
 };
