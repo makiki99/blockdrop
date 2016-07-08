@@ -1,6 +1,14 @@
 ## Changelog
 
-### V1.4.0
+### v1.5.0
+* FEATURE | Created new mode category - Special
+* FEATURE | Added 4 new modes:
+	* Blockflip
+	* Time Rush
+	* Claustrophobia
+	* Negative Shadow
+
+### v1.4.0
 * FEATURE | Added Survival mode.
 
 ### v1.3.3

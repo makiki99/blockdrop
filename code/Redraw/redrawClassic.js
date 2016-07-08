@@ -61,7 +61,7 @@ function redrawClassic() {
 				ctx.fillText("Claustrophobia",offX*tilesize,offY*tilesize);
 				break;
 			case 15:
-				ctx.fillText("Negative Shadow",offX*tilesize,offY*tilesize);
+				ctx.fillText("Neg. Shadow",offX*tilesize,offY*tilesize);
 				break;
 			default:
 				ctx.fillText("ERROR",offX*tilesize,offY*tilesize);
@@ -91,7 +91,11 @@ function redrawClassic() {
 
 	ctx.strokeStyle = "#ffffff";
 	ctx.lineWidth = 3;
-	ctx.strokeRect(offX*tilesize,(offY-2)*tilesize,tilesize*10,tilesize*22);
+	if (gamestate === 14) {
+		ctx.strokeRect(offX*tilesize,(offY-2)*tilesize,tilesize*10,tilesize*12);
+	} else {
+		ctx.strokeRect(offX*tilesize,(offY-2)*tilesize,tilesize*10,tilesize*22);
+	}
 	ctx.strokeStyle = "#ff0000";
 	ctx.lineWidth = 1;
 	ctx.beginPath();
@@ -105,7 +109,7 @@ function redrawClassic() {
 		(function() {
 			if (!invisMode || deadFrame > 0) {
 				for (x = 0; x < 10; x++) {
-					for (y = 0; y < 20; y++) {
+					for (y = 0; y < matrix.length; y++) {
 						if (matrix[y][x] > 0) {
 							if (deadFrame === 0){
 								ctx.drawImage(tiles[prefMenu.preflist[4]][matrix[y][x]-1],(x+offX)*tilesize,(y+offY)*tilesize);
@@ -120,6 +124,9 @@ function redrawClassic() {
 
 		(function() {
 			//ghost piece
+			if (gamestate === 15) {
+				return;
+			}
 			if (areFrame <= 0 && drawGhost) {
 				var ghostPos = [0,0];
 				ghostPos[0] = game.piecePos[0];
@@ -143,6 +150,9 @@ function redrawClassic() {
 
 		(function() {
 			//current piece
+			if (gamestate === 15) {
+				return;
+			}
 			if (areFrame <= 0) {
 				for (i = 0; i < 4; i++) {
 
@@ -172,7 +182,11 @@ function redrawClassic() {
 		//lock delay bar
 		if (deadFrame === 0) {
 			offX = 2;
-			offY = 21;
+			if (gamestate === 14) {
+				offY = 11;
+			} else {
+				offY = 21;
+			}
 			ctx.fillStyle = "#00ff00";
 			ctx.fillRect(offX*tilesize,offY*tilesize+6,(tilesize*10)*(lockdelay-lockframe)/lockdelay,4);
 		}
@@ -192,7 +206,11 @@ function redrawClassic() {
 				centiseconds = "0" + centiseconds;
 			}
 			offX = 4.5;
-			offY = 22.5;
+			if (gamestate === 14) {
+				offY = 12.5;
+			} else {
+				offY = 22.5;
+			}
 			ctx.font = tilesize + "px 'Orbitron',monospace";
 			ctx.fillStyle = "#ffffff";
 			ctx.fillText(minutes+":"+seconds+"."+centiseconds,tilesize*offX,tilesize*offY);
