@@ -8,11 +8,6 @@ function redrawClassic() {
 
 	var offX, offY;
 
-	if (gamestate === 12) {
-		canvas.style.transform = "scaleY(-1)";
-	} else {
-		canvas.style.transform = "none";
-	}
 	//screen clear
 	ctx.fillStyle = "#000000";
 	ctx.fillRect(0,0,canvas.width,canvas.height);

@@ -106,6 +106,9 @@ function inputModeSelect() {
 			marathon.b2bBonus = 0;
 			marathon.b2b = true;
 			modeSelect.substate = 0;
+			if (gamestate === 12) {
+				canvas.style.transform = "scaleY(-1)";
+			}
 
 		}
 

@@ -17,6 +17,7 @@ function inputSpecial() {
 			keys[controls.keyCodes[10]] = false;
 			keys[controls.keyCodes[11]] = false;
 		}
+		canvas.style.transform = "none";
 		deadFrame++;
 		return;
 	}
