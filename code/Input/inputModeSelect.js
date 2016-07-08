@@ -89,7 +89,11 @@ function inputModeSelect() {
 			dasFrameRight = 0;
 			areFrame = 0;
 			lockframe = 0;
-			framecount = 0;
+			if (gamestate === 13) {
+				framecount = 5400;
+			} else {
+				framecount = 0;
+			}
 			countdown = 180;
 			var randomNum = Math.floor(Math.random()*4+3);
 			game.currentPiece = game.nextPiece;

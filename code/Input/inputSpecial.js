@@ -23,7 +23,14 @@ function inputSpecial() {
 	}
 
 	if (deadFrame === 0) {
-		framecount++;
+		if (gamestate === 13) {
+			framecount--;
+			if (framecount <= 0) {
+				deadFrame++;
+			}
+		} else {
+			framecount++;
+		}
 	}
 
 
@@ -69,7 +76,7 @@ function inputSpecial() {
 				var y = minoData[game.currentPiece]["rotation"+game.currentRotation][i][1]+game.piecePos[0];
 				if (matrix[y] === undefined) {
 					//top out
-					++deadFrame;
+					deadFrame++;
 					return;
 				}
 				matrix[y][x] = minoData[game.currentPiece].color;
@@ -107,12 +114,17 @@ function inputSpecial() {
 	}
 
 	//process level and score
+	var prevLevelSegment = Math.floor(game.level/100);
 	if (haveLockedPiece && (game.level + 1) % 100 !== 0) {
 		game.level++;
 	}
 	game.level += linesCleared;
 	if (linesCleared > 0) {
 		areFrame += lineDelay;
+	}
+	var currentLevelSegment = Math.floor(game.level/100);
+	if (gamestate === 13 && currentLevelSegment>prevLevelSegment) {
+		framecount += 3600;
 	}
 
 }
