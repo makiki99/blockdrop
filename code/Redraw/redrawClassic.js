@@ -281,6 +281,8 @@ function redrawClassic() {
 			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level/2)))*tilesize,4,0.2*(game.level/3)*tilesize);
 		} else if (gamestate === 11) {
 			// draw nuttin'
+		} else if (gamestate === 14) {
+			ctx.fillRect(offX*tilesize,(offY+(10-0.1*(game.level % 100)))*tilesize,4,0.1*(game.level % 100)*tilesize);
 		} else {
 			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level % 100)))*tilesize,4,0.2*(game.level % 100)*tilesize);
 		}

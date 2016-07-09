@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.5.1
+* FIX | Fixed level bar display in Claustrophobia mode.
+
 ### v1.5.0
 * FEATURE | Created new mode category - Special
 * FEATURE | Added 4 new modes:
