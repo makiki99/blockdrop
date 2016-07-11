@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.5.2
+* CHANGE | Rebalanced grade requirements.
+
 ### v1.5.1
 * FIX | Fixed level bar display in Claustrophobia mode.
 
