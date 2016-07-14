@@ -33,7 +33,9 @@ function redrawProfile() {
 	if (profileMenu.substate === 4) {
 		ctx.font = tilesize*2 + "px 'Orbitron',monospace";
 		ctx.fillStyle = "#ffffff";
-		ctx.fillText("There is already a profile with this name.",tilesize*3,tilesize*8);
+		ctx.fillText("There is already",tilesize*3,tilesize*7);
+		ctx.fillText("a profile with",tilesize*5,tilesize*9.5);
+		ctx.fillText("this name.",tilesize*6.5,tilesize*12);
 	}
 
 }

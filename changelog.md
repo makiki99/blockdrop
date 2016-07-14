@@ -4,6 +4,7 @@
 * FEATURE | Added a message when player plays for the first time on the current version.
 * FIX | Prevented accidental opening of the links below the game screen.
 * FIX | Grade now updates on profile load.
+* FIX | Separated "there is already a profile with this name" into 3 lines.
 
 ### v1.5.2
 * CHANGE | Rebalanced grade requirements.
