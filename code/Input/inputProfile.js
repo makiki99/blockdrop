@@ -163,6 +163,9 @@ function loadProfile(name) {
 			prefMenu.preflist[i] = prefMenu.defPreflist[i];
 		}
 	}
+	if (currentProfile.topScores.length >= 10) {
+		submitScore(0);
+	}
 	saveProfile(name);
 }
 
