@@ -51,6 +51,8 @@ function inputModeSelect() {
 
 		} else {
 
+			showUpdateInfo = false;
+
 			gamestate = modeSelect.submenuList[modeSelect.substate-1].statelist[modeSelect.currentSelection];
 
 			//reset gamestate

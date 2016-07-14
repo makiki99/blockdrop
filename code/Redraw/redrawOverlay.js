@@ -1,3 +1,5 @@
+var showUpdateInfo = false;
+
 function redrawOverlay() {
 
 	var offX, offY;
@@ -30,6 +32,17 @@ function redrawOverlay() {
 			ctx.fillText("GRADE:",tilesize*offX,tilesize*(offY+0.5));
 			ctx.fillStyle = grade[currentProfile.grade][0];
 			ctx.fillText(grade[currentProfile.grade][1],tilesize*(offX+3),tilesize*(offY+0.5));
+		}
+	}());
+
+	//update note
+	(function() {
+		if (showUpdateInfo) {
+			offX = 1;
+			offY = 23;
+			ctx.font = tilesize/2 + "px sans-serif";
+			ctx.fillText("The game has updated!",tilesize*offX,tilesize*offY);
+			ctx.fillText("See changelog for more info!",tilesize*offX,tilesize*(offY+0.5));
 		}
 	}());
 

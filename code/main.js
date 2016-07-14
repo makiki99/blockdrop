@@ -1,4 +1,4 @@
-var version = "v1.5.3",
+var version = "v1.6.0",
 	debug = {
 		//debug toogles
 		showScore: false
@@ -197,7 +197,11 @@ window.addEventListener("load",function(){
 		loadImage("assets/tileset3/gray.png"),
 	]
 	];
-
+	//check last version played
+	if (localStorage.BLOCKDROP__VERSION !== version) {
+		localStorage.BLOCKDROP__VERSION = version;
+		showUpdateInfo = true;
+	}
 	requestAnimationFrame(main);
 });
 

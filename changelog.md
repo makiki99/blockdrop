@@ -1,6 +1,7 @@
 ## Changelog
 
-### v1.5.3
+### v1.6.0
+* FEATURE | Added a message when player plays for the first time on the current version.
 * FIX | Prevented accidental opening of the links below the game screen.
 
 ### v1.5.2
