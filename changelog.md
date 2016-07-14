@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.5.3
+* FIX | Prevented accidental opening of the links below the game screen.
+
 ### v1.5.2
 * CHANGE | Rebalanced grade requirements.
 

@@ -1,4 +1,4 @@
-var version = "v1.5.2",
+var version = "v1.5.3",
 	debug = {
 		//debug toogles
 		showScore: false
@@ -204,6 +204,9 @@ window.addEventListener("load",function(){
 document.body.addEventListener("keydown", function(e){
 	keys[e.keyCode] = true;
 	if (e.keyCode === 8) {
+		e.preventDefault();
+	}
+	if (e.keyCode === 13) {
 		e.preventDefault();
 	}
 });
