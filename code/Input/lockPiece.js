@@ -45,6 +45,7 @@ function lockPiece() {
 			buttonAIsPressed = false;
 			buttonBIsPressed = false;
 			buttonCIsPressed = false;
+			sfx.pieceLock.play();
 		}
 	}
 }

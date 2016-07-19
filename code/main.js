@@ -165,7 +165,7 @@ function loadAudio(src){
 	});
 }
 
-assetCount = 33;
+assetCount = 34;
 window.addEventListener("load",function(){
 	// assets
 	tiles = [[
