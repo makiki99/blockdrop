@@ -1,5 +1,8 @@
 ## Changelog
 
+### v1.7.0
+* FEATURE | Added sound effects.
+
 ### v1.6.0
 * FEATURE | Added a message when player plays for the first time on the current version.
 * FIX | Prevented accidental opening of the links below the game screen.

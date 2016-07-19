@@ -207,7 +207,8 @@ window.addEventListener("load",function(){
 	]
 	];
 	sfx = {
-		sample: loadAudio("assets/sfx/piece drop.wav")
+		pieceDrop: loadAudio("assets/sfx/piece drop.wav"),
+		pieceLock: loadAudio("assets/sfx/piece lock.wav")
 	};
 	//check last version played
 	if (localStorage.BLOCKDROP__VERSION !== version) {

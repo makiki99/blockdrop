@@ -151,8 +151,9 @@ function movement() {
 	}
 
 	//process vertical movement
+	var initialYPos = game.piecePos[0];
 	while (miniTilesDown >= 256) {
-		if (colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation) === false) {
+		if (!colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation)) {
 			miniTilesDown -= 256;
 			game.piecePos[0]++;
 			lockframe = 0;
@@ -160,6 +161,9 @@ function movement() {
 			miniTilesDown = 0;
 			break;
 		}
+	}
+	if (game.piecePos[0] > initialYPos && colCheck(game.piecePos[0]+1,game.piecePos[1],game.currentRotation)) {
+		sfx.pieceDrop.play();
 	}
 
 	if (keys[controls.keyCodes[7]]) {

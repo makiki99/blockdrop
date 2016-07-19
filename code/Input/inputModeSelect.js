@@ -118,7 +118,7 @@ function inputModeSelect() {
 			game.history.splice(0,1);
 			game.history.push(randomNum);
 			modeClear = false;
-			generatePiece();
+			generatePiece("silent");
 			timeAttack.speedLevel = 1;
 			marathon.lineClears.single = 0;
 			marathon.lineClears.double = 0;
