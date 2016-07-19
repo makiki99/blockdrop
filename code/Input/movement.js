@@ -61,6 +61,14 @@ function movement() {
 		return;
 	}
 
+	if (areFrame === 0 || countdown === 0) {
+		if (keys[controls.keyCodes[2]] || keys[controls.keyCodes[3]] || keys[controls.keyCodes[4]]) {
+			sfx.prerotate.play();
+		}
+		areFrame--;
+		countdown--;
+	}
+
 	(function() {
 		if (keys[controls.keyCodes[2]]) {
 			// A button
