@@ -1,4 +1,4 @@
-var version = "v1.6.0",
+var version = "v1.7.0",
 	debug = {
 		//debug toogles
 		showScore: false
@@ -27,8 +27,9 @@ canvas.height = tilesize*24;
 
 //asset containers
 var tiles;
-var imageCount; //always increase it by 8 when adding a new tileset
-var imagesLoaded = 0;
+var sfx;
+var assetCount; //always increase it by 8 when adding a new tileset
+var assetsLoaded = 0;
 
 var fpsLock = {
 	now : 0,
@@ -40,11 +41,11 @@ var fpsLock = {
 function main() {
 
 	requestAnimationFrame(main);
-	if (imagesLoaded < imageCount) {
+	if (assetsLoaded < assetCount) {
 		ctx.fillStyle = "black";
 		ctx.fillRect(0,0,canvas.width,canvas.height);
 		ctx.fillStyle = "white";
-		ctx.fillText("Loading ("+imagesLoaded+"/"+imageCount+")",24,24);
+		ctx.fillText("Loading ("+assetsLoaded+"/"+assetCount+")",24,24);
 		return;
 	}
 
@@ -148,15 +149,23 @@ function loadImage(src) {
 	var img = new Image();
 	img.src = src;
 	img.onload = function() {
-		imagesLoaded++;
+		assetsLoaded++;
 	};
 	img.onerror = function() {
 		console.error("loading failed from source "+src);
 	};
 	return img;
 }
+function loadAudio(src){
+	return new Howl({
+		urls: [src],
+		onload: function () {
+			assetsLoaded++;
+		}
+	});
+}
 
-imageCount = 32;
+assetCount = 33;
 window.addEventListener("load",function(){
 	// assets
 	tiles = [[
@@ -197,6 +206,9 @@ window.addEventListener("load",function(){
 		loadImage("assets/tileset3/gray.png"),
 	]
 	];
+	sfx = {
+		sample: loadAudio("assets/sfx/piece drop.wav")
+	};
 	//check last version played
 	if (localStorage.BLOCKDROP__VERSION !== version) {
 		localStorage.BLOCKDROP__VERSION = version;
