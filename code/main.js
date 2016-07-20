@@ -165,7 +165,7 @@ function loadAudio(src){
 	});
 }
 
-assetCount = 35;
+assetCount = 37;
 window.addEventListener("load",function(){
 	// assets
 	tiles = [[
@@ -209,7 +209,9 @@ window.addEventListener("load",function(){
 	sfx = {
 		pieceDrop: loadAudio("assets/sfx/piece drop.wav"),
 		pieceLock: loadAudio("assets/sfx/piece lock.wav"),
-		prerotate: loadAudio("assets/sfx/prerotate.wav")
+		prerotate: loadAudio("assets/sfx/prerotate.wav"),
+		lineClear: loadAudio("assets/sfx/line clear.wav"),
+		quadClear: loadAudio("assets/sfx/quadruple.wav")
 	};
 	//check last version played
 	if (localStorage.BLOCKDROP__VERSION !== version) {

@@ -46,6 +46,11 @@ function lockPiece() {
 			buttonBIsPressed = false;
 			buttonCIsPressed = false;
 			sfx.pieceLock.play();
+			if (linesCleared === 4) {
+				sfx.quadClear.play();
+			} else if (linesCleared > 0) {
+				sfx.lineClear.play();
+			}
 		}
 	}
 }
