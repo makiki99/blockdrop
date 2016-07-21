@@ -68,13 +68,13 @@ function inputClassic(submode) {
 		}
 		diffMult *= 1+Math.floor(game.level/100)/50;
 		if (invisMode) {
-			diffMult *= 2+Math.floor(game.level/100)/10;
+			diffMult *= 1+Math.floor(game.level/100)/10;
 		}
 	}());
 
 	if (areFrame <= 0) {
 		if (invisMode) {
-			game.score -= diffMult/54;
+			game.score -= diffMult/60;
 		} else {
 			game.score -= diffMult/30;
 		}
