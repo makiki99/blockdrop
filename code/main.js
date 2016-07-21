@@ -165,7 +165,7 @@ function loadAudio(src){
 	});
 }
 
-assetCount = 37;
+assetCount = 39;
 window.addEventListener("load",function(){
 	// assets
 	tiles = [[
@@ -210,7 +210,9 @@ window.addEventListener("load",function(){
 		pieceDrop: loadAudio("assets/sfx/piece drop.wav"),
 		pieceLock: loadAudio("assets/sfx/piece lock.wav"),
 		prerotate: loadAudio("assets/sfx/prerotate.wav"),
-		lineClear: loadAudio("assets/sfx/line clear.wav"),
+		singleClear: loadAudio("assets/sfx/single.wav"),
+		doubleClear: loadAudio("assets/sfx/double.wav"),
+		tripleClear: loadAudio("assets/sfx/triple.wav"),
 		quadClear: loadAudio("assets/sfx/quadruple.wav")
 	};
 	//check last version played
