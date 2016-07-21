@@ -72,7 +72,7 @@ function inputClassic(submode) {
 		}
 	}());
 
-	if (areFrame === 0) {
+	if (areFrame <= 0) {
 		if (invisMode) {
 			game.score -= diffMult/54;
 		} else {
