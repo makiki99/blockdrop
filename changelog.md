@@ -1,5 +1,9 @@
 ## Changelog
 
+### v2.0.0
+* FEATURE | Added SFX! Yay!
+* FIX | Now the level counter can't roll past end level.
+
 ### v1.7.0
 * FEATURE | Added sound effects.
 
