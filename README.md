@@ -10,4 +10,4 @@ All you need is to clone the repository or download zip package, and then open i
 
 ### Acknowledgments
 * [Xershh](http://steamcommunity.com/id/xershh/) - tileset id 0
-* [Sinewave](https://twitter.com/sinewaveslicer) - tileset id 3
+* [Sinewave](https://twitter.com/sinewaveslicer) - tileset id 3, piece drop and piece lock sounds
