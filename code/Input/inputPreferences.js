@@ -60,7 +60,7 @@ function inputPreferences() {
 				if (prefMenu.preflist[5] > 100) {
 					prefMenu.preflist[5] = 0;
 				}
-				Howler.volume(prefMenu.preflist[5]/100);
+				Howler.volume = prefMenu.preflist[5]/100;
 				break;
 			default:
 
