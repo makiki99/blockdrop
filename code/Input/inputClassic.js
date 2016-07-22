@@ -8,6 +8,7 @@ function inputClassic(submode) {
 
 	// special checks
 	if (game.level >= submode.endlevel && deadFrame === 0) {
+		game.level = submode.endlevel;
 		deadFrame++;
 		modeClear = true;
 		submitScore(game.score);

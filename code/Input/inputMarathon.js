@@ -27,6 +27,7 @@ var marathon = {
 function inputMarathon() {
 	// special checks
 	if (game.level >= marathon.endlevel && deadFrame === 0) {
+		game.level = marathon.endlevel;
 		deadFrame++;
 		modeClear = true;
 	}

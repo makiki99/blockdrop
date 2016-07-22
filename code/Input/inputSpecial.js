@@ -2,6 +2,7 @@ function inputSpecial() {
 
 	// special checks
 	if (game.level >= normal.endlevel && deadFrame === 0) {
+		game.level = normal.endlevel;
 		deadFrame++;
 		modeClear = true;
 	}

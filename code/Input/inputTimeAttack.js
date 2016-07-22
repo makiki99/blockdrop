@@ -19,6 +19,7 @@ function inputTimeAttack() {
 
 	// special checks
 	if (game.level >= timeAttack.endlevel && deadFrame === 0) {
+		game.level = timeAttack.endlevel;
 		deadFrame++;
 		modeClear = true;
 	}
