@@ -167,6 +167,7 @@ function loadProfile(name) {
 		submitScore(0);
 	}
 	saveProfile(name);
+	Howler.volume = prefMenu.preflist[5]/100;
 }
 
 function saveProfile(name) {

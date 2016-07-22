@@ -1,13 +1,14 @@
 var prefMenu = {
 	currentSelection : 0,
-	defPreflist : [false,false,2,true,0],
-	preflist : [false,false,2,true,0],
+	defPreflist : [false,false,2,true,0,50],
+	preflist : [false,false,2,true,0,50],
 	namelist : [
 		"Flip rotation buttons",
 		"Show framerate",
 		"Show level bar",
 		"Force 60 FPS",
-		"Tileset"
+		"Tileset",
+		"SFX volume"
 	]
 };
 
@@ -53,6 +54,13 @@ function inputPreferences() {
 				if (prefMenu.preflist[4] > tiles.length-1) {
 					prefMenu.preflist[4] = 0;
 				}
+				break;
+			case 5:
+				prefMenu.preflist[5] += 10;
+				if (prefMenu.preflist[5] > 100) {
+					prefMenu.preflist[5] = 0;
+				}
+				Howler.volume(prefMenu.preflist[5]/100);
 				break;
 			default:
 

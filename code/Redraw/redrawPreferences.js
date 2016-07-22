@@ -39,6 +39,9 @@ function redrawPreferences() {
 				ctx.drawImage(tiles[prefMenu.preflist[4]][ii],tilesize*(16+ii),tilesize*(2+i-1)+3);
 			}
 		}
+		if (i === 5) {
+			prefString = prefMenu.preflist[5];
+		}
 		ctx.fillText(prefString,tilesize*15,tilesize*(2+i));
 	}
 
