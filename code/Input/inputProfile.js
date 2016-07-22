@@ -166,6 +166,9 @@ function loadProfile(name) {
 	if (currentProfile.topScores.length >= 10) {
 		submitScore(0);
 	}
+	if (currentProfile.playcount === undefined) {
+		currentProfile.playcount = 0;
+	}
 	saveProfile(name);
 	Howler.volume = prefMenu.preflist[5]/100;
 }
@@ -254,6 +257,7 @@ function Profile(name) {
 	this.name = name;
 	this.topScores = [];
 	this.grade = 0;
+	this.playcount = 0;
 	this.controls = controls.defKeyCodes.slice();
 	this.preferences = prefMenu.preflist.slice();
 }

@@ -24,14 +24,16 @@ function redrawOverlay() {
 	//name
 	(function() {
 		offX = 13;
-		offY = 23;
+		offY = 22.5;
 		ctx.font = tilesize/2 + "px sans-serif";
 		if (!isGuest && gamestate !== -1) {
 			ctx.fillText("PLAYER:",tilesize*offX,tilesize*offY);
-			ctx.fillText(currentProfile.name,tilesize*(offX+3),tilesize*offY);
+			ctx.fillText("PLAYS:",tilesize*offX,tilesize*(offY+1));
+			ctx.fillText(currentProfile.playcount,tilesize*(offX+3),tilesize*(offY+1));
 			ctx.fillText("GRADE:",tilesize*offX,tilesize*(offY+0.5));
 			ctx.fillStyle = grade[currentProfile.grade][0];
 			ctx.fillText(grade[currentProfile.grade][1],tilesize*(offX+3),tilesize*(offY+0.5));
+			ctx.fillText(currentProfile.name,tilesize*(offX+3),tilesize*offY);
 		}
 	}());
 

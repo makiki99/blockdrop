@@ -130,7 +130,7 @@ function inputModeSelect() {
 			if (gamestate === 12) {
 				canvas.style.transform = "scaleY(-1)";
 			}
-
+			currentProfile.playcount++;
 		}
 
 		keys[controls.keyCodes[10]] = false;
