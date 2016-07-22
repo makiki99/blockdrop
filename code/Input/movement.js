@@ -65,7 +65,7 @@ function movement() {
 		if (keys[controls.keyCodes[2]] || keys[controls.keyCodes[3]] || keys[controls.keyCodes[4]]) {
 			sfx.prerotate.play();
 		}
-		//TODO: next piece sounds
+		sfx.piece[game.nextPiece].play();
 		areFrame--;
 		countdown--;
 	}

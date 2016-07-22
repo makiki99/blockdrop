@@ -213,7 +213,16 @@ window.addEventListener("load",function(){
 		singleClear: loadAudio("assets/sfx/single.wav"),
 		doubleClear: loadAudio("assets/sfx/double.wav"),
 		tripleClear: loadAudio("assets/sfx/triple.wav"),
-		quadClear: loadAudio("assets/sfx/quadruple.wav")
+		quadClear: loadAudio("assets/sfx/quadruple.wav"),
+		piece: [
+			loadAudio("assets/sfx/z-piece.wav"),
+			loadAudio("assets/sfx/s-piece.wav"),
+			loadAudio("assets/sfx/o-piece.wav"),
+			loadAudio("assets/sfx/j-piece.wav"),
+			loadAudio("assets/sfx/l-piece.wav"),
+			loadAudio("assets/sfx/i-piece.wav"),
+			loadAudio("assets/sfx/t-piece.wav"),
+		]
 	};
 	//check last version played
 	if (localStorage.BLOCKDROP__VERSION !== version) {
