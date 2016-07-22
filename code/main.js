@@ -156,12 +156,19 @@ function loadImage(src) {
 	};
 	return img;
 }
-function loadAudio(src){
+function loadAudio(src,vol){
 	return new Howl({
 		urls: [src],
 		onload: function () {
 			assetsLoaded++;
-		}
+		},
+		volume: (function() {
+			if (vol === undefined) {
+				return 1;
+			} else {
+				return vol;
+			}
+		}())
 	});
 }
 
@@ -215,13 +222,13 @@ window.addEventListener("load",function(){
 		tripleClear: loadAudio("assets/sfx/triple.wav"),
 		quadClear: loadAudio("assets/sfx/quadruple.wav"),
 		piece: [
-			loadAudio("assets/sfx/z-piece.wav"),
-			loadAudio("assets/sfx/s-piece.wav"),
-			loadAudio("assets/sfx/o-piece.wav"),
-			loadAudio("assets/sfx/j-piece.wav"),
-			loadAudio("assets/sfx/l-piece.wav"),
-			loadAudio("assets/sfx/i-piece.wav"),
-			loadAudio("assets/sfx/t-piece.wav"),
+			loadAudio("assets/sfx/z-piece.wav",0.75),
+			loadAudio("assets/sfx/s-piece.wav",0.75),
+			loadAudio("assets/sfx/o-piece.wav",0.75),
+			loadAudio("assets/sfx/j-piece.wav",0.75),
+			loadAudio("assets/sfx/l-piece.wav",0.75),
+			loadAudio("assets/sfx/i-piece.wav",0.75),
+			loadAudio("assets/sfx/t-piece.wav",0.75)
 		]
 	};
 	//check last version played
