@@ -170,7 +170,7 @@ function loadProfile(name) {
 		currentProfile.playcount = 0;
 	}
 	saveProfile(name);
-	Howler.volume = prefMenu.preflist[5]/100;
+	Howler.volume(prefMenu.preflist[5]/100);
 }
 
 function saveProfile(name) {
