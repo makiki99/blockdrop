@@ -1,4 +1,4 @@
-var version = "v2.0.0",
+var version = "v2.0.1",
 	debug = {
 		//debug toogles
 		showScore: false

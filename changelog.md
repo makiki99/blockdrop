@@ -1,5 +1,8 @@
 ## Changelog
 
+### v2.0.1
+* FIX | Claustrophobia mode is now back playable.
+
 ### v2.0.0
 * FEATURE | Added SFX! Yay!
 * FEATURE | Added playcount counter.

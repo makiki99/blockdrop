@@ -20,7 +20,7 @@ function lockPiece() {
 			miniTilesDown = 0;
 			//clear lines
 			(function() {
-				for(y = 0; y < 20; y++){
+				for(y = 0; y < matrix.length; y++){
 					var foo = 0;
 					for (x = 0;x < 10; x++) {
 						if (matrix[y][x] > 0) {
