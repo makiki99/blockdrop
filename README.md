@@ -2,7 +2,7 @@
 A tetromino game where you clear lines.
 
 ### Running local copy
-All you need is to clone the repository or download zip package, and then open index.html.
+Run any http server in a root directory of this repository. This game doesn't use any serverside code, but Howler.js library disallows running game via `file://` protocol.
 
 ### Licensing
 * The code is released under [MIT license](http://choosealicense.com/licenses/mit/).
