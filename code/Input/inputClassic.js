@@ -2,7 +2,8 @@ var scoreSegment = -1,
 	speedLevel = -1,
 	haveLockedPiece = false,
 	linesCleared = 0,
-	diffMult = 0;
+	diffMult = 0,
+	countdown = 180;
 
 function inputClassic(submode) {
 

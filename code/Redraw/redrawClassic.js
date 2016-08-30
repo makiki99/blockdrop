@@ -274,7 +274,7 @@ function redrawClassic() {
 		offX = 12.25;
 	}
 	offY = 1;
-	if (countdown === 0 && prefMenu.preflist[2] < 2){
+	if (countdown < 0 && prefMenu.preflist[2] < 2){
 		if (gamestate === 9) {
 			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level/3)))*tilesize,4,0.2*(game.level/3)*tilesize);
 		} else if (gamestate === 10) {

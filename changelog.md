@@ -1,7 +1,11 @@
 ## Changelog
 
+### v2.0.3
+* FIX | Fixed level bar not showing up.
+* FIX | Somehow improved performance.
+
 ### v2.0.2
-* FIX | Fixed a very stupid error causing players to be unable to change the sfx volume
+* FIX | Fixed a very stupid error causing players to be unable to change the sfx volume.
 
 ### v2.0.1
 * FIX | Claustrophobia mode is now back playable.
