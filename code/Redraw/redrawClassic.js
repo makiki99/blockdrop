@@ -63,6 +63,18 @@ function redrawClassic() {
 			case 15:
 				ctx.fillText("Neg. Shadow",offX*tilesize,offY*tilesize);
 				break;
+			case 16:
+				ctx.fillText("Quad. Clear",offX*tilesize,offY*tilesize);
+				break;
+			case 17:
+				ctx.fillText("Over 9000",offX*tilesize,offY*tilesize);
+				break;
+			case 18:
+				ctx.fillText("H. Marathon",offX*tilesize,offY*tilesize);
+				break;
+			case 19:
+				ctx.fillText("Marathon",offX*tilesize,offY*tilesize);
+				break;
 			default:
 				ctx.fillText("ERROR",offX*tilesize,offY*tilesize);
 		}

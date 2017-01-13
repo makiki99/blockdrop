@@ -1,5 +1,8 @@
 ## Changelog
 
+### v2.1.0
+* FEATURE | Added endurance modes.
+
 ### v2.0.3
 * FIX | Fixed level bar not showing up.
 * FIX | Somehow improved performance.

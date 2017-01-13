@@ -4,7 +4,8 @@ var modeSelect = {
 	menuList: [
 		{name:"Ranked", substate: 1},
 		{name:"Unranked", substate: 2},
-		{name:"Special", substate: 3}
+		{name:"Special", substate: 3},
+		{name:"Endurance", substate: 4}
 	],
 	submenuList: [
 		{
@@ -35,9 +36,17 @@ var modeSelect = {
 				"Claustrophobia",
 				"Negative Shadow"
 			]
+		},
+		{
+			statelist:[16,17,18,19],
+			nameList:[
+				"Quadruple Clear",
+				"Over 9000",
+				"Half Marathon",
+				"Marathon"
+			]
 		}
-	],
-
+	]
 };
 
 function inputModeSelect() {

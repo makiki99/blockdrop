@@ -1,4 +1,4 @@
-var version = "v2.0.3",
+var version = "v2.1.0",
 	debug = {
 		//debug toogles
 		showScore: false
@@ -28,7 +28,7 @@ canvas.height = tilesize*24;
 //asset containers
 var tiles;
 var sfx;
-var assetCount; //always increase it by 8 when adding a new tileset
+var assetCount;
 var assetsLoaded = 0;
 
 var fpsLock = {
@@ -133,6 +133,22 @@ function main() {
 				break;
 			case 15:
 				inputSpecial();
+				redrawClassic();
+				break;
+			case 16:
+				inputEndurance(4000);
+				redrawClassic();
+				break;
+			case 17:
+				inputEndurance(9001);
+				redrawClassic();
+				break;
+			case 18:
+				inputEndurance(21098);
+				redrawClassic();
+				break;
+			case 19:
+				inputEndurance(42195);
 				redrawClassic();
 				break;
 			default:
