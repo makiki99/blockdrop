@@ -2,6 +2,7 @@
 
 ### v2.1.0
 * FEATURE | Added endurance modes.
+* CHANGE | Changed default setting for `force 60 fps` to `false`
 
 ### v2.0.3
 * FIX | Fixed level bar not showing up.

@@ -1,7 +1,7 @@
 var prefMenu = {
 	currentSelection : 0,
-	defPreflist : [false,false,2,true,0,50],
-	preflist : [false,false,2,true,0,50],
+	defPreflist : [false,false,2,false,0,50],
+	preflist : [false,false,2,false,0,50],
 	namelist : [
 		"Flip rotation buttons",
 		"Show framerate",
