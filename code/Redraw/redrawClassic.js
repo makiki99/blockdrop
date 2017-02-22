@@ -75,6 +75,9 @@ function redrawClassic() {
 			case 19:
 				ctx.fillText("Marathon",offX*tilesize,offY*tilesize);
 				break;
+			case 20:
+				ctx.fillText("T. A. Death",offX*tilesize,offY*tilesize);
+				break;
 			default:
 				ctx.fillText("ERROR",offX*tilesize,offY*tilesize);
 		}

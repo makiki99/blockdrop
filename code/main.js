@@ -1,4 +1,4 @@
-var version = "v2.1.0",
+var version = "v2.2.0",
 	debug = {
 		//debug toogles
 		showScore: false
@@ -14,7 +14,8 @@ var version = "v2.1.0",
 		nextPiece: 0,
 		history: [0,1,1,0],
 		level: 1,
-		score: 0
+		score: 0,
+		torikan: false
 	};
 
 //canvas variables
@@ -149,6 +150,10 @@ function main() {
 				break;
 			case 19:
 				inputEndurance(42195);
+				redrawClassic();
+				break;
+			case 20:
+				inputDeath();
 				redrawClassic();
 				break;
 			default:

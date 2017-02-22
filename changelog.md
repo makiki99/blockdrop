@@ -1,5 +1,8 @@
 ## Changelog
 
+### v2.2.0
+* FEATURE | Totally Almost Death mode
+
 ### v2.1.0
 * FEATURE | Added endurance modes.
 * CHANGE | Changed default setting for `force 60 fps` to `false`
