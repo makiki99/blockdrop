@@ -186,6 +186,9 @@ function createProfile(name) {
 }
 
 function submitScore(score) {
+	if (gamestate > 8) {
+		return;
+	}
 	function compareNumbers(a, b) {
 		return b - a;
 	}

@@ -1,5 +1,9 @@
 ## Changelog
 
+### v2.3.0
+* FEATURE | HELL mode
+* FIX | Removed grade improvement from dying/suiciding in 200 lines mode (or any other than ranked).
+
 ### v2.2.0
 * FEATURE | Totally Almost Death mode
 

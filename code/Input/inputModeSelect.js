@@ -21,12 +21,13 @@ var modeSelect = {
 			]
 		},
 		{
-			statelist:[9,10,11,20],
+			statelist:[9,10,11,20,21],
 			nameList:[
 				"Time Attack",
 				"200 lines",
 				"Survival",
-				"The Almost Death"
+				"The Almost Death",
+				"HELL"
 			]
 		},
 		{
@@ -141,6 +142,7 @@ function inputModeSelect() {
 				canvas.style.transform = "scaleY(-1)";
 			}
 			currentProfile.playcount++;
+			hell.garbage = 0;
 		}
 
 		keys[controls.keyCodes[10]] = false;

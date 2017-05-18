@@ -1,4 +1,4 @@
-var version = "v2.2.0",
+var version = "v2.3.0",
 	debug = {
 		//debug toogles
 		showScore: false
@@ -154,6 +154,10 @@ function main() {
 				break;
 			case 20:
 				inputDeath();
+				redrawClassic();
+				break;
+			case 21:
+				inputHell();
 				redrawClassic();
 				break;
 			default:
