@@ -3,6 +3,7 @@
 ### v3.0.0
 * FEATURE | Added overdan grades.
 * FIX | Fixed colors on the grade overlay.
+* CHANGE | Shadow and Phantom are now unranked.
 
 ### v2.3.0
 * FEATURE | HELL mode

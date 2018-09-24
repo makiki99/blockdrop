@@ -186,7 +186,7 @@ function createProfile(name) {
 }
 
 function submitScore(score) {
-	if (gamestate > 8) {
+	if (gamestate > 5 && gamestate != 7) { //[2,3,4,5,7]
 		return;
 	}
 	function compareNumbers(a, b) {

@@ -9,25 +9,25 @@ var modeSelect = {
 	],
 	submenuList: [
 		{
-			statelist:[2,3,4,5,7,6,8],
+			statelist:[2,3,4,5,7],
 			nameList:[
 				"Easy",
 				"Normal",
 				"Hard",
 				"Hyper",
 				"Another",
-				"Shadow",
-				"Phantom",
 			]
 		},
 		{
-			statelist:[9,10,11,20,21],
+			statelist:[9,10,11,20,21,6,8],
 			nameList:[
 				"Time Attack",
 				"200 lines",
 				"Survival",
 				"The Almost Death",
-				"HELL"
+				"HELL",
+				"Shadow",
+				"Phantom",
 			]
 		},
 		{
