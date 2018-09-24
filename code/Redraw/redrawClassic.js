@@ -43,72 +43,11 @@ function redrawClassic() {
 	ctx.fillStyle = "#ffffff";
 	ctx.font = tilesize + "px 'Orbitron',monospace";
 	ctx.textAlign = "center";
-	(function() {
-		switch (gamestate) {
-			case 2:
-				ctx.fillText("Easy",offX*tilesize,offY*tilesize);
-				break;
-			case 3:
-				ctx.fillText("Normal",offX*tilesize,offY*tilesize);
-				break;
-			case 4:
-				ctx.fillText("Hard",offX*tilesize,offY*tilesize);
-				break;
-			case 5:
-				ctx.fillText("Hyper",offX*tilesize,offY*tilesize);
-				break;
-			case 6:
-				ctx.fillText("Shadow",offX*tilesize,offY*tilesize);
-				break;
-			case 7:
-				ctx.fillText("Another",offX*tilesize,offY*tilesize);
-				break;
-			case 8:
-				ctx.fillText("Phantom",offX*tilesize,offY*tilesize);
-				break;
-			case 9:
-				ctx.fillText("Time Attack",offX*tilesize,offY*tilesize);
-				break;
-			case 10:
-				ctx.fillText("200 lines",offX*tilesize,offY*tilesize);
-				break;
-			case 11:
-				ctx.fillText("Survival",offX*tilesize,offY*tilesize);
-				break;
-			case 12:
-				ctx.fillText("Blockflip",offX*tilesize,offY*tilesize);
-				break;
-			case 13:
-				ctx.fillText("Time Rush",offX*tilesize,offY*tilesize);
-				break;
-			case 14:
-				ctx.fillText("Claustrophobia",offX*tilesize,offY*tilesize);
-				break;
-			case 15:
-				ctx.fillText("Neg. Shadow",offX*tilesize,offY*tilesize);
-				break;
-			case 16:
-				ctx.fillText("Quad. Clear",offX*tilesize,offY*tilesize);
-				break;
-			case 17:
-				ctx.fillText("Over 9000",offX*tilesize,offY*tilesize);
-				break;
-			case 18:
-				ctx.fillText("H. Marathon",offX*tilesize,offY*tilesize);
-				break;
-			case 19:
-				ctx.fillText("Marathon",offX*tilesize,offY*tilesize);
-				break;
-			case 20:
-				ctx.fillText("T. A. Death",offX*tilesize,offY*tilesize);
-				break;
-			case 21:
-				ctx.fillText("HELL",offX*tilesize,offY*tilesize);
-				break;
-			default:
-				ctx.fillText("ERROR",offX*tilesize,offY*tilesize);
-		}
-	}());
+	if (gamestate in displayNames) {
+		ctx.fillText(displayNames[gamestate],offX*tilesize,offY*tilesize);
+	} else {
+		ctx.fillText("ERROR",offX*tilesize,offY*tilesize);
+	}
 
 	//level
 	offX = 16;
