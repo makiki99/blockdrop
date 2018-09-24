@@ -1,6 +1,6 @@
 grade = [
 	["#DDDDDD","Unranked", 0],
-	["#EEEEEE","Beginner", 1],
+	["#DDDDDD","Beginner", 1],
 	// beginner kyu
 	["#FFFFFF","30th kyu", 100],
 	["#FFFFFF","29th kyu", 150],
@@ -44,4 +44,9 @@ grade = [
 	["#FFFFFF","7th dan", 2485],
 	["#FFFFFF","8th dan", 2550],
 	["#FFFFFF","9th dan", 2615],
+	// overdan
+	["#3FFF3F","Master", 2800],
+	["#FFD700","True Master", 3000],
+	["#00FFFF","Grand Master", 3300],
+	["#DC143C","Super GM", 3600],
 ];

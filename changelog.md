@@ -1,5 +1,9 @@
 ## Changelog
 
+### v3.0.0
+* FEATURE | Added overdan grades.
+* FIX | Fixed colors on the grade overlay.
+
 ### v2.3.0
 * FEATURE | HELL mode
 * FIX | Removed grade improvement from dying/suiciding in 200 lines mode (or any other than ranked).

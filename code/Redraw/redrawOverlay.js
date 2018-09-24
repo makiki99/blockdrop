@@ -33,6 +33,7 @@ function redrawOverlay() {
 			ctx.fillText("GRADE:",tilesize*offX,tilesize*(offY+0.5));
 			ctx.fillStyle = grade[currentProfile.grade][0];
 			ctx.fillText(grade[currentProfile.grade][1],tilesize*(offX+3),tilesize*(offY+0.5));
+			ctx.fillStyle = "white";
 			ctx.fillText(currentProfile.name,tilesize*(offX+3),tilesize*offY);
 		}
 	}());
