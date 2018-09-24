@@ -4,6 +4,30 @@ var lineClearAnim = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 	invisMode = false,
 	nextBuffer = 0;
 
+var displayNames = [
+	"","",
+	"Easy",
+	"Normal",
+	"Hard",
+	"Hyper",
+	"Shadow",
+	"Another",
+	"Phantom",
+	"Time Attack",
+	"200 lines",
+	"Survival",
+	"Blockflip",
+	"Time Rush",
+	"Claustrophobia",
+	"Neg. Shadow",
+	"Quad. Clear",
+	"Over 9000",
+	"H. Marathon",
+	"Marathon",
+	"T. A. Death",
+	"HELL",
+]
+
 function redrawClassic() {
 
 	var offX, offY;
