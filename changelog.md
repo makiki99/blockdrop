@@ -4,6 +4,7 @@
 * FEATURE | Added overdan grades.
 * FIX | Fixed colors on the grade overlay.
 * CHANGE | Shadow and Phantom are now unranked.
+* CHANGE | Survival mode is no longer available to play.
 
 ### v2.3.0
 * FEATURE | HELL mode
