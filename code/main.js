@@ -160,6 +160,10 @@ function main() {
 				inputHell();
 				redrawClassic();
 				break;
+			case 22:
+				inputUltraSpecial();
+				redrawClassic();
+				break;
 			default:
 				console.error("Unexpected gamestate id");
 

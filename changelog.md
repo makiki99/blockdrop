@@ -2,6 +2,7 @@
 
 ### v3.0.0
 * FEATURE | Added overdan grades.
+* FEATURE | Ultra Challenge mode - a mode with dynamic difficulty system!
 * FIX | Fixed colors on the grade overlay.
 * CHANGE | Shadow and Phantom are now unranked.
 * CHANGE | Survival mode is no longer available to play.

@@ -1,5 +1,5 @@
 // THIS FILE IS NOT MEANT TO BE LOADED - THIS IS MERELY A BASE FOR FUTURE MODES
-function input???() {
+function input_todo() {
 
 	// special checks
 	if (game.level >= submode.endlevel && deadFrame === 0) {

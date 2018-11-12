@@ -26,6 +26,7 @@ var displayNames = [
 	"Marathon",
 	"T. A. Death",
 	"HELL",
+	"Ultra"
 ]
 
 function redrawClassic() {
@@ -57,6 +58,8 @@ function redrawClassic() {
 		ctx.fillText("LINE",offX*tilesize,offY*tilesize);
 	} else if (gamestate === 11) {
 		// draw nuttin'
+	} else if (gamestate === 22) {
+		ctx.fillText("RANK",offX*tilesize,offY*tilesize);
 	} else {
 		ctx.fillText("LVL",offX*tilesize,offY*tilesize);
 	}
@@ -264,6 +267,10 @@ function redrawClassic() {
 			// draw nuttin'
 		} else if (gamestate === 14) {
 			ctx.fillRect(offX*tilesize,(offY+(10-0.1*(game.level % 100)))*tilesize,4,0.1*(game.level % 100)*tilesize);
+		} else if (gamestate === 22) {
+			let subrank = 20*(ultraSpecial.rankPoints-4800*game.level)/4800;
+			if (subrank < 0) subrank = 0;
+			ctx.fillRect(offX*tilesize,(offY+(20-subrank))*tilesize,4,subrank*tilesize);
 		} else {
 			ctx.fillRect(offX*tilesize,(offY+(20-0.2*(game.level % 100)))*tilesize,4,0.2*(game.level % 100)*tilesize);
 		}
@@ -277,6 +284,20 @@ function redrawClassic() {
 		ctx.lineWidth = 6;
 		ctx.strokeText("SCORE: " +Math.floor(game.score),tilesize*3.5,tilesize*11);
 		ctx.fillText("SCORE: " + Math.floor(game.score),tilesize*3.5,tilesize*11);
+	}
+
+	//ultra challenge specific stuff
+	if (gamestate === 22) {
+		ctx.font = tilesize + "px 'Orbitron',monospace";
+		ctx.fillStyle = "#ffffff";
+		ctx.textAlign = "left";
+		ctx.fillText("SCORE",tilesize*13.5,tilesize*8);
+		ctx.textAlign = "right";
+		for (i=0; i<7; i++)
+			ctx.fillText(Math.floor(game.score/Math.pow(10,i))%10,tilesize*19-i*20,tilesize*9);
+		ctx.font = tilesize*3/4 + "px 'Orbitron',monospace";
+		ctx.fillText("+"+ultraSpecial.bonusScore,tilesize*19,tilesize*9.8);
+		ctx.textAlign = "";
 	}
 
 	//debug.showScore

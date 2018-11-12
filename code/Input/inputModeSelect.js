@@ -19,7 +19,7 @@ var modeSelect = {
 			]
 		},
 		{
-			statelist:[9,10,20,21,6,8],
+			statelist:[9,10,20,21,6,8,22],
 			nameList:[
 				"Time Attack",
 				"200 lines",
@@ -27,6 +27,7 @@ var modeSelect = {
 				"HELL",
 				"Shadow",
 				"Phantom",
+				"Ultra Challenge",
 			]
 		},
 		{
@@ -105,12 +106,14 @@ function inputModeSelect() {
 			}
 			deadFrame = 0;
 			game.history = [0,1,0,1];
-			if (gamestate === 10) {
+			if (gamestate === 10 || gamestate == 22) {
 				game.level = 0;
 			} else {
 				game.level = 1;
 			}
 			game.score = 0;
+			ultraSpecial.rankPoints = 0;
+			ultraSpecial.bonusScore = 0;
 			speedLevel = 0;
 			dasFrameLeft = 0;
 			dasFrameRight = 0;
@@ -118,6 +121,8 @@ function inputModeSelect() {
 			lockframe = 0;
 			if (gamestate === 13) {
 				framecount = 5400;
+			} if (gamestate === 22) {
+				framecount = 5*60*60;
 			} else {
 				framecount = 0;
 			}
