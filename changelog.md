@@ -1,5 +1,8 @@
 ## Changelog
 
+### v3.1.0
+* CHANGE | Added danger derank for Ultra Challenge.
+
 ### v3.0.0
 * FEATURE | Added overdan grades.
 * FEATURE | Ultra Challenge mode - a mode with dynamic difficulty system!

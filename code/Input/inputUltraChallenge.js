@@ -121,6 +121,22 @@ function inputUltraSpecial() {
         game.score += game.level
     }
     
+    for (let y=0; y<4; y++) {
+        let found = false;
+        for (let x = 0; x < 9; x++) {
+            if (matrix[y][x]>0) {
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            ultraSpecial.rankPoints -= (4-y)*(4-y)
+            break;
+        }
+    }
+
+    if (ultraSpecial.rankPoints < 0) ultraSpecial.rankPoints = 0;
+
     if (ultraSpecial.rankPoints >= 4800*game.level+4800) game.level++
     if (ultraSpecial.rankPoints < 4800*game.level-2400) game.level--
 
