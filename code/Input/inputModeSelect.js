@@ -121,7 +121,7 @@ function inputModeSelect() {
 			lockframe = 0;
 			if (gamestate === 13) {
 				framecount = 5400;
-			} if (gamestate === 22) {
+			} else if (gamestate === 22) {
 				framecount = 5*60*60;
 			} else {
 				framecount = 0;
