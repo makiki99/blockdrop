@@ -26,7 +26,8 @@ var displayNames = [
 	"Marathon",
 	"T. A. Death",
 	"HELL",
-	"Ultra"
+	"Ultra",
+	"Outer Space"
 ]
 
 function redrawClassic() {

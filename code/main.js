@@ -1,4 +1,4 @@
-var version = "v3.1.1",
+var version = "v3.2.0",
 	debug = {
 		//debug toogles
 		showScore: false
@@ -162,6 +162,10 @@ function main() {
 				break;
 			case 22:
 				inputUltraSpecial();
+				redrawClassic();
+				break;
+			case 23:
+				inputSpecial();
 				redrawClassic();
 				break;
 			default:

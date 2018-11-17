@@ -20,20 +20,38 @@ function lockPiece() {
 			miniTilesDown = 0;
 			//clear lines
 			(function() {
-				for(y = 0; y < matrix.length; y++){
-					var foo = 0;
-					for (x = 0;x < 10; x++) {
-						if (matrix[y][x] > 0) {
-							foo++;
-						} else {
-							break;
+				if (gamestate === 23) {
+					for(y = matrix.length-1; y >= 0; y--){
+						var foo = 0;
+						for (x = 0;x < 10; x++) {
+							if (matrix[y][x] > 0) {
+								foo++;
+							} else {
+								break;
+							}
+						}
+						if (foo >= 10) {
+							matrix[y] = [0,0,0,0,0,0,0,0,0,0];
+							lineClearAnim[y] = 5;
+							linesCleared++;
 						}
 					}
-					if (foo >= 10) {
-						matrix.splice(y,1);
-						matrix.unshift([0,0,0,0,0,0,0,0,0,0]);
-						lineClearAnim[y] = 5;
-						linesCleared++;
+				} else {
+					for(y = 0; y < matrix.length; y++){
+						var foo = 0;
+						for (x = 0;x < 10; x++) {
+							if (matrix[y][x] > 0) {
+								foo++;
+							} else {
+								break;
+							}
+						}
+						if (foo >= 10) {
+							matrix.splice(y,1);
+							matrix.unshift([0,0,0,0,0,0,0,0,0,0]);
+							lineClearAnim[y] = 5;
+							linesCleared++;
+						}
 					}
 				}
 			}());

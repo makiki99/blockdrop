@@ -31,12 +31,13 @@ var modeSelect = {
 			]
 		},
 		{
-			statelist:[12,13,14,15],
+			statelist:[12,13,14,15,23],
 			nameList:[
 				"Blockflip",
 				"Time Rush",
 				"Claustrophobia",
-				"Negative Shadow"
+				"Negative Shadow",
+				"Outer Space"
 			]
 		},
 		{

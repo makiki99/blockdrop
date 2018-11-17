@@ -1,7 +1,10 @@
 ## Changelog
 
+### v3.2.0
+* FEATURE | Added Outer Space mode.
+
 ### v3.1.1
-* CHANGE | Fixed a typo causing Time Rush to be unplayable
+* FIX | Fixed a typo causing Time Rush to be unplayable
 
 ### v3.1.0
 * CHANGE | Added danger derank for Ultra Challenge.
